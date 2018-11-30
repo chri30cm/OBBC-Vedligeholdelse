@@ -8,5 +8,9 @@ namespace OBBC_Vedligeholdelse
 {
     class Machine
     {
+        public void GetAllMachines()
+        {
+
+        }
     }
 }

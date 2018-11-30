@@ -8,6 +8,7 @@ namespace OBBC_Vedligeholdelse
 {
     class Menu
     {
+        Controller controller = new Controller();
         public void Show()
         {
             bool running = true;
@@ -52,9 +53,9 @@ namespace OBBC_Vedligeholdelse
             return Console.ReadLine();
         }
 
-        public void CheckMachines()
+        public void CheckMachine()
         {
-
+            controller.CheckMachine();
         }
     }
 }
