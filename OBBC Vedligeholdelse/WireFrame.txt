@@ -1,0 +1,29 @@
+﻿-------Vedligeholdelse OBBC-------
+1. Vis Maskiner             -
+2. Ændre På Status Af Maskine    -
+3. Maskine Mangler Del           - 
+4. Tilføj Maskine                -
+5. Fjern Maskine                 -
+6. Find Specifik Maskine         - 
+----------------------------------
+
+
+1:
+------------Vælg Område-----------
+1. Bryst                         -
+2. Mave                          -
+3. Arme                          -
+4. Ryg                           - 
+5. Core                          - 
+6. Spinning                      - 
+7. Ben                           -
+8. Alle Maskiner                 -
+----------------------------------
+1:
+----Maskiner For Område: Bryst----
+1. Maskine 322                   -
+2. Maskine 323                   -
+3. Maskine 325                   -
+4. Maskine 328                   -
+5. Maskine 330                   -
+----------------------------------
