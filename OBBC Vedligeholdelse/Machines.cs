@@ -38,7 +38,7 @@ namespace OBBC_Vedligeholdelse
                 }
                 catch (SqlException e)
                 {
-                    Console.WriteLine("UPS" + e.Message);
+                    Console.WriteLine("UPS, " + e.Message);
                 }
             }
         }

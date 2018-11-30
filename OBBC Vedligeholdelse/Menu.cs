@@ -36,7 +36,7 @@ namespace OBBC_Vedligeholdelse
 
         private void ShowMenu()
         {
-            Console.WriteLine("Dragons Lair");
+            Console.WriteLine("OBBC");
             Console.WriteLine();
             Console.WriteLine("1. Check alle maskiner");
             Console.WriteLine("");
