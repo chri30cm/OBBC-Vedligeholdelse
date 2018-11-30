@@ -10,6 +10,14 @@ namespace OBBC_Vedligeholdelse
     {
         static void Main(string[] args)
         {
+            Program myProgram = new Program();
+            myProgram.Run();
+        }
+
+        void Run()
+        {
+            Menu menu = new Menu();
+            menu.Show();
         }
     }
 }
