@@ -8,10 +8,10 @@ namespace OBBC_Vedligeholdelse
 {
     class Controller
     {
-        Machine machine = new Machine();
+        Machines machines = new Machines();
         public void CheckMachine()
         {
-            machine.GetAllMachines();
+            machines.GetAllMachines();
         }
     }
 }

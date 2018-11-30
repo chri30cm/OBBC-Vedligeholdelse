@@ -23,12 +23,9 @@ namespace OBBC_Vedligeholdelse
                         break;
                     case "1":
                         Console.Clear();
-                        //CheckMachines(); --- skal laves
+                        CheckMachine();
                         break;
-                    //case "2":
-                    //    Console.Clear();
-                    //    ShowScore();
-                    //    break;
+                    //case "2":    --- Flere funktioner...
                     default:
                         Console.WriteLine("Ugyldigt valg.");
                         Console.ReadLine();
