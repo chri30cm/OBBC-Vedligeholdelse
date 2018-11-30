@@ -8,6 +8,6 @@ namespace OBBC_Vedligeholdelse
 {
     class Controller
     {
-        public 
+        
     }
 }
