@@ -19,18 +19,20 @@ namespace OBBC_Vedligeholdelse
                 {
                     con.Open();
 
-                    SqlCommand cmd1 = new SqlCommand("", con);
+                    SqlCommand cmd1 = new SqlCommand("ShowMachines", con);
                     cmd1.CommandType = CommandType.StoredProcedure;
-
+                    
                     SqlDataReader reader = cmd1.ExecuteReader();
 
                     if (reader.HasRows)
                     {
                         while (reader.Read())
                         {
-                            string machineID = reader["machineID"].ToString();
-                            string location = reader["location"].ToString();
-                            Console.WriteLine($"{machineID} {location}");
+                            string machineID = reader["MaskineID"].ToString();
+                            string location = reader["MaskineOmråde"].ToString();
+                            string log = reader["LogID"].ToString();
+                            string note = reader["Note"].ToString();
+                            Console.WriteLine($"MaskineID: {machineID}, Lokation: {location}, Log: {log}, Note:  {note}");
                         }
                     }
                 }
