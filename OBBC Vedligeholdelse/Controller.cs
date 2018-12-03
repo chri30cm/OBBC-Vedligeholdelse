@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OBBC_Vedligeholdelse
 {
-    class Controller
+    public class Controller
     {
         Machines machine = new Machines();
         public void ShowMachines(int area)

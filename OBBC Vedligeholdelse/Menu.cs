@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OBBC_Vedligeholdelse
 {
-    class Menu
+    public class Menu
     {
         Controller control = new Controller();
         public void Show()

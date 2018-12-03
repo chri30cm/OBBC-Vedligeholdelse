@@ -8,9 +8,9 @@ using System.Data.SqlClient;
 
 namespace OBBC_Vedligeholdelse
 {
-    class Machines
+    public class Machines
     {
-        private static string connectionString = "Server=EALSQL1.eal.local; Database= C_DB01_2018; User Id= C_STUDENT01; Password= C_OPENDB01";
+        private const string connectionString = "Server=EALSQL1.eal.local; Database= C_DB01_2018; User Id= C_STUDENT01; Password= C_OPENDB01";
         public void GetAllMachines()
         {
             using (SqlConnection con = new SqlConnection(connectionString))
