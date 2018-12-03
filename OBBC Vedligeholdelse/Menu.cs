@@ -23,7 +23,7 @@ namespace OBBC_Vedligeholdelse
                         break;
                     case "1":
                         Console.Clear();
-                        CheckMachine();
+                        ShowMachines();
                         break;
                     //case "2":    --- Flere funktioner...
                     default:
@@ -60,10 +60,12 @@ namespace OBBC_Vedligeholdelse
             Console.WriteLine("------------Vælg Område-----------");
             Console.WriteLine("1. Vis alle maskiner");
             Console.WriteLine("2. Vis Bryst maskiner");
-            Console.WriteLine("-");
-            Console.WriteLine("-");
+            Console.WriteLine("3. Vis Ryg maskiner");
+            Console.WriteLine("4. Vis Mave maskiner");
+            Console.WriteLine("5. Vis Spinningsmaskiner");
+            Console.WriteLine("6.-");
             int input = int.Parse(Console.ReadLine());
-            controller.CheckMachine(input);
+            controller.ShowMachines(input);
         }
     }
 }
