@@ -8,7 +8,7 @@ namespace OBBC_Vedligeholdelse
 {
     class Menu
     {
-        Controller controller = new Controller();
+        Controller control = new Controller();
         public void Show()
         {
             bool running = true;
@@ -55,7 +55,7 @@ namespace OBBC_Vedligeholdelse
             return Console.ReadLine();
         }
 
-        public void CheckMachine()
+        public void ShowMachines()
         {
             Console.WriteLine("------------Vælg Område-----------");
             Console.WriteLine("1. Vis alle maskiner");
@@ -65,7 +65,7 @@ namespace OBBC_Vedligeholdelse
             Console.WriteLine("5. Vis Spinningsmaskiner");
             Console.WriteLine("6.-");
             int input = int.Parse(Console.ReadLine());
-            controller.ShowMachines(input);
+            control.ShowMachines(input);
         }
     }
 }
