@@ -9,9 +9,9 @@ namespace OBBC_Vedligeholdelse
     class Controller
     {
         Machines machine = new Machines();
-        public void CheckMachine(int områdeValg)
+        public void CheckMachine(int AreaChoice)
         {
-            switch (områdeValg)
+            switch (AreaChoice)
             {
                 case 1:
                     machine.GetAllMachines();
@@ -20,7 +20,7 @@ namespace OBBC_Vedligeholdelse
                     machine.GetChestMachines();
                     break;                
                 case 3:
-                    machine.Get
+                    machine.Get;
                     break;
                 default:
                     break;
