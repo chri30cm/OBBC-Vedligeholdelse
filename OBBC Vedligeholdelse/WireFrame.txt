@@ -1,10 +1,10 @@
 ﻿-------Vedligeholdelse OBBC-------
-1. Vis Maskiner             -
-2. Ændre På Status Af Maskine    -
-3. Maskine Mangler Del           - 
-4. Tilføj Maskine                -
-5. Fjern Maskine                 -
-6. Find Specifik Maskine         - 
+1. Vis Maskiner             
+2. Ændre På Status Af Maskine    
+3. Maskine Mangler Del           
+4. Tilføj Maskine                
+5. Fjern Maskine                 
+6. Find Specifik Maskine         
 ----------------------------------
 
 
@@ -15,7 +15,7 @@
 3. Arme                          -
 4. Ryg                           - 
 5. Core                          - 
-6. Spinning                      - 
+6. Spinning                      -
 7. Ben                           -
 8. Alle Maskiner                 -
 ----------------------------------
