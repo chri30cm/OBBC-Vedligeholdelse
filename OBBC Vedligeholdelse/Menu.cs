@@ -58,8 +58,8 @@ namespace OBBC_Vedligeholdelse
         public void CheckMachine()
         {
             Console.WriteLine("------------Vælg Område-----------");
-            Console.WriteLine("Bryst");
-            Console.WriteLine("-");
+            Console.WriteLine("1. Vis alle maskiner");
+            Console.WriteLine("2. Vis Bryst maskiner");
             Console.WriteLine("-");
             Console.WriteLine("-");
             int input = int.Parse(Console.ReadLine());

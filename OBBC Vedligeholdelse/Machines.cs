@@ -42,5 +42,10 @@ namespace OBBC_Vedligeholdelse
                 }
             }
         }
+
+        public void GetChestMachines()
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+        }
     }
 }
