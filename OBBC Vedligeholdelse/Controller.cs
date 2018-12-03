@@ -9,9 +9,9 @@ namespace OBBC_Vedligeholdelse
     class Controller
     {
         Machines machine = new Machines();
-        public void CheckMachine(int områdeValg)
+        public void ShowMachines(int area)
         {
-            switch (områdeValg)
+            switch (area)
             {
                 case 1:
                     Console.Clear();
@@ -33,7 +33,13 @@ namespace OBBC_Vedligeholdelse
                     machine.GetSpecificMachines("Mave");
                     Console.ReadLine();
                     break;
+                case 5:
+                    Console.Clear();
+                    machine.GetSpecificMachines("Mave");
+                    Console.ReadLine();
+                    break;
                 default:
+                    Console.WriteLine("Du skal lige vælge et rigtigt tal, bror.");
                     break;
             }
 
