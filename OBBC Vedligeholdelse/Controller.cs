@@ -14,13 +14,24 @@ namespace OBBC_Vedligeholdelse
             switch (områdeValg)
             {
                 case 1:
+                    Console.Clear();
                     machine.GetAllMachines();
+                    Console.ReadLine();
                     break;
                 case 2:
-                    machine.GetChestMachines();
+                    Console.Clear();
+                    machine.GetSpecificMachines("Bryst");
+                    Console.ReadLine();
                     break;                
                 case 3:
-                    machine.Get
+                    Console.Clear();
+                    machine.GetSpecificMachines("Ryg");
+                    Console.ReadLine();
+                    break;
+                case 4:
+                    Console.Clear();
+                    machine.GetSpecificMachines("Mave");
+                    Console.ReadLine();
                     break;
                 default:
                     break;
