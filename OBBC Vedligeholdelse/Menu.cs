@@ -23,7 +23,7 @@ namespace OBBC_Vedligeholdelse
                         break;
                     case "1":
                         Console.Clear();
-                        CheckMachine();
+                        ShowMachine();
                         break;
                     //case "2":    --- Flere funktioner...
                     default:
@@ -50,9 +50,9 @@ namespace OBBC_Vedligeholdelse
             return Console.ReadLine();
         }
 
-        public void CheckMachine()
+        public void ShowMachine()
         {
-            controller.CheckMachine();
+            controller.ShowMachine();
         }
     }
 }
