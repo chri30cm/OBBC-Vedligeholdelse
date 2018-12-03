@@ -23,7 +23,7 @@ namespace OBBC_Vedligeholdelse
                         break;
                     case "1":
                         Console.Clear();
-                        ShowMachine();
+                        CheckMachine();
                         break;
                     //case "2":    --- Flere funktioner...
                     default:
@@ -36,11 +36,16 @@ namespace OBBC_Vedligeholdelse
 
         private void ShowMenu()
         {
-            Console.WriteLine("OBBC");
+            Console.WriteLine("-------Vedligeholdelse OBBC-------");
             Console.WriteLine();
-            Console.WriteLine("1. Check alle maskiner");
-            Console.WriteLine("");
+            Console.WriteLine("1. Vis Maskiner");
+            Console.WriteLine("2. Ændre status på maskiner");
+            Console.WriteLine("3.Maskine Mangler Del");
+            Console.WriteLine("4. Tilføj Maskine");
+            Console.WriteLine("5. Fjern Maskine");
+            Console.WriteLine("6. Find Specifik Maskine ");
             Console.WriteLine("0. Exit");
+            Console.WriteLine("----------------------------------");
         }
 
         private string GetUserChoice()
@@ -50,9 +55,15 @@ namespace OBBC_Vedligeholdelse
             return Console.ReadLine();
         }
 
-        public void ShowMachine()
+        public void CheckMachine()
         {
-            controller.ShowMachine();
+            Console.WriteLine("------------Vælg Område-----------");
+            Console.WriteLine("Bryst");
+            Console.WriteLine("-");
+            Console.WriteLine("-");
+            Console.WriteLine("-");
+            int input = int.Parse(Console.ReadLine());
+            controller.CheckMachine(input);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace OBBC_Vedligeholdelse
     class Controller
     {
         Machines machines = new Machines();
-        public void ShowMachine()
+        public void CheckMachine(int områdeValg)
         {
             machines.GetAllMachines();
         }
