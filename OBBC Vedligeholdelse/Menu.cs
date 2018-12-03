@@ -62,8 +62,9 @@ namespace OBBC_Vedligeholdelse
             Console.WriteLine("2. Vis Bryst maskiner");
             Console.WriteLine("3. Vis Ryg maskiner");
             Console.WriteLine("4. Vis Mave maskiner");
-            Console.WriteLine("5. Vis Spinningsmaskiner");
-            Console.WriteLine("6.-");
+            Console.WriteLine("5. Vis Spinningsmaskiner"); //Endnu ikke implementeret
+            Console.WriteLine("6. Vis Ben maskiner");
+            Console.WriteLine("7. Vis Arme maskiner");
             int input = int.Parse(Console.ReadLine());
             control.ShowMachines(input);
         }

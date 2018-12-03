@@ -35,7 +35,17 @@ namespace OBBC_Vedligeholdelse
                     break;
                 case 5:
                     Console.Clear();
-                    machine.GetSpecificMachines("Mave");
+                    machine.GetSpecificMachines("");
+                    Console.ReadLine();
+                    break;
+                case 6:
+                    Console.Clear();
+                    machine.GetSpecificMachines("Ben");
+                    Console.ReadLine();
+                    break;
+                case 7:
+                    Console.Clear();
+                    machine.GetSpecificMachines("Arme");
                     Console.ReadLine();
                     break;
                 default:
