@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OBBC_Vedligeholdelse
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
