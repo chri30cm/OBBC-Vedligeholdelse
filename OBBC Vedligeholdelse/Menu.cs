@@ -25,7 +25,10 @@ namespace OBBC_Vedligeholdelse
                         Console.Clear();
                         ShowMachines();
                         break;
-                    //case "2":    --- Flere funktioner...
+                    case "2":
+                        Console.Clear();
+                        ChangeStatus();
+                        break;  
                     default:
                         Console.WriteLine("Ugyldigt valg.");
                         Console.ReadLine();
@@ -66,6 +69,18 @@ namespace OBBC_Vedligeholdelse
             Console.WriteLine("6.-");
             int input = int.Parse(Console.ReadLine());
             control.ShowMachines(input);
+        }
+
+        public void ChangeStatus()
+        {
+            Console.WriteLine("MaskinID: ");
+            int machineID = int.Parse(Console.ReadLine());
+            Console.WriteLine("vælg ændring på maskine");
+            Console.WriteLine("1. Maskine repareret");
+            Console.WriteLine("2. Maskine er i gang med at blive ordnet");
+            Console.WriteLine("3. Maskine er gået i stykker");
+            int input = int.Parse(Console.ReadLine());
+            control.ChangeStatus(input, machineID);
         }
     }
 }
