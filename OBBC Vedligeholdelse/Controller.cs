@@ -54,5 +54,26 @@ namespace OBBC_Vedligeholdelse
             }
 
         }
+        public void ChangeStatus(int statusChoice, int machineID)
+        {
+            switch (statusChoice)
+            {
+                case 1:
+                    Console.Clear();
+                    machine.ChangeMachineStatus(machineID, "Grøn");
+                    break;
+                case 2:
+                    Console.Clear();
+                    machine.ChangeMachineStatus(machineID, "Gul");
+                    break;
+                case 3:
+                    Console.Clear();
+                    machine.ChangeMachineStatus(machineID, "Rød");
+                    break;
+                default:
+                    Console.WriteLine("Du skal lige vælge et rigtigt tal, bror.");
+                    break;
+            }
+        }
     }
 }
