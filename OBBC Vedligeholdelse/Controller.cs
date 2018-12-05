@@ -35,7 +35,7 @@ namespace OBBC_Vedligeholdelse
                     break;
                 case 5:
                     Console.Clear();
-                    machine.GetSpecificMachines("");
+                    machine.GetSpecificMachines("Spinning");
                     Console.ReadLine();
                     break;
                 case 6:
