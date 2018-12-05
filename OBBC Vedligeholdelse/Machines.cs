@@ -67,7 +67,7 @@ namespace OBBC_Vedligeholdelse
                         cmd2.CommandType = CommandType.StoredProcedure;
                         cmd2.Parameters.Add(new SqlParameter("@MaskineID", machineID));
                         cmd2.Parameters.Add(new SqlParameter("@Status", status));
-
+                        Console.WriteLine("still");
                     }
                     catch (SqlException e)
                     {

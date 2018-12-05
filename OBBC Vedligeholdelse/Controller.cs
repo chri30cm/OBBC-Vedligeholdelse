@@ -61,14 +61,17 @@ namespace OBBC_Vedligeholdelse
                 case 1:
                     Console.Clear();
                     machine.ChangeMachineStatus(machineID, "Grøn");
+                    Console.WriteLine("works");
                     break;
                 case 2:
                     Console.Clear();
                     machine.ChangeMachineStatus(machineID, "Gul");
+                    Console.WriteLine("works");
                     break;
                 case 3:
                     Console.Clear();
                     machine.ChangeMachineStatus(machineID, "Rød");
+                    Console.WriteLine("works");
                     break;
                 default:
                     Console.WriteLine("Du skal lige vælge et rigtigt tal, bror.");
