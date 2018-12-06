@@ -9,9 +9,9 @@ namespace OBBC_Vedligeholdelse
     public class Controller
     {
         Machines machine = new Machines();
-        public void ShowMachines(int area)
+        public void ShowMachines(int areaChoice)
         {
-            switch (area)
+            switch (areaChoice)
             {
                 case 1:
                     Console.Clear();

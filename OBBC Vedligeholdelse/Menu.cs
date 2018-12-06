@@ -68,8 +68,8 @@ namespace OBBC_Vedligeholdelse
             Console.WriteLine("5. Vis Spinningsmaskiner"); 
             Console.WriteLine("6. Vis Ben maskiner");
             Console.WriteLine("7. Vis Arme maskiner");
-            int input = int.Parse(Console.ReadLine());
-            control.ShowMachines(input);
+            int areaChoice = int.Parse(Console.ReadLine());
+            control.ShowMachines(areaChoice);
         }
 
         public void ChangeStatus()
@@ -80,8 +80,8 @@ namespace OBBC_Vedligeholdelse
             Console.WriteLine("1. Maskine repareret");
             Console.WriteLine("2. Maskine er i gang med at blive ordnet");
             Console.WriteLine("3. Maskine er gået i stykker");
-            int input = int.Parse(Console.ReadLine());
-            control.ChangeStatus(input, machineID);
+            int statusChoice = int.Parse(Console.ReadLine());
+            control.ChangeStatus(statusChoice, machineID);
         }
     }
 }

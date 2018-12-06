@@ -31,7 +31,7 @@ namespace OBBC_Vedligeholdelse
             }
         }
 
-        public void GetSpecificMachines(string machineType)
+        public void GetSpecificMachines(string area)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -42,7 +42,7 @@ namespace OBBC_Vedligeholdelse
 
                         SqlCommand cmd2 = new SqlCommand("ShowSpecificMachines", con);
                         cmd2.CommandType = CommandType.StoredProcedure;
-                        cmd2.Parameters.Add(new SqlParameter("@MaskineOmråde", machineType));
+                        cmd2.Parameters.Add(new SqlParameter("@MaskineOmråde", area));
 
                         ReadandWrite(cmd2);
                     }
