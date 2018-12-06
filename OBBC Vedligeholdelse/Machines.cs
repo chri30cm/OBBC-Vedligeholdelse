@@ -89,6 +89,7 @@ namespace OBBC_Vedligeholdelse
                     string location = reader["MaskineOmråde"].ToString();
                     string log = reader["LogID"].ToString();
                     string note = reader["Note"].ToString();
+                    //string status = reader["Status"].ToString();
                     Console.WriteLine($"MaskineID: {machineID}, Lokation: {location}, Log: {log}, Note:  {note}");
                 }
             }

@@ -43,7 +43,7 @@ namespace OBBC_Vedligeholdelse
             Console.WriteLine();
             Console.WriteLine("1. Vis Maskiner");
             Console.WriteLine("2. Ændre status på maskiner");
-            Console.WriteLine("3.Maskine Mangler Del");
+            Console.WriteLine("3. Maskine Mangler Del");
             Console.WriteLine("4. Tilføj Maskine");
             Console.WriteLine("5. Fjern Maskine");
             Console.WriteLine("6. Find Specifik Maskine ");
@@ -74,9 +74,9 @@ namespace OBBC_Vedligeholdelse
 
         public void ChangeStatus()
         {
-            Console.WriteLine("MaskinID: ");
+            Console.WriteLine("Indtast Maskine ID: ");
             int machineID = int.Parse(Console.ReadLine());
-            Console.WriteLine("vælg ændring på maskine");
+            Console.WriteLine("Vælg ændring på maskine");
             Console.WriteLine("1. Maskine repareret");
             Console.WriteLine("2. Maskine er i gang med at blive ordnet");
             Console.WriteLine("3. Maskine er gået i stykker");

@@ -17,36 +17,43 @@ namespace OBBC_Vedligeholdelse
                     Console.Clear();
                     machine.GetAllMachines();
                     Console.ReadLine();
+                    Console.Clear();
                     break;
                 case 2:
                     Console.Clear();
                     machine.GetSpecificMachines("Bryst");
                     Console.ReadLine();
+                    Console.Clear();
                     break;                
                 case 3:
                     Console.Clear();
                     machine.GetSpecificMachines("Ryg");
                     Console.ReadLine();
+                    Console.Clear();
                     break;
                 case 4:
                     Console.Clear();
                     machine.GetSpecificMachines("Mave");
                     Console.ReadLine();
+                    Console.Clear();
                     break;
                 case 5:
                     Console.Clear();
                     machine.GetSpecificMachines("Spinning");
                     Console.ReadLine();
+                    Console.Clear();
                     break;
                 case 6:
                     Console.Clear();
                     machine.GetSpecificMachines("Ben");
                     Console.ReadLine();
+                    Console.Clear();
                     break;
                 case 7:
                     Console.Clear();
                     machine.GetSpecificMachines("Arme");
                     Console.ReadLine();
+                    Console.Clear();
                     break;
                 default:
                     Console.WriteLine("Du skal lige vælge et rigtigt tal, bror.");
