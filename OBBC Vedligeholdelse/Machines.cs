@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace OBBC_Vedligeholdelse
+namespace OBBC_Vedligeholdelse 
 {
     public class Machines
     {
