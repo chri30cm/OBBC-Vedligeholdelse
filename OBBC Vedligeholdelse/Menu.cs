@@ -25,7 +25,10 @@ namespace OBBC_Vedligeholdelse
                         Console.Clear();
                         ShowMachines();
                         break;
-                    //case "2":    --- Flere funktioner...
+                    case "2":
+                        Console.Clear();
+                        ChangeStatus();
+                        break;  
                     default:
                         Console.WriteLine("Ugyldigt valg.");
                         Console.ReadLine();
@@ -40,7 +43,7 @@ namespace OBBC_Vedligeholdelse
             Console.WriteLine();
             Console.WriteLine("1. Vis Maskiner");
             Console.WriteLine("2. Ændre status på maskiner");
-            Console.WriteLine("3.Maskine Mangler Del");
+            Console.WriteLine("3. Maskine Mangler Del");
             Console.WriteLine("4. Tilføj Maskine");
             Console.WriteLine("5. Fjern Maskine");
             Console.WriteLine("6. Find Specifik Maskine ");
@@ -62,10 +65,23 @@ namespace OBBC_Vedligeholdelse
             Console.WriteLine("2. Vis Bryst maskiner");
             Console.WriteLine("3. Vis Ryg maskiner");
             Console.WriteLine("4. Vis Mave maskiner");
-            Console.WriteLine("5. Vis Spinningsmaskiner");
-            Console.WriteLine("6.-");
-            int input = int.Parse(Console.ReadLine());
-            control.ShowMachines(input);
+            Console.WriteLine("5. Vis Spinningsmaskiner"); 
+            Console.WriteLine("6. Vis Ben maskiner");
+            Console.WriteLine("7. Vis Arme maskiner");
+            int areaChoice = int.Parse(Console.ReadLine());
+            control.ShowMachines(areaChoice);
+        }
+
+        public void ChangeStatus()
+        {
+            Console.WriteLine("Indtast Maskine ID: ");
+            int machineID = int.Parse(Console.ReadLine());
+            Console.WriteLine("Vælg ændring på maskine");
+            Console.WriteLine("1. Maskine repareret");
+            Console.WriteLine("2. Maskine er i gang med at blive ordnet");
+            Console.WriteLine("3. Maskine er gået i stykker");
+            int statusChoice = int.Parse(Console.ReadLine());
+            control.ChangeStatus(statusChoice, machineID);
         }
     }
 }
