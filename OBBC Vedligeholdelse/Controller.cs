@@ -8,50 +8,50 @@ namespace OBBC_Vedligeholdelse
 {
     public class Controller
     {
-        Machines machine = new Machines();
-        public void ShowMachines(int areaChoice)
+        ErrorReports reports = new ErrorReports();
+        public void ShowReports(int areaChoice)
         {
             switch (areaChoice)
             {
                 case 1:
                     Console.Clear();
-                    machine.GetAllMachines();
+                    reports.GetAllReports();
                     Console.ReadLine();
                     Console.Clear();
                     break;
                 case 2:
                     Console.Clear();
-                    machine.GetSpecificMachines("Bryst");
+                    reports.GetSpecificReports("Bryst");
                     Console.ReadLine();
                     Console.Clear();
                     break;                
                 case 3:
                     Console.Clear();
-                    machine.GetSpecificMachines("Ryg");
+                    reports.GetSpecificReports("Ryg");
                     Console.ReadLine();
                     Console.Clear();
                     break;
                 case 4:
                     Console.Clear();
-                    machine.GetSpecificMachines("Mave");
+                    reports.GetSpecificReports("Mave");
                     Console.ReadLine();
                     Console.Clear();
                     break;
                 case 5:
                     Console.Clear();
-                    machine.GetSpecificMachines("Spinning");
+                    reports.GetSpecificReports("Spinning");
                     Console.ReadLine();
                     Console.Clear();
                     break;
                 case 6:
                     Console.Clear();
-                    machine.GetSpecificMachines("Ben");
+                    reports.GetSpecificReports("Ben");
                     Console.ReadLine();
                     Console.Clear();
                     break;
                 case 7:
                     Console.Clear();
-                    machine.GetSpecificMachines("Arme");
+                    reports.GetSpecificReports("Arme");
                     Console.ReadLine();
                     Console.Clear();
                     break;
@@ -61,23 +61,23 @@ namespace OBBC_Vedligeholdelse
             }
 
         }
-        public void ChangeStatus(int statusChoice, int machineID)
+        public void ChangeStatus(int statusChoice, int reportID)
         {
             switch (statusChoice)
             {
                 case 1:
                     Console.Clear();
-                    machine.ChangeMachineStatus(machineID, "Grøn");
+                    reports.ChangeReportStatus(reportID, "Grøn");
                     Console.WriteLine("works");
                     break;
                 case 2:
                     Console.Clear();
-                    machine.ChangeMachineStatus(machineID, "Gul");
+                    reports.ChangeReportStatus(reportID, "Gul");
                     Console.WriteLine("works");
                     break;
                 case 3:
                     Console.Clear();
-                    machine.ChangeMachineStatus(machineID, "Rød");
+                    reports.ChangeReportStatus(reportID, "Rød");
                     Console.WriteLine("works");
                     break;
                 default:

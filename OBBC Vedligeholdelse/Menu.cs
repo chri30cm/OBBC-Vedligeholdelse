@@ -23,7 +23,7 @@ namespace OBBC_Vedligeholdelse
                         break;
                     case "1":
                         Console.Clear();
-                        ShowMachines();
+                        ShowReports();
                         break;
                     case "2":
                         Console.Clear();
@@ -58,7 +58,7 @@ namespace OBBC_Vedligeholdelse
             return Console.ReadLine();
         }
 
-        public void ShowMachines()
+        public void ShowReports()
         {
             Console.WriteLine("------------Vælg Område-----------");
             Console.WriteLine("1. Vis alle maskiner");
@@ -69,7 +69,7 @@ namespace OBBC_Vedligeholdelse
             Console.WriteLine("6. Vis Ben maskiner");
             Console.WriteLine("7. Vis Arme maskiner");
             int areaChoice = int.Parse(Console.ReadLine());
-            control.ShowMachines(areaChoice);
+            control.ShowReports(areaChoice);
         }
 
         public void ChangeStatus()

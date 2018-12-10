@@ -8,10 +8,10 @@ using System.Data.SqlClient;
 
 namespace OBBC_Vedligeholdelse 
 {
-    public class Machines
+    public class ErrorReports
     {
         private const string connectionString = "Server=EALSQL1.eal.local; Database= CANE; User Id= C_STUDENT01; Password= C_OPENDB01";
-        public void GetAllMachines()
+        public void GetAllReports()
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -31,7 +31,7 @@ namespace OBBC_Vedligeholdelse
             }
         }
 
-        public void GetSpecificMachines(string area)
+        public void GetSpecificReports(string area)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -54,7 +54,7 @@ namespace OBBC_Vedligeholdelse
             }
         }
 
-        public void ChangeMachineStatus(int machineID, string status)
+        public void ChangeReportStatus(int machineID, string status)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -89,8 +89,8 @@ namespace OBBC_Vedligeholdelse
                     string location = reader["MaskineOmråde"].ToString();
                     string log = reader["LogID"].ToString();
                     string note = reader["Note"].ToString();
-                    //string status = reader["Status"].ToString();
-                    Console.WriteLine($"MaskineID: {machineID}, Lokation: {location}, Log: {log}, Note:  {note}");
+                    string status = reader["Status"].ToString();
+                    Console.WriteLine($"MaskineID: {machineID}, Lokation: {location}, Log: {log}, Note:  {note}, Status: {status}");
                 }
             }
         }
