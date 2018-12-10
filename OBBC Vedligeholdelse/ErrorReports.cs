@@ -8,10 +8,10 @@ using System.Data.SqlClient;
 
 namespace OBBC_Vedligeholdelse 
 {
-    public class Machines
+    public class ErrorReports
     {
         private const string connectionString = "Server=EALSQL1.eal.local; Database= CANE; User Id= C_STUDENT01; Password= C_OPENDB01";
-        public void GetAllMachines()
+        public void GetAllCurrentReports()
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -19,10 +19,10 @@ namespace OBBC_Vedligeholdelse
                 {
                     con.Open();
 
-                    SqlCommand cmd1 = new SqlCommand("ShowAllMachines", con);
-                    cmd1.CommandType = CommandType.StoredProcedure;
+                    SqlCommand cmd = new SqlCommand("VisAlleAktuelleFejlRapporter", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
 
-                    ReadandWrite(cmd1);
+                    DatabaseReader(cmd);
                 }
                 catch (SqlException e)
                 {
@@ -31,7 +31,7 @@ namespace OBBC_Vedligeholdelse
             }
         }
 
-        public void GetSpecificMachines(string area)
+        public void GetSpecificCurrentReports(string area)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -40,11 +40,11 @@ namespace OBBC_Vedligeholdelse
                     {
                         con.Open();
 
-                        SqlCommand cmd2 = new SqlCommand("ShowSpecificMachines", con);
-                        cmd2.CommandType = CommandType.StoredProcedure;
-                        cmd2.Parameters.Add(new SqlParameter("@MaskineOmråde", area));
+                        SqlCommand cmd = new SqlCommand("VisSpecifikkeAktuelleFejlRapporter", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter("@Lokation", area));
 
-                        ReadandWrite(cmd2);
+                        DatabaseReader(cmd);
                     }
                     catch (SqlException e)
                     {
@@ -54,7 +54,7 @@ namespace OBBC_Vedligeholdelse
             }
         }
 
-        public void ChangeMachineStatus(int machineID, string status)
+        public void ChangeReportStatus(int machineID, string status)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -63,10 +63,10 @@ namespace OBBC_Vedligeholdelse
                     {
                         con.Open();
 
-                        SqlCommand cmd2 = new SqlCommand("ChangeStatus", con);
-                        cmd2.CommandType = CommandType.StoredProcedure;
-                        cmd2.Parameters.Add(new SqlParameter("@MaskineID", machineID));
-                        cmd2.Parameters.Add(new SqlParameter("@Status", status));
+                        SqlCommand cmd = new SqlCommand("ChangeStatus", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter("@MaskineID", machineID));
+                        cmd.Parameters.Add(new SqlParameter("@Status", status));
                         Console.WriteLine("still");
                     }
                     catch (SqlException e)
@@ -77,7 +77,7 @@ namespace OBBC_Vedligeholdelse
             }
         }
 
-        private void ReadandWrite(SqlCommand cmd)
+        private void DatabaseReader(SqlCommand cmd)
         {
             SqlDataReader reader = cmd.ExecuteReader();
 
@@ -85,12 +85,13 @@ namespace OBBC_Vedligeholdelse
             {
                 while (reader.Read())
                 {
-                    string machineID = reader["MaskineID"].ToString();
-                    string location = reader["MaskineOmråde"].ToString();
-                    string log = reader["LogID"].ToString();
-                    string note = reader["Note"].ToString();
-                    //string status = reader["Status"].ToString();
-                    Console.WriteLine($"MaskineID: {machineID}, Lokation: {location}, Log: {log}, Note:  {note}");
+                    string rapportID = reader["RapportID"].ToString();
+                    string lokation = reader["Lokation"].ToString();
+                    string PB = reader["ProblemBeskrivelse"].ToString();
+                    string tidspunkt = reader["Tidspunkt"].ToString();
+                    string extraInfo = reader["ExtraInfo"].ToString();
+                    Console.WriteLine($"RapportID: {rapportID} \nLokation: {lokation} \nProblembeskrivelse: {PB} \nTidspunkt:  {tidspunkt} \nExtra Info: {extraInfo}");
+                    Console.WriteLine();
                 }
             }
         }
