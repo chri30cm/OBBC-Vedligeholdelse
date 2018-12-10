@@ -10,14 +10,14 @@
 
 1:
 ------------Vælg Område-----------
-1. Bryst                         -
-2. Mave                          -
-3. Arme                          -
-4. Ryg                           - 
-5. Core                          - 
+1. Bryst(0)                         -
+2. Mave(1)                          -
+3. Arme(2)                          -
+4. Ryg(0)                           - 
+5. Core(1)                          - 
 6. Spinning                      -
 7. Ben                           -
-8. Alle Maskiner                 -
+8. Alle Maskiner(12)                 -
 ----------------------------------
 1:
 ----Maskiner For Område: Bryst----
