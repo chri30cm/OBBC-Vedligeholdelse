@@ -11,7 +11,7 @@ namespace OBBC_Vedligeholdelse
     public class ErrorReports
     {
         private const string connectionString = "Server=EALSQL1.eal.local; Database= CANE; User Id= C_STUDENT01; Password= C_OPENDB01";
-        public void GetAllReports()
+        public void GetAllCurrentReports()
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -19,7 +19,7 @@ namespace OBBC_Vedligeholdelse
                 {
                     con.Open();
 
-                    SqlCommand cmd1 = new SqlCommand("ShowAllMachines", con);
+                    SqlCommand cmd1 = new SqlCommand("VisAlleAktuelleFejlRapporter", con);
                     cmd1.CommandType = CommandType.StoredProcedure;
 
                     ReadandWrite(cmd1);
@@ -31,7 +31,7 @@ namespace OBBC_Vedligeholdelse
             }
         }
 
-        public void GetSpecificReports(string area)
+        public void GetSpecificCurrentReports(string area)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -40,9 +40,9 @@ namespace OBBC_Vedligeholdelse
                     {
                         con.Open();
 
-                        SqlCommand cmd2 = new SqlCommand("ShowSpecificMachines", con);
+                        SqlCommand cmd2 = new SqlCommand("VisSpecifikkeAktuelleFejlRapporter", con);
                         cmd2.CommandType = CommandType.StoredProcedure;
-                        cmd2.Parameters.Add(new SqlParameter("@MaskineOmråde", area));
+                        cmd2.Parameters.Add(new SqlParameter("@Lokation", area));
 
                         ReadandWrite(cmd2);
                     }
@@ -85,12 +85,13 @@ namespace OBBC_Vedligeholdelse
             {
                 while (reader.Read())
                 {
-                    string machineID = reader["MaskineID"].ToString();
-                    string location = reader["MaskineOmråde"].ToString();
-                    string log = reader["LogID"].ToString();
-                    string note = reader["Note"].ToString();
-                    string status = reader["Status"].ToString();
-                    Console.WriteLine($"MaskineID: {machineID}, Lokation: {location}, Log: {log}, Note:  {note}, Status: {status}");
+                    string rapportID = reader["RapportID"].ToString();
+                    string lokation = reader["Lokation"].ToString();
+                    string PB = reader["ProblemBeskrivelse"].ToString();
+                    string tidspunkt = reader["Tidspunkt"].ToString();
+                    string extraInfo = reader["ExtraInfo"].ToString();
+                    Console.WriteLine($"RapportID: {rapportID} \nLokation: {lokation} \nProblembeskrivelse: {PB} \nTidspunkt:  {tidspunkt} \nExtra Info: {extraInfo}");
+                    Console.WriteLine();
                 }
             }
         }

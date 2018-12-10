@@ -9,49 +9,49 @@ namespace OBBC_Vedligeholdelse
     public class Controller
     {
         ErrorReports reports = new ErrorReports();
-        public void ShowReports(int areaChoice)
+        public void ShowCurrentReports(int areaChoice)
         {
             switch (areaChoice)
             {
                 case 1:
                     Console.Clear();
-                    reports.GetAllReports();
+                    reports.GetAllCurrentReports();
                     Console.ReadLine();
                     Console.Clear();
                     break;
                 case 2:
                     Console.Clear();
-                    reports.GetSpecificReports("Bryst");
+                    reports.GetSpecificCurrentReports("Bryst");
                     Console.ReadLine();
                     Console.Clear();
                     break;                
                 case 3:
                     Console.Clear();
-                    reports.GetSpecificReports("Ryg");
+                    reports.GetSpecificCurrentReports("Ryg");
                     Console.ReadLine();
                     Console.Clear();
                     break;
                 case 4:
                     Console.Clear();
-                    reports.GetSpecificReports("Mave");
+                    reports.GetSpecificCurrentReports("Mave");
                     Console.ReadLine();
                     Console.Clear();
                     break;
                 case 5:
                     Console.Clear();
-                    reports.GetSpecificReports("Spinning");
+                    reports.GetSpecificCurrentReports("Spinning");
                     Console.ReadLine();
                     Console.Clear();
                     break;
                 case 6:
                     Console.Clear();
-                    reports.GetSpecificReports("Ben");
+                    reports.GetSpecificCurrentReports("Ben");
                     Console.ReadLine();
                     Console.Clear();
                     break;
                 case 7:
                     Console.Clear();
-                    reports.GetSpecificReports("Arme");
+                    reports.GetSpecificCurrentReports("Arme");
                     Console.ReadLine();
                     Console.Clear();
                     break;

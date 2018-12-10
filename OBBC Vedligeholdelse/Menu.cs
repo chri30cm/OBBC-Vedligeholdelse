@@ -23,12 +23,15 @@ namespace OBBC_Vedligeholdelse
                         break;
                     case "1":
                         Console.Clear();
-                        ShowReports();
+                        ShowCurrentReports();
                         break;
                     case "2":
                         Console.Clear();
+                        break;
+                    case "3":
+                        Console.Clear();
                         ChangeStatus();
-                        break;  
+                        break;
                     default:
                         Console.WriteLine("Ugyldigt valg.");
                         Console.ReadLine();
@@ -41,12 +44,11 @@ namespace OBBC_Vedligeholdelse
         {
             Console.WriteLine("-------Vedligeholdelse OBBC-------");
             Console.WriteLine();
-            Console.WriteLine("1. Vis Maskiner");
-            Console.WriteLine("2. Ændre status på maskiner");
-            Console.WriteLine("3. Maskine Mangler Del");
-            Console.WriteLine("4. Tilføj Maskine");
-            Console.WriteLine("5. Fjern Maskine");
-            Console.WriteLine("6. Find Specifik Maskine ");
+            Console.WriteLine("1. Vis Aktuelle Fejl Rapporter");
+            Console.WriteLine("2. Opret Fejlmelding");
+            Console.WriteLine("3. Ændre på fejlstatus");
+            Console.WriteLine("4. Maskine Mangler Del");
+            Console.WriteLine("5. Find Specifik dato");
             Console.WriteLine("0. Exit");
             Console.WriteLine("----------------------------------");
         }
@@ -58,30 +60,30 @@ namespace OBBC_Vedligeholdelse
             return Console.ReadLine();
         }
 
-        public void ShowReports()
+        public void ShowCurrentReports()
         {
             Console.WriteLine("------------Vælg Område-----------");
-            Console.WriteLine("1. Vis alle maskiner");
-            Console.WriteLine("2. Vis Bryst maskiner");
-            Console.WriteLine("3. Vis Ryg maskiner");
-            Console.WriteLine("4. Vis Mave maskiner");
-            Console.WriteLine("5. Vis Spinningsmaskiner"); 
-            Console.WriteLine("6. Vis Ben maskiner");
-            Console.WriteLine("7. Vis Arme maskiner");
+            Console.WriteLine("1. Vis alle aktuelle Rapporter");
+            Console.WriteLine("2. Vis Bryst Rapporter");
+            Console.WriteLine("3. Vis Ryg Rapporter");
+            Console.WriteLine("4. Vis Mave Rapporter");
+            Console.WriteLine("5. Vis Spinnings-Rapporter"); 
+            Console.WriteLine("6. Vis Ben Rapporter");
+            Console.WriteLine("7. Vis Arme Rapporter");
             int areaChoice = int.Parse(Console.ReadLine());
-            control.ShowReports(areaChoice);
+            control.ShowCurrentReports(areaChoice);
         }
 
         public void ChangeStatus()
         {
-            Console.WriteLine("Indtast Maskine ID: ");
-            int machineID = int.Parse(Console.ReadLine());
-            Console.WriteLine("Vælg ændring på maskine");
+            Console.WriteLine("Indtast Rapport ID: ");
+            int reportID = int.Parse(Console.ReadLine());
+            Console.WriteLine("Vælg status for maskine");
             Console.WriteLine("1. Maskine repareret");
             Console.WriteLine("2. Maskine er i gang med at blive ordnet");
             Console.WriteLine("3. Maskine er gået i stykker");
             int statusChoice = int.Parse(Console.ReadLine());
-            control.ChangeStatus(statusChoice, machineID);
+            control.ChangeStatus(statusChoice, reportID);
         }
     }
 }
