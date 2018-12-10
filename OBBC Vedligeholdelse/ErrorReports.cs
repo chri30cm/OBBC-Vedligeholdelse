@@ -19,10 +19,10 @@ namespace OBBC_Vedligeholdelse
                 {
                     con.Open();
 
-                    SqlCommand cmd1 = new SqlCommand("VisAlleAktuelleFejlRapporter", con);
-                    cmd1.CommandType = CommandType.StoredProcedure;
+                    SqlCommand cmd = new SqlCommand("VisAlleAktuelleFejlRapporter", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
 
-                    ReadandWrite(cmd1);
+                    DatabaseReader(cmd);
                 }
                 catch (SqlException e)
                 {
@@ -40,11 +40,11 @@ namespace OBBC_Vedligeholdelse
                     {
                         con.Open();
 
-                        SqlCommand cmd2 = new SqlCommand("VisSpecifikkeAktuelleFejlRapporter", con);
-                        cmd2.CommandType = CommandType.StoredProcedure;
-                        cmd2.Parameters.Add(new SqlParameter("@Lokation", area));
+                        SqlCommand cmd = new SqlCommand("VisSpecifikkeAktuelleFejlRapporter", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter("@Lokation", area));
 
-                        ReadandWrite(cmd2);
+                        DatabaseReader(cmd);
                     }
                     catch (SqlException e)
                     {
@@ -63,10 +63,10 @@ namespace OBBC_Vedligeholdelse
                     {
                         con.Open();
 
-                        SqlCommand cmd2 = new SqlCommand("ChangeStatus", con);
-                        cmd2.CommandType = CommandType.StoredProcedure;
-                        cmd2.Parameters.Add(new SqlParameter("@MaskineID", machineID));
-                        cmd2.Parameters.Add(new SqlParameter("@Status", status));
+                        SqlCommand cmd = new SqlCommand("ChangeStatus", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter("@MaskineID", machineID));
+                        cmd.Parameters.Add(new SqlParameter("@Status", status));
                         Console.WriteLine("still");
                     }
                     catch (SqlException e)
@@ -77,7 +77,7 @@ namespace OBBC_Vedligeholdelse
             }
         }
 
-        private void ReadandWrite(SqlCommand cmd)
+        private void DatabaseReader(SqlCommand cmd)
         {
             SqlDataReader reader = cmd.ExecuteReader();
 
