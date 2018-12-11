@@ -8,50 +8,50 @@ namespace OBBC_Vedligeholdelse
 {
     public class Controller
     {
-        ErrorReports reports = new ErrorReports();
+        ErrorReports report = new ErrorReports();
         public void ShowCurrentReports(int areaChoice)
         {
             switch (areaChoice)
             {
                 case 1:
                     Console.Clear();
-                    reports.GetAllCurrentReports();
+                    report.GetAllCurrentReports();
                     Console.ReadLine();
                     Console.Clear();
                     break;
                 case 2:
                     Console.Clear();
-                    reports.GetSpecificCurrentReports("Bryst");
+                    report.GetSpecificCurrentReports("Bryst");
                     Console.ReadLine();
                     Console.Clear();
                     break;                
                 case 3:
                     Console.Clear();
-                    reports.GetSpecificCurrentReports("Ryg");
+                    report.GetSpecificCurrentReports("Ryg");
                     Console.ReadLine();
                     Console.Clear();
                     break;
                 case 4:
                     Console.Clear();
-                    reports.GetSpecificCurrentReports("Mave");
+                    report.GetSpecificCurrentReports("Mave");
                     Console.ReadLine();
                     Console.Clear();
                     break;
                 case 5:
                     Console.Clear();
-                    reports.GetSpecificCurrentReports("Spinning");
+                    report.GetSpecificCurrentReports("Spinning");
                     Console.ReadLine();
                     Console.Clear();
                     break;
                 case 6:
                     Console.Clear();
-                    reports.GetSpecificCurrentReports("Ben");
+                    report.GetSpecificCurrentReports("Ben");
                     Console.ReadLine();
                     Console.Clear();
                     break;
                 case 7:
                     Console.Clear();
-                    reports.GetSpecificCurrentReports("Arme");
+                    report.GetSpecificCurrentReports("Arme");
                     Console.ReadLine();
                     Console.Clear();
                     break;
@@ -67,17 +67,17 @@ namespace OBBC_Vedligeholdelse
             {
                 case 1:
                     Console.Clear();
-                    reports.ChangeReportStatus(reportID, "Grøn");
+                    report.ChangeReportStatus(reportID, "Grøn");
                     Console.WriteLine("works");
                     break;
                 case 2:
                     Console.Clear();
-                    reports.ChangeReportStatus(reportID, "Gul");
+                    report.ChangeReportStatus(reportID, "Gul");
                     Console.WriteLine("works");
                     break;
                 case 3:
                     Console.Clear();
-                    reports.ChangeReportStatus(reportID, "Rød");
+                    report.ChangeReportStatus(reportID, "Rød");
                     Console.WriteLine("works");
                     break;
                 default:
