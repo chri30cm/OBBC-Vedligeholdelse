@@ -95,6 +95,31 @@ namespace OBBC_Vedligeholdelse
                 }
             }
         }
-        private void 
+        public void InsertReport(string area,string errorReport, string date,string extraInfo)
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                {
+                    try
+                    {
+                        con.Open();
+
+                        SqlCommand cmd = new SqlCommand("InsertReport", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter("@Lokation", area));
+                        cmd.Parameters.Add(new SqlParameter("@ProblemBeskrivelse", errorReport));
+                        cmd.Parameters.Add(new SqlParameter("@Tidspunkt", date));
+                        cmd.Parameters.Add(new SqlParameter("@ExtraInfo", extraInfo));
+
+                        DatabaseReader(cmd);
+                        Console.WriteLine("Success");
+                    }
+                    catch (SqlException e)
+                    {
+                        Console.WriteLine("UPS, " + e.Message);
+                    }
+                }
+            }
+        }
     }
 }
