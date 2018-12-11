@@ -21,7 +21,6 @@
 1:
 ----Maskiner For Område:      ----
 1. Bryst | Note: ingen | Log |	 -
-2. Bryst | Note: Maskine 420's 
-sæde er i stykker |  10-12-2018  -
+2. Bryst | Note: Maskine 420's sæde er i stykker |  10-12-2018  -
 ----------------------------------
 
