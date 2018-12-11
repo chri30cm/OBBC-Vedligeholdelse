@@ -93,46 +93,41 @@ namespace OBBC_Vedligeholdelse
             {
                 case 1:
                     Console.Clear();
-                    report.GetAllCurrentReports();
+                    report.InsertReport("Bryst",errorReport,date,extraInfo);
                     Console.ReadLine();
                     Console.Clear();
                     break;
                 case 2:
                     Console.Clear();
-                    report.GetSpecificCurrentReports("Bryst");
+                    report.InsertReport("Ryg", errorReport, date, extraInfo);
                     Console.ReadLine();
                     Console.Clear();
                     break;
                 case 3:
                     Console.Clear();
-                    report.GetSpecificCurrentReports("Ryg");
+                    report.InsertReport("Mave", errorReport, date, extraInfo);
                     Console.ReadLine();
                     Console.Clear();
                     break;
                 case 4:
                     Console.Clear();
-                    report.GetSpecificCurrentReports("Mave");
+                    report.InsertReport("Spinning", errorReport, date, extraInfo);
                     Console.ReadLine();
                     Console.Clear();
                     break;
                 case 5:
                     Console.Clear();
-                    report.GetSpecificCurrentReports("Spinning");
+                    report.InsertReport("Ben", errorReport, date, extraInfo);
                     Console.ReadLine();
                     Console.Clear();
                     break;
                 case 6:
                     Console.Clear();
-                    report.GetSpecificCurrentReports("Ben");
+                    report.InsertReport("Arme", errorReport, date, extraInfo);
                     Console.ReadLine();
                     Console.Clear();
                     break;
-                case 7:
-                    Console.Clear();
-                    report.GetSpecificCurrentReports("Arme");
-                    Console.ReadLine();
-                    Console.Clear();
-                    break;
+            
                 default:
                     Console.WriteLine("Du skal lige vælge et rigtigt tal, bror.");
                     break;

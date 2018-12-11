@@ -100,8 +100,8 @@ namespace OBBC_Vedligeholdelse
             Console.Clear();
             Console.WriteLine("Beskriv Problemet med Maskinen");
             string errorReport = Console.ReadLine();
-            CurrentOrManual();
-            string date = CreateDate();
+           string date = CurrentOrManual();
+            
             Console.Clear();
             Console.WriteLine("Har du Extra information af tilføje?");
             string extraInfo = Console.ReadLine();
@@ -137,7 +137,7 @@ namespace OBBC_Vedligeholdelse
                 }
                 else if (choice == 2)
                 {
-                    result = "default";
+                    result = DateTime.Now.ToShortDateString();
                     running = false;
                 }
                 else
