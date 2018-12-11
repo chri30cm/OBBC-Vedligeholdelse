@@ -85,5 +85,58 @@ namespace OBBC_Vedligeholdelse
                     break;
             }
         }
+
+        public void CreateNewReport(int areaChoice, string errorReport, string date, string extraInfo)
+        {
+            
+            switch (areaChoice)
+            {
+                case 1:
+                    Console.Clear();
+                    reports.GetAllCurrentReports();
+                    Console.ReadLine();
+                    Console.Clear();
+                    break;
+                case 2:
+                    Console.Clear();
+                    reports.GetSpecificCurrentReports("Bryst");
+                    Console.ReadLine();
+                    Console.Clear();
+                    break;
+                case 3:
+                    Console.Clear();
+                    reports.GetSpecificCurrentReports("Ryg");
+                    Console.ReadLine();
+                    Console.Clear();
+                    break;
+                case 4:
+                    Console.Clear();
+                    reports.GetSpecificCurrentReports("Mave");
+                    Console.ReadLine();
+                    Console.Clear();
+                    break;
+                case 5:
+                    Console.Clear();
+                    reports.GetSpecificCurrentReports("Spinning");
+                    Console.ReadLine();
+                    Console.Clear();
+                    break;
+                case 6:
+                    Console.Clear();
+                    reports.GetSpecificCurrentReports("Ben");
+                    Console.ReadLine();
+                    Console.Clear();
+                    break;
+                case 7:
+                    Console.Clear();
+                    reports.GetSpecificCurrentReports("Arme");
+                    Console.ReadLine();
+                    Console.Clear();
+                    break;
+                default:
+                    Console.WriteLine("Du skal lige vælge et rigtigt tal, bror.");
+                    break;
+            }
+        }
     }
 }

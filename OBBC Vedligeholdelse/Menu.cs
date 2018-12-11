@@ -27,6 +27,7 @@ namespace OBBC_Vedligeholdelse
                         break;
                     case "2":
                         Console.Clear();
+                        CreateNewReport();
                         break;
                     case "3":
                         Console.Clear();
@@ -84,6 +85,67 @@ namespace OBBC_Vedligeholdelse
             Console.WriteLine("3. Maskine er gået i stykker");
             int statusChoice = int.Parse(Console.ReadLine());
             control.ChangeStatus(statusChoice, reportID);
+        }
+
+        public void CreateNewReport()
+        {
+            Console.WriteLine("------------Vælg Område-----------");
+            Console.WriteLine("1. Bryst");
+            Console.WriteLine("2. Ryg");
+            Console.WriteLine("3. Mave");
+            Console.WriteLine("4. Spinning");
+            Console.WriteLine("5. Ben");
+            Console.WriteLine("6. Arme");
+            int areaChoice = int.Parse(Console.ReadLine());
+            Console.Clear();
+            Console.WriteLine("Beskriv Problemet med Maskinen");
+            string errorReport = Console.ReadLine();
+            CurrentOrManual();
+            string date = CreateDate();
+            Console.Clear();
+            Console.WriteLine("Har du Extra information af tilføje?");
+            string extraInfo = Console.ReadLine();
+            control.CreateNewReport(areaChoice, errorReport, date, extraInfo);
+        }
+
+        private string CreateDate()
+        {
+            Console.WriteLine("indtast dag (f.eks 25)");
+            int day = int.Parse(Console.ReadLine());
+            Console.WriteLine("indtast måned (f.eks 12)");
+            int month = int.Parse(Console.ReadLine());
+            Console.WriteLine("indtast år (f.eks 2018)");
+            int year = int.Parse(Console.ReadLine());
+            string date = $"{day}-{month}-{year}";
+            return date;
+        }
+
+        private string CurrentOrManual()
+        {
+            Console.WriteLine("vil du manuelt skrive dato, eller vælge nuværende tidspunkt?");
+            Console.WriteLine("1: Manuelt");
+            Console.WriteLine("2: Nuværende tidspunkt");
+            int choice = int.Parse(Console.ReadLine());
+            string result = null;
+            bool running = true;
+            while (running)
+            {
+                if (choice == 1)
+                {
+                    result = CreateDate();
+                    running = false;
+                }
+                else if (choice == 2)
+                {
+                    result = "default";
+                    running = false;
+                }
+                else
+                {
+                    throw new Exception("hov hov, du skal lige putte et ordenligt input, bror.");
+                } 
+            }
+            return result;
         }
     }
 }
