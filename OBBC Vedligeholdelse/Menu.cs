@@ -10,12 +10,16 @@ namespace OBBC_Vedligeholdelse
     public class Menu
     {
         Controller control = new Controller();
+        private const string startMenu = @"..\..\StartMenu.txt";
+        private const string firstMenu = @"..\..\StartMenu.txt";
+
+
         public void Show()
         {
             bool running = true;
             do
             {
-                ShowMenu();
+                ShowSelectedMenu(startMenu);
                 string choice = GetUserChoice();
                 switch (choice)
                 {
@@ -42,12 +46,12 @@ namespace OBBC_Vedligeholdelse
             } while (running);
         }
 
-        private void ShowMenu()
+        private void ShowSelectedMenu(string selectedMenu)
             
         {
             try
             {
-                using (StreamReader sr = new StreamReader(@"..\..\StartMenu.txt"))
+                using (StreamReader sr = new StreamReader(selectedMenu))
                 {
                     string line;
                     while ((line = sr.ReadLine()) != null)
