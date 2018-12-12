@@ -100,6 +100,7 @@ namespace OBBC_Vedligeholdelse
             Console.Clear();
             Console.WriteLine("Beskriv Problemet med Maskinen");
             string errorReport = Console.ReadLine();
+            Console.Clear();
            string date = CurrentOrManual();
             
             Console.Clear();

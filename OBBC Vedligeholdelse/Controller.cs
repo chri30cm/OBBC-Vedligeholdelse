@@ -88,50 +88,46 @@ namespace OBBC_Vedligeholdelse
 
         public void CreateNewReport(int areaChoice, string errorReport, string date, string extraInfo)
         {
-            
+            Console.Clear();
             switch (areaChoice)
             {
                 case 1:
-                    Console.Clear();
+                   
                     report.InsertReport("Bryst",errorReport,date,extraInfo);
-                    Console.ReadLine();
-                    Console.Clear();
+                   
                     break;
                 case 2:
-                    Console.Clear();
+                    
                     report.InsertReport("Ryg", errorReport, date, extraInfo);
-                    Console.ReadLine();
-                    Console.Clear();
+                   
                     break;
                 case 3:
-                    Console.Clear();
+               
                     report.InsertReport("Mave", errorReport, date, extraInfo);
-                    Console.ReadLine();
-                    Console.Clear();
+                    
                     break;
                 case 4:
-                    Console.Clear();
+                   
                     report.InsertReport("Spinning", errorReport, date, extraInfo);
-                    Console.ReadLine();
-                    Console.Clear();
+                   
                     break;
                 case 5:
-                    Console.Clear();
+                    
                     report.InsertReport("Ben", errorReport, date, extraInfo);
-                    Console.ReadLine();
-                    Console.Clear();
+                    
                     break;
                 case 6:
-                    Console.Clear();
+                    
                     report.InsertReport("Arme", errorReport, date, extraInfo);
-                    Console.ReadLine();
-                    Console.Clear();
+                    
                     break;
             
                 default:
                     Console.WriteLine("Du skal lige vælge et rigtigt tal, bror.");
                     break;
             }
+            Console.ReadLine();
+            Console.Clear();
         }
     }
 }
