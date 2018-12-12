@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace OBBC_Vedligeholdelse
 {
@@ -42,16 +43,24 @@ namespace OBBC_Vedligeholdelse
         }
 
         private void ShowMenu()
+            
         {
-            Console.WriteLine("-------Vedligeholdelse OBBC-------");
-            Console.WriteLine();
-            Console.WriteLine("1. Vis Aktuelle Fejl Rapporter");
-            Console.WriteLine("2. Opret Fejlmelding");
-            Console.WriteLine("3. Ændre på fejlstatus");
-            Console.WriteLine("4. Maskine Mangler Del");
-            Console.WriteLine("5. Find Specifik dato");
-            Console.WriteLine("0. Exit");
-            Console.WriteLine("----------------------------------");
+            try
+            {
+                using (StreamReader sr = new StreamReader(@"..\..\StartMenu.txt"))
+                {
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        Console.WriteLine(line);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Filen kunne ikke læses");
+                Console.WriteLine(e.Message);
+            }
         }
 
         private string GetUserChoice()

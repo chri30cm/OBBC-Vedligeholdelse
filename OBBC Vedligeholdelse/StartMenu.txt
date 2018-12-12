@@ -1,0 +1,9 @@
+﻿ -------Vedligeholdelse OBBC-------
+ 
+1. Vis Aktuelle Fejl Rapporter
+2. Opret Fejlmelding
+3. Ændre på fejlstatus
+4. Maskine Mangler Del
+5. Find Specifik dato
+0. Exit
+----------------------------------
