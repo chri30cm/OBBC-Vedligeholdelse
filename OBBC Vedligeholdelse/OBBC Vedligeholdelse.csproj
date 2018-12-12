@@ -53,6 +53,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="FirstMenu.txt" />
+    <Content Include="SecondMenu.txt" />
     <Content Include="StartMenu.txt" />
     <Content Include="WireFrame.txt" />
   </ItemGroup>
