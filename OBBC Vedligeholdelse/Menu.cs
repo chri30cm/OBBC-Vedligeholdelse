@@ -137,7 +137,8 @@ namespace OBBC_Vedligeholdelse
                 }
                 else if (choice == 2)
                 {
-                    result = DateTime.Now.ToShortDateString();
+                    result = DateTime.Now.ToString("yyyy-MM-dd h:mm:ss tt");
+
                     running = false;
                 }
                 else
