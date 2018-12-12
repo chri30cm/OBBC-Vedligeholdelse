@@ -56,6 +56,7 @@
     <Content Include="FirstMenu.txt" />
     <Content Include="SecondMenu.txt" />
     <Content Include="StartMenu.txt" />
+    <Content Include="ThirdMenu.txt" />
     <Content Include="WireFrame.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -87,10 +87,7 @@ namespace OBBC_Vedligeholdelse
         {
             Console.WriteLine("Indtast Rapport ID: ");
             int reportID = int.Parse(Console.ReadLine());
-            Console.WriteLine("Vælg status for maskine");
-            Console.WriteLine("1. Maskine repareret");
-            Console.WriteLine("2. Maskine er i gang med at blive ordnet");
-            Console.WriteLine("3. Maskine er gået i stykker");
+            ShowSelectedMenu(thirdMenu);
             int statusChoice = int.Parse(Console.ReadLine());
             control.ChangeStatus(statusChoice, reportID);
         }
