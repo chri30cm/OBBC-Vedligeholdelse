@@ -11,7 +11,9 @@ namespace OBBC_Vedligeholdelse
     {
         Controller control = new Controller();
         private const string startMenu = @"..\..\StartMenu.txt";
-        private const string firstMenu = @"..\..\StartMenu.txt";
+        private const string firstMenu = @"..\..\FirstMenu.txt";
+        private const string secondMenu = @"..\..\SecondMenu.txt";
+        private const string thirdMenu = @"..\..\ThirdMenu.txt";
 
 
         public void Show()
@@ -76,14 +78,7 @@ namespace OBBC_Vedligeholdelse
 
         public void ShowCurrentReports()
         {
-            Console.WriteLine("------------Vælg Område-----------");
-            Console.WriteLine("1. Vis alle aktuelle Rapporter");
-            Console.WriteLine("2. Vis Bryst Rapporter");
-            Console.WriteLine("3. Vis Ryg Rapporter");
-            Console.WriteLine("4. Vis Mave Rapporter");
-            Console.WriteLine("5. Vis Spinnings-Rapporter"); 
-            Console.WriteLine("6. Vis Ben Rapporter");
-            Console.WriteLine("7. Vis Arme Rapporter");
+            ShowSelectedMenu(firstMenu);
             int areaChoice = int.Parse(Console.ReadLine());
             control.ShowCurrentReports(areaChoice);
         }
@@ -102,13 +97,7 @@ namespace OBBC_Vedligeholdelse
 
         public void CreateNewReport()
         {
-            Console.WriteLine("------------Vælg Område-----------");
-            Console.WriteLine("1. Bryst");
-            Console.WriteLine("2. Ryg");
-            Console.WriteLine("3. Mave");
-            Console.WriteLine("4. Spinning");
-            Console.WriteLine("5. Ben");
-            Console.WriteLine("6. Arme");
+            ShowSelectedMenu(secondMenu);
             int areaChoice = int.Parse(Console.ReadLine());
             Console.Clear();
             Console.WriteLine("Beskriv Problemet med Maskinen");
