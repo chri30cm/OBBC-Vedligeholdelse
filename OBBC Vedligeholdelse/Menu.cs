@@ -136,29 +136,30 @@ namespace OBBC_Vedligeholdelse
 
         private string CurrentOrManual()
         {
-            Console.WriteLine("vil du manuelt skrive dato, eller vælge nuværende tidspunkt?");
-            Console.WriteLine("1: Manuelt");
-            Console.WriteLine("2: Nuværende tidspunkt");
-            int choice = int.Parse(Console.ReadLine());
             string result = null;
             bool running = true;
             while (running)
             {
+                Console.Clear();
+                Console.WriteLine("vil du manuelt skrive dato, eller vælge nuværende tidspunkt?");
+                Console.WriteLine("1: Manuelt");
+                Console.WriteLine("2: Nuværende tidspunkt");
+                int choice = int.Parse(Console.ReadLine());
+
                 if (choice == 1)
                 {
-                    result = CreateDate();
-                    running = false;
+                        result = CreateDate();
+                        running = false;
                 }
                 else if (choice == 2)
                 {
-                    result = DateTime.Now.ToString("yyyy-MM-dd H:mm:ss");
-
-                    running = false;
+                        result = DateTime.Now.ToString("yyyy-MM-dd H:mm:ss");
+                        running = false;
                 }
                 else
                 {
-                    throw new Exception("hov hov, du skal lige putte et ordenligt input, bror.");
-                } 
+                    Console.WriteLine("hov hov du, ");
+                }
             }
             return result;
         }

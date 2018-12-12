@@ -45,22 +45,17 @@ namespace OBBC_Vedligeholdelse
         }
         public void ChangeStatus(int statusChoice, int reportID)
         {
+            Console.Clear();
             switch (statusChoice)
             {
                 case 1:
-                    Console.Clear();
                     report.ChangeReportStatus(reportID, "Grøn");
-                    Console.WriteLine("works");
                     break;
                 case 2:
-                    Console.Clear();
                     report.ChangeReportStatus(reportID, "Gul");
-                    Console.WriteLine("works");
                     break;
                 case 3:
-                    Console.Clear();
                     report.ChangeReportStatus(reportID, "Rød");
-                    Console.WriteLine("works");
                     break;
                 default:
                     Console.WriteLine("Du skal lige vælge et rigtigt tal, bror.");

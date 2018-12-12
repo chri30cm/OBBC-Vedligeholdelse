@@ -18,10 +18,8 @@ namespace OBBC_Vedligeholdelse
                 try
                 {
                     con.Open();
-
                     SqlCommand cmd = new SqlCommand("VisAlleAktuelleFejlRapporter", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-
                     DatabaseReader(cmd);
                 }
                 catch (SqlException e)
@@ -39,11 +37,9 @@ namespace OBBC_Vedligeholdelse
                     try
                     {
                         con.Open();
-
                         SqlCommand cmd = new SqlCommand("VisSpecifikkeAktuelleFejlRapporter", con);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add(new SqlParameter("@Lokation", area));
-
                         DatabaseReader(cmd);
                     }
                     catch (SqlException e)
@@ -62,16 +58,15 @@ namespace OBBC_Vedligeholdelse
                     try
                     {
                         con.Open();
-
                         SqlCommand cmd = new SqlCommand("ChangeStatus", con);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add(new SqlParameter("@MaskineID", machineID));
                         cmd.Parameters.Add(new SqlParameter("@Status", status));
-                        Console.WriteLine("still");
+                        Console.WriteLine("success");
                     }
                     catch (SqlException e)
                     {
-                        Console.WriteLine("UPS, " + e.Message);
+                        Console.WriteLine("fejl, " + e.Message);
                     }
                 }
             }
@@ -103,16 +98,14 @@ namespace OBBC_Vedligeholdelse
                     try
                     {
                         con.Open();
-
                         SqlCommand cmd = new SqlCommand("InsertReport", con);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add(new SqlParameter("@Lokation", area));
                         cmd.Parameters.Add(new SqlParameter("@ProblemBeskrivelse", errorReport));
                         cmd.Parameters.Add(new SqlParameter("@Tidspunkt", date));
                         cmd.Parameters.Add(new SqlParameter("@ExtraInfo", extraInfo));
-
                         DatabaseReader(cmd);
-                        Console.WriteLine("Success");
+                        Console.WriteLine("success");
                     }
                     catch (SqlException e)
                     {
