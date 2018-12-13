@@ -103,21 +103,21 @@ namespace OBBC_Vedligeholdelse
             {
                 while (reader.Read())
                 {
-                    string rapportID = reader["RapportID"].ToString();
-                    string lokation = reader["Lokation"].ToString();
+                    string reportID = reader["RapportID"].ToString();
+                    string location = reader["Lokation"].ToString();
                     string PB = reader["ProblemBeskrivelse"].ToString();
-                    string tidspunkt = reader["Tidspunkt"].ToString();
+                    string time = reader["Tidspunkt"].ToString();
                     string extraInfo = reader["ExtraInfo"].ToString();
                     string status = reader["Status"].ToString();
                     if (status == "Gul")
                     {
                         Console.ForegroundColor = ConsoleColor.Yellow;
-                        Console.WriteLine($"RapportID: {rapportID} \nLokation: {lokation} \nProblembeskrivelse: {PB} \nTidspunkt:  {tidspunkt} \nExtra Info: {extraInfo}");
+                        Console.WriteLine(DateWriter(reportID, location, PB, time, extraInfo));
                     }
                     else if (status == "Rød")
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine($"RapportID: {rapportID} \nLokation: {lokation} \nProblembeskrivelse: {PB} \nTidspunkt:  {tidspunkt} \nExtra Info: {extraInfo}");
+                        Console.WriteLine(DateWriter(reportID, location, PB, time, extraInfo));
                     }
                     Console.WriteLine();
                 } 
@@ -154,6 +154,10 @@ namespace OBBC_Vedligeholdelse
                 Console.WriteLine(e.Message);
             }
             return _connectionString;
+        }
+        private string DateWriter(string reportID, string location, string PB, string time, string extraInfo)
+        {
+            return $"RapportID: {reportID} \nLokation: {location} \nProblembeskrivelse: {PB} \nTidspunkt:  {time} \nExtra Info: {extraInfo}";
         }
     }
 }
