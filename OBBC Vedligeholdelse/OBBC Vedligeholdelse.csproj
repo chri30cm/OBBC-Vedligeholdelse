@@ -53,6 +53,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DatabaseAccess.txt" />
     <Content Include="FirstMenu.txt" />
     <Content Include="SecondMenu.txt" />
     <Content Include="StartMenu.txt" />

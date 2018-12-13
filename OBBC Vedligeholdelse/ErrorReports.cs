@@ -5,15 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace OBBC_Vedligeholdelse 
 {
     public class ErrorReports
     {
-        private const string connectionString = "Server=EALSQL1.eal.local; Database= CANE; User Id= C_STUDENT01; Password= C_OPENDB01";
+        //private const string connectionString = "Server=EALSQL1.eal.local; Database= CANE; User Id= C_STUDENT01; Password= C_OPENDB01";
         public void GetAllCurrentReports()
         {
-            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlConnection con = new SqlConnection(DynamicConnectionString()))
             {
                 try
                 {
@@ -29,9 +30,42 @@ namespace OBBC_Vedligeholdelse
             }
         }
 
+        public string DynamicConnectionString()
+        {
+            string _connectionString = null;
+
+            try
+            {
+                using (StreamReader sr = new StreamReader(@"..\..\DatabaseAccess.txt"))
+                {
+                    string line;
+                    string[] connectionArray;
+                    string server;
+                    string database;
+                    string userId;
+                    string password;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        connectionArray = line.Split(':');
+                        server = connectionArray[0].ToString();
+                        database = connectionArray[1].ToString();
+                        userId = connectionArray[2].ToString();
+                        password = connectionArray[3].ToString();
+                        _connectionString = $"Server={server}; Database= {database}; User Id= {userId}; Password= {password}";
+                    }                
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Filen kunne ikke læses");
+                Console.WriteLine(e.Message);
+            }
+            return _connectionString;
+        }
+
         public void GetSpecificCurrentReports(string area)
         {
-            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlConnection con = new SqlConnection(DynamicConnectionString()))
             {
                 {
                     try
@@ -53,7 +87,7 @@ namespace OBBC_Vedligeholdelse
 
         public void ChangeReportStatus(int reportID, string status)
         {
-            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlConnection con = new SqlConnection(DynamicConnectionString()))
             {
                 {
                     try
@@ -75,7 +109,7 @@ namespace OBBC_Vedligeholdelse
         }
         public void InsertReport(string area,string errorReport, string date,string extraInfo)
         {
-            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlConnection con = new SqlConnection(DynamicConnectionString()))
             {
                 {
                     try
