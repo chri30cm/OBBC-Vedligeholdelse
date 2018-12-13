@@ -61,6 +61,7 @@ namespace OBBC_Vedligeholdelse
                     Console.WriteLine("Du skal lige vælge et rigtigt tal, bror.");
                     break;
             }
+            Console.ReadLine();
         }
 
         public void CreateNewReport(int areaChoice, string errorReport, string date, string extraInfo)

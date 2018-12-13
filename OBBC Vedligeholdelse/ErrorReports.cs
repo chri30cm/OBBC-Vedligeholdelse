@@ -50,7 +50,7 @@ namespace OBBC_Vedligeholdelse
             }
         }
 
-        public void ChangeReportStatus(int machineID, string status)
+        public void ChangeReportStatus(int reportID, string status)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -58,9 +58,9 @@ namespace OBBC_Vedligeholdelse
                     try
                     {
                         con.Open();
-                        SqlCommand cmd = new SqlCommand("ChangeStatus", con);
+                        SqlCommand cmd = new SqlCommand("ÆndreStatus", con);
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.Add(new SqlParameter("@MaskineID", machineID));
+                        cmd.Parameters.Add(new SqlParameter("@RapportID", reportID));
                         cmd.Parameters.Add(new SqlParameter("@Status", status));
                         Console.WriteLine("success");
                     }
@@ -68,25 +68,6 @@ namespace OBBC_Vedligeholdelse
                     {
                         Console.WriteLine("fejl, " + e.Message);
                     }
-                }
-            }
-        }
-
-        private void DatabaseReader(SqlCommand cmd)
-        {
-            SqlDataReader reader = cmd.ExecuteReader();
-
-            if (reader.HasRows)
-            {
-                while (reader.Read())
-                {
-                    string rapportID = reader["RapportID"].ToString();
-                    string lokation = reader["Lokation"].ToString();
-                    string PB = reader["ProblemBeskrivelse"].ToString();
-                    string tidspunkt = reader["Tidspunkt"].ToString();
-                    string extraInfo = reader["ExtraInfo"].ToString();
-                    Console.WriteLine($"RapportID: {rapportID} \nLokation: {lokation} \nProblembeskrivelse: {PB} \nTidspunkt:  {tidspunkt} \nExtra Info: {extraInfo}");
-                    Console.WriteLine();
                 }
             }
         }
@@ -111,6 +92,25 @@ namespace OBBC_Vedligeholdelse
                     {
                         Console.WriteLine("UPS, " + e.Message);
                     }
+                }
+            }
+        }
+
+        private void DatabaseReader(SqlCommand cmd)
+        {
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    string rapportID = reader["RapportID"].ToString();
+                    string lokation = reader["Lokation"].ToString();
+                    string PB = reader["ProblemBeskrivelse"].ToString();
+                    string tidspunkt = reader["Tidspunkt"].ToString();
+                    string extraInfo = reader["ExtraInfo"].ToString();
+                    Console.WriteLine($"RapportID: {rapportID} \nLokation: {lokation} \nProblembeskrivelse: {PB} \nTidspunkt:  {tidspunkt} \nExtra Info: {extraInfo}");
+                    Console.WriteLine();
                 }
             }
         }
