@@ -41,6 +41,7 @@ namespace OBBC_Vedligeholdelse
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add(new SqlParameter("@Lokation", area));
                         DatabaseReader(cmd);
+                       
                     }
                     catch (SqlException e)
                     {
@@ -110,10 +111,22 @@ namespace OBBC_Vedligeholdelse
                     string PB = reader["ProblemBeskrivelse"].ToString();
                     string tidspunkt = reader["Tidspunkt"].ToString();
                     string extraInfo = reader["ExtraInfo"].ToString();
-                    Console.WriteLine($"RapportID: {rapportID} \nLokation: {lokation} \nProblembeskrivelse: {PB} \nTidspunkt:  {tidspunkt} \nExtra Info: {extraInfo}");
+                    string status = reader["Status"].ToString();
+
+                    if (status == "Gul")
+                    {
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine($"RapportID: {rapportID} \nLokation: {lokation} \nProblembeskrivelse: {PB} \nTidspunkt:  {tidspunkt} \nExtra Info: {extraInfo}");
+                    }
+                    else if (status == "Rød")
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine($"RapportID: {rapportID} \nLokation: {lokation} \nProblembeskrivelse: {PB} \nTidspunkt:  {tidspunkt} \nExtra Info: {extraInfo}");
+                    }
                     Console.WriteLine();
-                }
+                } 
             }
+            Console.ForegroundColor = ConsoleColor.White;
         }
     }
 }
