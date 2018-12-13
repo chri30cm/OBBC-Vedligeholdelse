@@ -21,31 +21,39 @@ namespace OBBC_Vedligeholdelse
             bool running = true;
             do
             {
-                ShowSelectedMenu(startMenu);
-                string choice = GetUserChoice();
-                switch (choice)
+                try
                 {
-                    case "0":
-                        running = false;
-                        break;
-                    case "1":
-                        Console.Clear();
-                        ShowCurrentReports();
-                        break;
-                    case "2":
-                        Console.Clear();
-                        CreateNewReport();
-                        break;
-                    case "3":
-                        Console.Clear();
-                        ChangeStatus();
-                        break;
-                    default:
-                        Console.WriteLine("Ugyldigt valg.");
-                        Console.ReadLine();
-                        break;
+                    ShowSelectedMenu(startMenu);
+                    string choice = GetUserChoice();
+                    switch (choice)
+                    {
+                        case "0":
+                            running = false;
+                            break;
+                        case "1":
+                            Console.Clear();
+                            ShowCurrentReports();
+                            break;
+                        case "2":
+                            Console.Clear();
+                            CreateNewReport();
+                            break;
+                        case "3":
+                            Console.Clear();
+                            ChangeStatus();
+                            break;
+                        default:
+                            Console.WriteLine("Ugyldigt valg.");
+                            Console.ReadLine();
+                            break;
+                    }
                 }
-            } while (running);
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
+            while (running);
         }
 
         private void ShowSelectedMenu(string selectedMenu)
@@ -94,18 +102,17 @@ namespace OBBC_Vedligeholdelse
 
         public void CreateNewReport()
         {
-            ShowSelectedMenu(secondMenu);
-            int areaChoice = int.Parse(Console.ReadLine());
-            Console.Clear();
-            Console.WriteLine("Beskriv Problemet med Maskinen");
-            string errorReport = Console.ReadLine();
-            Console.Clear();
+           ShowSelectedMenu(secondMenu);
+           int areaChoice = int.Parse(Console.ReadLine());
+           Console.Clear();
+           Console.WriteLine("Beskriv Problemet med Maskinen");
+           string errorReport = Console.ReadLine();
+           Console.Clear();
            string date = CurrentOrManual();
-            
-            Console.Clear();
-            Console.WriteLine("Har du Extra information af tilføje?");
-            string extraInfo = Console.ReadLine();
-            control.CreateNewReport(areaChoice, errorReport, date, extraInfo);
+           Console.Clear();
+           Console.WriteLine("Har du Extra information af tilføje?");
+           string extraInfo = Console.ReadLine();
+           control.CreateNewReport(areaChoice, errorReport, date, extraInfo);
         }
 
         private string CreateDate()

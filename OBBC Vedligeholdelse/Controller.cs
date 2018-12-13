@@ -41,7 +41,7 @@ namespace OBBC_Vedligeholdelse
             }
             Console.ReadLine();
             Console.Clear();
-
+             
         }
         public void ChangeStatus(int statusChoice, int reportID)
         {
