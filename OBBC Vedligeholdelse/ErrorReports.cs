@@ -62,6 +62,7 @@ namespace OBBC_Vedligeholdelse
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add(new SqlParameter("@RapportID", reportID));
                         cmd.Parameters.Add(new SqlParameter("@Status", status));
+                        cmd.ExecuteReader();
                         Console.WriteLine("success");
                     }
                     catch (SqlException e)
