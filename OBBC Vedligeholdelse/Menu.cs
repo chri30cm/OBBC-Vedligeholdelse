@@ -14,8 +14,6 @@ namespace OBBC_Vedligeholdelse
         private const string firstMenu = @"..\..\FirstMenu.txt";
         private const string secondMenu = @"..\..\SecondMenu.txt";
         private const string thirdMenu = @"..\..\ThirdMenu.txt";
-
-
         public void Show()
         {
             bool running = true;
@@ -25,21 +23,19 @@ namespace OBBC_Vedligeholdelse
                 {
                     ShowSelectedMenu(startMenu);
                     string choice = GetUserChoice();
+                    Console.Clear();
                     switch (choice)
                     {
                         case "0":
                             running = false;
                             break;
                         case "1":
-                            Console.Clear();
                             ShowCurrentReports();
                             break;
                         case "2":
-                            Console.Clear();
                             CreateNewReport();
                             break;
                         case "3":
-                            Console.Clear();
                             ChangeStatus();
                             break;
                         default:
@@ -55,7 +51,6 @@ namespace OBBC_Vedligeholdelse
             }
             while (running);
         }
-
         private void ShowSelectedMenu(string selectedMenu)
             
         {
@@ -76,21 +71,18 @@ namespace OBBC_Vedligeholdelse
                 Console.WriteLine(e.Message);
             }
         }
-
         private string GetUserChoice()
         {
             Console.WriteLine();
             Console.Write("Indtast dit valg: ");
             return Console.ReadLine();
         }
-
         public void ShowCurrentReports()
         {
             ShowSelectedMenu(firstMenu);
             int areaChoice = int.Parse(Console.ReadLine());
             control.ShowCurrentReports(areaChoice);
         }
-
         public void ChangeStatus()
         {
             Console.WriteLine("Indtast Rapport ID: ");
@@ -99,7 +91,6 @@ namespace OBBC_Vedligeholdelse
             int statusChoice = int.Parse(Console.ReadLine());
             control.ChangeStatus(statusChoice, reportID);
         }
-
         public void CreateNewReport()
         {
            ShowSelectedMenu(secondMenu);
@@ -114,7 +105,6 @@ namespace OBBC_Vedligeholdelse
            string extraInfo = Console.ReadLine();
            control.CreateNewReport(areaChoice, errorReport, date, extraInfo);
         }
-
         private string CreateDate()
         {
             Console.WriteLine("indtast dag (f.eks 25)");
@@ -126,7 +116,6 @@ namespace OBBC_Vedligeholdelse
             string date = $"{day}-{month}-{year}";
             return date;
         }
-
         private string CurrentOrManual()
         {
             string result = null;
@@ -138,7 +127,6 @@ namespace OBBC_Vedligeholdelse
                 Console.WriteLine("1: Manuelt");
                 Console.WriteLine("2: Nuværende tidspunkt");
                 int choice = int.Parse(Console.ReadLine());
-
                 if (choice == 1)
                 {
                         result = CreateDate();

@@ -8,7 +8,7 @@ namespace OBBC_Vedligeholdelse
 {
     public class Controller
     {
-        ErrorReports report = new ErrorReports();
+        DatabaseController report = new DatabaseController();
         public void ShowCurrentReports(int areaChoice)
         {
             Console.Clear();
@@ -41,7 +41,6 @@ namespace OBBC_Vedligeholdelse
             }
             Console.ReadLine();
             Console.Clear();
-             
         }
         public void ChangeStatus(int statusChoice, int reportID)
         {
@@ -63,7 +62,6 @@ namespace OBBC_Vedligeholdelse
             }
             Console.ReadLine();
         }
-
         public void CreateNewReport(int areaChoice, string errorReport, string date, string extraInfo)
         {
             Console.Clear();

@@ -13,7 +13,6 @@ namespace OBBC_Vedligeholdelse
             Program myProgram = new Program();
             myProgram.Run();
         }
-
         void Run()
         {
             Menu menu = new Menu();
