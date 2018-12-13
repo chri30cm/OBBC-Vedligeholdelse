@@ -14,6 +14,8 @@ namespace OBBC_Vedligeholdelse
         private const string firstMenu = @"..\..\FirstMenu.txt";
         private const string secondMenu = @"..\..\SecondMenu.txt";
         private const string thirdMenu = @"..\..\ThirdMenu.txt";
+        private const string fourthMenu = @"..\..\FourthMenu.txt";
+        private const string fifthMenu = @"..\..\FifthMenu.txt";
         public void Show()
         {
             bool running = true;
