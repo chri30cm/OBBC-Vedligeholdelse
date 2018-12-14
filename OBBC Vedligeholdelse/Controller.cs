@@ -8,32 +8,32 @@ namespace OBBC_Vedligeholdelse
 {
     public class Controller
     {
-        DatabaseController report = new DatabaseController();
+        DatabaseController databaseController = new DatabaseController();
         public void ShowCurrentReports(int areaChoice)
         {
             Console.Clear();
             switch (areaChoice)
             {
                 case 1:
-                    report.GetAllCurrentReports();                    
+                    databaseController.GetAllCurrentReports();                    
                     break;
                 case 2:
-                    report.GetSpecificCurrentReports("Bryst");
+                    databaseController.GetSpecificCurrentReports("Bryst");
                     break;                
                 case 3:
-                    report.GetSpecificCurrentReports("Ryg");
+                    databaseController.GetSpecificCurrentReports("Ryg");
                     break;
                 case 4:
-                    report.GetSpecificCurrentReports("Mave");
+                    databaseController.GetSpecificCurrentReports("Mave");
                     break;
                 case 5:
-                    report.GetSpecificCurrentReports("Spinning");
+                    databaseController.GetSpecificCurrentReports("Spinning");
                     break;
                 case 6:
-                    report.GetSpecificCurrentReports("Ben");
+                    databaseController.GetSpecificCurrentReports("Ben");
                     break;
                 case 7:                    
-                    report.GetSpecificCurrentReports("Arme");
+                    databaseController.GetSpecificCurrentReports("Arme");
                     break;
                 default:
                     Console.WriteLine("Du skal lige vælge et rigtigt tal, bror.");
@@ -48,13 +48,13 @@ namespace OBBC_Vedligeholdelse
             switch (statusChoice)
             {
                 case 1:
-                    report.ChangeReportStatus(reportID, "Grøn");
+                    databaseController.ChangeReportStatus(reportID, "Grøn");
                     break;
                 case 2:
-                    report.ChangeReportStatus(reportID, "Gul");
+                    databaseController.ChangeReportStatus(reportID, "Gul");
                     break;
                 case 3:
-                    report.ChangeReportStatus(reportID, "Rød");
+                    databaseController.ChangeReportStatus(reportID, "Rød");
                     break;
                 default:
                     Console.WriteLine("Du skal lige vælge et rigtigt tal, bror.");
@@ -68,25 +68,26 @@ namespace OBBC_Vedligeholdelse
             switch (areaChoice)
             {
                 case 1:                   
-                    report.InsertReport("Bryst",errorReport,date,extraInfo);                   
+                    databaseController.InsertReport("Bryst",errorReport,date,extraInfo);                   
                     break;
                 case 2:                    
-                    report.InsertReport("Ryg", errorReport, date, extraInfo);                   
+                    databaseController.InsertReport("Ryg", errorReport, date, extraInfo);                   
                     break;
                 case 3:               
-                    report.InsertReport("Mave", errorReport, date, extraInfo);                    
+                    databaseController.InsertReport("Mave", errorReport, date, extraInfo);                    
                     break;
                 case 4:                   
-                    report.InsertReport("Spinning", errorReport, date, extraInfo);                   
+                    databaseController.InsertReport("Spinning", errorReport, date, extraInfo);                   
                     break;
                 case 5:                    
-                    report.InsertReport("Ben", errorReport, date, extraInfo);                    
+                    databaseController.InsertReport("Ben", errorReport, date, extraInfo);                    
                     break;
                 case 6:                    
-                    report.InsertReport("Arme", errorReport, date, extraInfo);                    
+                    databaseController.InsertReport("Arme", errorReport, date, extraInfo);                    
                     break;            
                 default:
-                    Console.WriteLine("Du skal lige vælge et rigtigt tal, bror.");
+                    Console.WriteLine("Området ekstisterer ikke!" +
+                        "   ");
                     break;
             }
             Console.ReadLine();

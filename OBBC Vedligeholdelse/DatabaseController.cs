@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +11,6 @@ namespace OBBC_Vedligeholdelse
 {
     public class DatabaseController
     {
-        //private const string connectionString = "Server=EALSQL1.eal.local; Database= CANE; User Id= C_STUDENT01; Password= C_OPENDB01";
         public void GetAllCurrentReports()
         {
             using (SqlConnection con = new SqlConnection(DynamicConnectionString()))
@@ -111,12 +110,12 @@ namespace OBBC_Vedligeholdelse
                     string status = reader["Status"].ToString();
                     if (status == "Gul")
                     {
-                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
                         Console.WriteLine(DateWriter(reportID, location, PB, time, extraInfo));
                     }
                     else if (status == "Rød")
                     {
-                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine(DateWriter(reportID, location, PB, time, extraInfo));
                     }
                     Console.WriteLine();
