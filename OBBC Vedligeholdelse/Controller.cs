@@ -9,8 +9,9 @@ namespace OBBC_Vedligeholdelse
     public class Controller
     {
         DatabaseController databaseController = new DatabaseController();
-        public void ShowCurrentReports(int areaChoice)
+        public bool ShowCurrentReports(int areaChoice)
         {
+            bool success = true;
             Console.Clear();
             switch (areaChoice)
             {
@@ -37,10 +38,12 @@ namespace OBBC_Vedligeholdelse
                     break;
                 default:
                     Console.WriteLine("Du skal lige vælge et rigtigt tal, bror.");
+                    success = false;
                     break;
             }
             Console.ReadLine();
             Console.Clear();
+            return success;
         }
         public void ChangeStatus(int statusChoice, int reportID)
         {
@@ -57,7 +60,7 @@ namespace OBBC_Vedligeholdelse
                     databaseController.ChangeReportStatus(reportID, "Rød");
                     break;
                 default:
-                    Console.WriteLine("Det valgte input var forkert, prøv igen");
+                    Console.WriteLine("Det valgte input var forkert");
                     break;
             }
             Console.ReadLine();

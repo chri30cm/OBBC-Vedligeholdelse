@@ -52,10 +52,10 @@ namespace OBBC_Vedligeholdelse
                             break;
                     }
                 }
-                catch (Exception e)
+                catch(Exception e)
                 {
                     Console.WriteLine(e.Message);
-                }
+                }    
             }
             while (running);
         }
@@ -101,9 +101,16 @@ namespace OBBC_Vedligeholdelse
         }
         public void ShowCurrentReports()
         {
-            ShowSelectedMenu(firstMenu);
-            int areaChoice = int.Parse(Console.ReadLine());
-            control.ShowCurrentReports(areaChoice);
+            int areaChoice;
+            do
+            {
+                ShowSelectedMenu(firstMenu);
+                if (!int.TryParse(Console.ReadLine(), out areaChoice))
+                {
+                    areaChoice = -1;
+                }
+            }
+            while (control.ShowCurrentReports(areaChoice) == false);
         }
         public void ChangeStatus()
         {
