@@ -93,5 +93,71 @@ namespace OBBC_Vedligeholdelse
             Console.ReadLine();
             Console.Clear();
         }
+        public void ShowOldReports(int areaChoice)
+        {
+            Console.Clear();
+            switch (areaChoice)
+            {
+                case 1:
+                    databaseController.GetAllOldReports();
+                    break;
+                case 2:
+                    databaseController.GetSpecificOldReports("Bryst");
+                    break;
+                case 3:
+                    databaseController.GetSpecificOldReports("Ryg");
+                    break;
+                case 4:
+                    databaseController.GetSpecificOldReports("Mave");
+                    break;
+                case 5:
+                    databaseController.GetSpecificOldReports("Spinning");
+                    break;
+                case 6:
+                    databaseController.GetSpecificOldReports("Ben");
+                    break;
+                case 7:
+                    databaseController.GetSpecificOldReports("Arme");
+                    break;
+                default:
+                    Console.WriteLine("Du skal lige vælge et rigtigt tal, bror.");
+                    break;
+            }
+            Console.ReadLine();
+            Console.Clear();
+        }
+        public void ShowExtraInfoReports(int areaChoice)
+        {
+            Console.Clear();
+            switch (areaChoice)
+            {
+                case 1:
+                    databaseController.GetAllExtraInfoReports();
+                    break;
+                case 2:
+                    databaseController.GetSpecificExtraInfoReports("Bryst");
+                    break;
+                case 3:
+                    databaseController.GetSpecificExtraInfoReports("Ryg");
+                    break;
+                case 4:
+                    databaseController.GetSpecificExtraInfoReports("Mave");
+                    break;
+                case 5:
+                    databaseController.GetSpecificExtraInfoReports("Spinning");
+                    break;
+                case 6:
+                    databaseController.GetSpecificExtraInfoReports("Ben");
+                    break;
+                case 7:
+                    databaseController.GetSpecificExtraInfoReports("Arme");
+                    break;
+                default:
+                    Console.WriteLine("Du skal lige vælge et rigtigt tal, bror.");
+                    break;
+            }
+            Console.ReadLine();
+            Console.Clear();
+        }
     }
 }

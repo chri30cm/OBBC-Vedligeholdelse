@@ -3,7 +3,7 @@
 1. Vis Aktuelle Fejl Rapporter
 2. Opret Fejlmelding
 3. Ændre på fejlstatus
-4. Maskine Mangler Del
-5. Find Specifik dato
+4. Vis gamle rapporter
+5. Vis rapporter med extra info
 0. Exit
 ----------------------------------

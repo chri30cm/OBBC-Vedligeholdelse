@@ -40,6 +40,12 @@ namespace OBBC_Vedligeholdelse
                         case "3":
                             ChangeStatus();
                             break;
+                        case "4":
+                            ShowOldReports();
+                            break;
+                        case "5":
+                            ShowExtraInfoReports();
+                            break;
                         default:
                             Console.WriteLine("Ugyldigt valg.");
                             Console.ReadLine();
@@ -53,6 +59,21 @@ namespace OBBC_Vedligeholdelse
             }
             while (running);
         }
+
+        private void ShowExtraInfoReports()
+        {
+            ShowSelectedMenu(fifthMenu);
+            int areaChoice = int.Parse(Console.ReadLine());
+            control.ShowExtraInfoReports(areaChoice);
+        }
+
+        private void ShowOldReports()
+        {
+            ShowSelectedMenu(fourthMenu);
+            int areaChoice = int.Parse(Console.ReadLine());
+            control.ShowOldReports(areaChoice);
+        }
+
         private void ShowSelectedMenu(string selectedMenu)
             
         {
@@ -103,7 +124,7 @@ namespace OBBC_Vedligeholdelse
            Console.Clear();
            string date = CurrentOrManual();
            Console.Clear();
-           Console.WriteLine("Har du Extra information af tilføje?");
+           Console.WriteLine($"Har du Extra information af tilføje? \nHvis ingen Extra information, tryk blot enter. ");
            string extraInfo = Console.ReadLine();
            control.CreateNewReport(areaChoice, errorReport, date, extraInfo);
         }
