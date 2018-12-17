@@ -1,6 +1,7 @@
-﻿---------Vælg status for maskine----------
+﻿---------Vælg Status For Fejlrapport----------
 
 1. Maskine repareret
 2. Maskine er i gang med at blive ordnet
 3. Maskine er gået i stykker
+
 ------------------------------------------

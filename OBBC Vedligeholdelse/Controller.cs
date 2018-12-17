@@ -57,7 +57,7 @@ namespace OBBC_Vedligeholdelse
                     databaseController.ChangeReportStatus(reportID, "Rød");
                     break;
                 default:
-                    Console.WriteLine("Du skal lige vælge et rigtigt tal, bror.");
+                    Console.WriteLine("Det valgte input var forkert, prøv igen");
                     break;
             }
             Console.ReadLine();

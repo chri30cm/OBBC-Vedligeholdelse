@@ -74,8 +74,7 @@ namespace OBBC_Vedligeholdelse
             control.ShowOldReports(areaChoice);
         }
 
-        private void ShowSelectedMenu(string selectedMenu)
-            
+        public void ShowSelectedMenu(string selectedMenu)
         {
             try
             {
