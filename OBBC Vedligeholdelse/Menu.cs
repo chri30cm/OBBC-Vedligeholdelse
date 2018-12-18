@@ -47,7 +47,7 @@ namespace OBBC_Vedligeholdelse
                             ShowExtraInfoReports();
                             break;
                         default:
-                            Console.WriteLine("Ugyldigt valg.");
+                            Console.WriteLine("Ugyldigt valg, prøv igen.");
                             Console.ReadLine();
                             break;
                     }

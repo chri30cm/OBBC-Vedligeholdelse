@@ -8,12 +8,12 @@ namespace OBBC_Vedligeholdelse
 {
     public class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Program myProgram = new Program();
             myProgram.Run();
         }
-        void Run()
+        private void Run()
         {
             Menu menu = new Menu();
             menu.Show();

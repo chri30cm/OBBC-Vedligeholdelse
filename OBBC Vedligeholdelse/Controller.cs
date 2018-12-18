@@ -76,22 +76,22 @@ namespace OBBC_Vedligeholdelse
             switch (areaChoice)
             {
                 case 1:                   
-                    databaseController.InsertReport("Bryst",errorReport,date,extraInfo);                   
+                    databaseController.CreateReport("Bryst",errorReport,date,extraInfo);                   
                     break;
                 case 2:                    
-                    databaseController.InsertReport("Ryg", errorReport, date, extraInfo);                   
+                    databaseController.CreateReport("Ryg", errorReport, date, extraInfo);                   
                     break;
                 case 3:               
-                    databaseController.InsertReport("Mave", errorReport, date, extraInfo);                    
+                    databaseController.CreateReport("Mave", errorReport, date, extraInfo);                    
                     break;
                 case 4:                   
-                    databaseController.InsertReport("Spinning", errorReport, date, extraInfo);                   
+                    databaseController.CreateReport("Spinning", errorReport, date, extraInfo);                   
                     break;
                 case 5:                    
-                    databaseController.InsertReport("Ben", errorReport, date, extraInfo);                    
+                    databaseController.CreateReport("Ben", errorReport, date, extraInfo);                    
                     break;
                 case 6:                    
-                    databaseController.InsertReport("Arme", errorReport, date, extraInfo);                    
+                    databaseController.CreateReport("Arme", errorReport, date, extraInfo);                    
                     break;            
                 default:
                     Console.WriteLine("Området findes ikke");
