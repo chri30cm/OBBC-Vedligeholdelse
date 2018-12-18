@@ -51,6 +51,7 @@ namespace OBBC_Vedligeholdelse
                             Console.ReadLine();
                             break;
                     }
+                    Console.Clear();
                 }
                 catch(Exception e)
                 {
@@ -72,32 +73,6 @@ namespace OBBC_Vedligeholdelse
             ShowSelectedMenu(fourthMenu);
             int areaChoice = int.Parse(Console.ReadLine());
             control.ShowOldReports(areaChoice);
-        }
-
-        public void ShowSelectedMenu(string selectedMenu)
-        {
-            try
-            {
-                using (StreamReader sr = new StreamReader(selectedMenu))
-                {
-                    string line;
-                    while ((line = sr.ReadLine()) != null)
-                    {
-                        Console.WriteLine(line);
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Filen kunne ikke læses");
-                Console.WriteLine(e.Message);
-            }
-        }
-        private string GetUserChoice()
-        {
-            Console.WriteLine();
-            Console.Write("Indtast dit valg: ");
-            return Console.ReadLine();
         }
         public void ShowCurrentReports()
         {
@@ -133,6 +108,31 @@ namespace OBBC_Vedligeholdelse
            Console.WriteLine($"Har du Extra information af tilføje? \nHvis ingen Extra information, tryk blot enter. ");
            string extraInfo = Console.ReadLine();
            control.CreateNewReport(areaChoice, errorReport, date, extraInfo);
+        }
+        public void ShowSelectedMenu(string selectedMenu)
+        {
+            try
+            {
+                using (StreamReader sr = new StreamReader(selectedMenu))
+                {
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        Console.WriteLine(line);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Filen kunne ikke læses");
+                Console.WriteLine(e.Message);
+            }
+        }
+        private string GetUserChoice()
+        {
+            Console.WriteLine();
+            Console.Write("Indtast dit valg: ");
+            return Console.ReadLine();
         }
         private string CreateDate()
         {
