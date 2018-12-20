@@ -169,7 +169,7 @@ namespace OBBC_Vedligeholdelse
                 }
                 else
                 {
-                    Console.WriteLine("hov hov du, ");
+                    Console.WriteLine("Forkert input ");
                 }
             }
             return result;
