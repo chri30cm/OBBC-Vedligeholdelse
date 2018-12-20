@@ -47,7 +47,7 @@ namespace OBBC_Vedligeholdelse
                             ShowExtraInfoReports();
                             break;
                         default:
-                            Console.WriteLine("Ugyldigt valg, prøv igen.");
+                            Console.WriteLine("Ugyldigt valg, prøv venligst igen.");
                             Console.ReadLine();
                             break;
                     }
@@ -136,11 +136,11 @@ namespace OBBC_Vedligeholdelse
         }
         private string CreateDate()
         {
-            Console.WriteLine("indtast dag (f.eks 25)");
+            Console.WriteLine("Indtast dag (f.eks 25)");
             int day = int.Parse(Console.ReadLine());
-            Console.WriteLine("indtast måned (f.eks 12)");
+            Console.WriteLine("Indtast måned (f.eks 12)");
             int month = int.Parse(Console.ReadLine());
-            Console.WriteLine("indtast år (f.eks 2018)");
+            Console.WriteLine("Indtast år (f.eks 2018)");
             int year = int.Parse(Console.ReadLine());
           
             string date = $"{day}-{month}-{year}";
@@ -153,7 +153,7 @@ namespace OBBC_Vedligeholdelse
             while (running)
             {
                 Console.Clear();
-                Console.WriteLine("vil du manuelt skrive dato, eller vælge nuværende tidspunkt?");
+                Console.WriteLine("Vil du manuelt skrive dato, eller vælge nuværende tidspunkt?");
                 Console.WriteLine("1: Manuelt");
                 Console.WriteLine("2: Nuværende tidspunkt");
                 int choice = int.Parse(Console.ReadLine());

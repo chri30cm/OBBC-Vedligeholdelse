@@ -105,7 +105,7 @@ namespace OBBC_Vedligeholdelse
         public bool ShowOldReports(int areaChoice)
         {
             bool success = true;
-            Console.Clear();
+            Console.Clear();            
             switch (areaChoice)
             {
                 case 1:
