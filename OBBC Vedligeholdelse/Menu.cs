@@ -80,7 +80,7 @@ namespace OBBC_Vedligeholdelse
             do
             {
                 ShowSelectedMenu(firstMenu);
-                if (!int.TryParse(Console.ReadLine(), out areaChoice))
+                if (int.TryParse(Console.ReadLine(), out areaChoice) == false)
                 {
                     areaChoice = -1;
                 }
@@ -89,11 +89,24 @@ namespace OBBC_Vedligeholdelse
         }
         public void ChangeStatus()
         {
-            Console.WriteLine("Indtast Rapport ID: ");
-            int reportID = int.Parse(Console.ReadLine());
-            ShowSelectedMenu(thirdMenu);
-            int statusChoice = int.Parse(Console.ReadLine());
-            control.ChangeStatus(statusChoice, reportID);
+            int reportID;
+            int statusChoice;
+            do
+            {
+                Console.WriteLine("Indtast Rapport ID: ");
+                if (int.TryParse(Console.ReadLine(), out reportID) == false)
+                {
+                    reportID = -1;
+                }
+                Console.Clear();
+                ShowSelectedMenu(thirdMenu);
+                if(int.TryParse(Console.ReadLine(), out statusChoice) == false)
+                {
+                    statusChoice = -1;
+                }
+            }
+            while (control.ChangeStatus(statusChoice, reportID) == false);
+
         }
         public void CreateNewReport()
         {
