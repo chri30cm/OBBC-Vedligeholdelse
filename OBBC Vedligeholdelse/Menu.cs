@@ -136,6 +136,7 @@ namespace OBBC_Vedligeholdelse
             int month = int.Parse(Console.ReadLine());
             Console.WriteLine("indtast år (f.eks 2018)");
             int year = int.Parse(Console.ReadLine());
+          
             string date = $"{day}-{month}-{year}";
             return date;
         }

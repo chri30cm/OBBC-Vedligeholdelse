@@ -11,6 +11,7 @@ namespace OBBC_Vedligeholdelse
 {
     public class DatabaseController
     {
+       
         public void GetAllCurrentReports()
         {
             using (SqlConnection con = new SqlConnection(DynamicConnectionString()))
@@ -128,6 +129,7 @@ namespace OBBC_Vedligeholdelse
         }
         private void DatabaseReaderGreen(SqlCommand cmd)
         {
+            
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.HasRows)
             {
@@ -144,6 +146,7 @@ namespace OBBC_Vedligeholdelse
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine(DataWriter(reportID, location, PB, time, extraInfo));
                         Console.WriteLine();
+                        
                     }
                 }
             }
@@ -244,6 +247,7 @@ namespace OBBC_Vedligeholdelse
 
         public void GetAllOldReports()
         {
+            
             using (SqlConnection con = new SqlConnection(DynamicConnectionString()))
             {
                 try
