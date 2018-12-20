@@ -63,20 +63,34 @@ namespace OBBC_Vedligeholdelse
 
         private void ShowExtraInfoReports()
         {
-            ShowSelectedMenu(fifthMenu);
-            int areaChoice = int.Parse(Console.ReadLine());
-            control.ShowExtraInfoReports(areaChoice);
+            int areaChoice;
+            do
+            {
+                ShowSelectedMenu(fifthMenu);
+                if (int.TryParse(Console.ReadLine(), out areaChoice) == false)
+                {
+                    areaChoice = -1;
+                }
+            }
+            while (control.ShowExtraInfoReports(areaChoice) == false);
         }
 
         private void ShowOldReports()
         {
-            ShowSelectedMenu(fourthMenu);
-            int areaChoice = int.Parse(Console.ReadLine());
-            control.ShowOldReports(areaChoice);
+            int areaChoice;
+            do
+            {
+                ShowSelectedMenu(fourthMenu);
+                if (int.TryParse(Console.ReadLine(), out areaChoice) == false)
+                {
+                    areaChoice = -1;
+                }
+            }
+            while (control.ShowOldReports(areaChoice) == false);
         }
         public void ShowCurrentReports()
         {
-            int areaChoice;
+           int areaChoice;
            do
             {
                 ShowSelectedMenu(firstMenu);
@@ -94,23 +108,18 @@ namespace OBBC_Vedligeholdelse
             do
             {
                 Console.WriteLine("Indtast Rapport ID: ");
-                if (int.TryParse(Console.ReadLine(), out reportID) == false)
-                {
-                    reportID = -1;
-                }
+                int.TryParse(Console.ReadLine(), out reportID);
                 Console.Clear();
                 ShowSelectedMenu(thirdMenu);
-                if(int.TryParse(Console.ReadLine(), out statusChoice) == false)
+                if (!int.TryParse(Console.ReadLine(), out statusChoice))
                 {
                     statusChoice = -1;
                 }
             }
-            while (control.ChangeStatus(statusChoice, reportID) == false);
-
+            while (!control.ChangeStatus(statusChoice, reportID));
         }
         public void CreateNewReport()
         {
-            bool tryAgain = true;
             int areaChoice;
             string errorReport = null;
             string date = null;
@@ -121,20 +130,20 @@ namespace OBBC_Vedligeholdelse
                 if (!int.TryParse(Console.ReadLine(), out areaChoice))
                 {
                     areaChoice = -1;
-                    tryAgain = false;
+                }
+                if (areaChoice != -1)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Beskriv Problemet med Maskinen");
+                    errorReport = Console.ReadLine();
+                    Console.Clear();
+                    date = CurrentOrManual();
+                    Console.Clear();
+                    Console.WriteLine($"Har du Extra information af tilføje? \nHvis ingen Extra information, tryk blot enter. ");
+                    extraInfo = Console.ReadLine();
                 }
             }
-            while (tryAgain);
-
-            Console.Clear();
-            Console.WriteLine("Beskriv Problemet med Maskinen");
-            errorReport = Console.ReadLine();
-            Console.Clear();
-            date = CurrentOrManual();
-            Console.Clear();
-            Console.WriteLine($"Har du Extra information af tilføje? \nHvis ingen Extra information, tryk blot enter. ");
-            extraInfo = Console.ReadLine();
-            control.CreateNewReport(areaChoice, errorReport, date, extraInfo);
+            while (!control.CreateNewReport(areaChoice, errorReport, date, extraInfo));
         }
         public void ShowSelectedMenu(string selectedMenu)
         {
