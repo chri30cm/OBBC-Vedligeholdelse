@@ -9,8 +9,9 @@ namespace OBBC_Vedligeholdelse
     public class Controller
     {
         DatabaseController databaseController = new DatabaseController();
-        public void ShowCurrentReports(int areaChoice)
+        public bool ShowCurrentReports(int areaChoice)
         {
+            bool success = true;
             Console.Clear();
             switch (areaChoice)
             {
@@ -36,14 +37,17 @@ namespace OBBC_Vedligeholdelse
                     databaseController.GetSpecificCurrentReports("Arme");
                     break;
                 default:
-                    Console.WriteLine("Du skal lige vælge et rigtigt tal, bror.");
+                    Console.WriteLine("Området findes ikke");
+                    success = false;
                     break;
             }
             Console.ReadLine();
             Console.Clear();
+            return success;
         }
-        public void ChangeStatus(int statusChoice, int reportID)
+        public bool ChangeStatus(int statusChoice, int reportID)
         {
+            bool success = true;
             Console.Clear();
             switch (statusChoice)
             {
@@ -57,44 +61,50 @@ namespace OBBC_Vedligeholdelse
                     databaseController.ChangeReportStatus(reportID, "Rød");
                     break;
                 default:
-                    Console.WriteLine("Du skal lige vælge et rigtigt tal, bror.");
+                    Console.WriteLine("Den valgte status findes ikke");
+                    success = false;
                     break;
             }
             Console.ReadLine();
+            Console.Clear();
+            return success;
         }
-        public void CreateNewReport(int areaChoice, string errorReport, string date, string extraInfo)
+        public bool CreateNewReport(int areaChoice, string errorReport, string date, string extraInfo)
         {
+            bool success = true;
             Console.Clear();
             switch (areaChoice)
             {
                 case 1:                   
-                    databaseController.InsertReport("Bryst",errorReport,date,extraInfo);                   
+                    databaseController.CreateReport("Bryst",errorReport,date,extraInfo);                   
                     break;
                 case 2:                    
-                    databaseController.InsertReport("Ryg", errorReport, date, extraInfo);                   
+                    databaseController.CreateReport("Ryg", errorReport, date, extraInfo);                   
                     break;
                 case 3:               
-                    databaseController.InsertReport("Mave", errorReport, date, extraInfo);                    
+                    databaseController.CreateReport("Mave", errorReport, date, extraInfo);                    
                     break;
                 case 4:                   
-                    databaseController.InsertReport("Spinning", errorReport, date, extraInfo);                   
+                    databaseController.CreateReport("Spinning", errorReport, date, extraInfo);                   
                     break;
                 case 5:                    
-                    databaseController.InsertReport("Ben", errorReport, date, extraInfo);                    
+                    databaseController.CreateReport("Ben", errorReport, date, extraInfo);                    
                     break;
                 case 6:                    
-                    databaseController.InsertReport("Arme", errorReport, date, extraInfo);                    
+                    databaseController.CreateReport("Arme", errorReport, date, extraInfo);                    
                     break;            
                 default:
-                    Console.WriteLine("Området ekstisterer ikke!" +
-                        "   ");
+                    Console.WriteLine("Området findes ikke");
+                    success = false;
                     break;
             }
             Console.ReadLine();
             Console.Clear();
+            return success;
         }
-        public void ShowOldReports(int areaChoice)
+        public bool ShowOldReports(int areaChoice)
         {
+            bool success = true;
             Console.Clear();
             switch (areaChoice)
             {
@@ -120,14 +130,17 @@ namespace OBBC_Vedligeholdelse
                     databaseController.GetSpecificOldReports("Arme");
                     break;
                 default:
-                    Console.WriteLine("Du skal lige vælge et rigtigt tal, bror.");
+                    Console.WriteLine("Områdes findes ikke");
+                    success = false;
                     break;
             }
             Console.ReadLine();
             Console.Clear();
+            return success;
         }
-        public void ShowExtraInfoReports(int areaChoice)
+        public bool ShowExtraInfoReports(int areaChoice)
         {
+            bool success = true;
             Console.Clear();
             switch (areaChoice)
             {
@@ -153,11 +166,13 @@ namespace OBBC_Vedligeholdelse
                     databaseController.GetSpecificExtraInfoReports("Arme");
                     break;
                 default:
-                    Console.WriteLine("Du skal lige vælge et rigtigt tal, bror.");
+                    Console.WriteLine("Områdes findes ikke");
+                    success = false;
                     break;
             }
             Console.ReadLine();
             Console.Clear();
+            return success;
         }
     }
 }

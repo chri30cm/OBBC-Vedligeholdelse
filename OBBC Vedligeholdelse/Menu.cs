@@ -47,15 +47,16 @@ namespace OBBC_Vedligeholdelse
                             ShowExtraInfoReports();
                             break;
                         default:
-                            Console.WriteLine("Ugyldigt valg.");
+                            Console.WriteLine("Ugyldigt valg, prøv igen.");
                             Console.ReadLine();
                             break;
                     }
+                    Console.Clear();
                 }
-                catch (Exception e)
+                catch(Exception e)
                 {
                     Console.WriteLine(e.Message);
-                }
+                }    
             }
             while (running);
         }
@@ -73,9 +74,42 @@ namespace OBBC_Vedligeholdelse
             int areaChoice = int.Parse(Console.ReadLine());
             control.ShowOldReports(areaChoice);
         }
-
-        private void ShowSelectedMenu(string selectedMenu)
-            
+        public void ShowCurrentReports()
+        {
+            int areaChoice;
+            do
+            {
+                ShowSelectedMenu(firstMenu);
+                if (!int.TryParse(Console.ReadLine(), out areaChoice))
+                {
+                    areaChoice = -1;
+                }
+            }
+            while (control.ShowCurrentReports(areaChoice) == false);
+        }
+        public void ChangeStatus()
+        {
+            Console.WriteLine("Indtast Rapport ID: ");
+            int reportID = int.Parse(Console.ReadLine());
+            ShowSelectedMenu(thirdMenu);
+            int statusChoice = int.Parse(Console.ReadLine());
+            control.ChangeStatus(statusChoice, reportID);
+        }
+        public void CreateNewReport()
+        {
+           ShowSelectedMenu(secondMenu);
+           int areaChoice = int.Parse(Console.ReadLine());
+           Console.Clear();
+           Console.WriteLine("Beskriv Problemet med Maskinen");
+           string errorReport = Console.ReadLine();
+           Console.Clear();
+           string date = CurrentOrManual();
+           Console.Clear();
+           Console.WriteLine($"Har du Extra information af tilføje? \nHvis ingen Extra information, tryk blot enter. ");
+           string extraInfo = Console.ReadLine();
+           control.CreateNewReport(areaChoice, errorReport, date, extraInfo);
+        }
+        public void ShowSelectedMenu(string selectedMenu)
         {
             try
             {
@@ -99,34 +133,6 @@ namespace OBBC_Vedligeholdelse
             Console.WriteLine();
             Console.Write("Indtast dit valg: ");
             return Console.ReadLine();
-        }
-        public void ShowCurrentReports()
-        {
-            ShowSelectedMenu(firstMenu);
-            int areaChoice = int.Parse(Console.ReadLine());
-            control.ShowCurrentReports(areaChoice);
-        }
-        public void ChangeStatus()
-        {
-            Console.WriteLine("Indtast Rapport ID: ");
-            int reportID = int.Parse(Console.ReadLine());
-            ShowSelectedMenu(thirdMenu);
-            int statusChoice = int.Parse(Console.ReadLine());
-            control.ChangeStatus(statusChoice, reportID);
-        }
-        public void CreateNewReport()
-        {
-           ShowSelectedMenu(secondMenu);
-           int areaChoice = int.Parse(Console.ReadLine());
-           Console.Clear();
-           Console.WriteLine("Beskriv Problemet med Maskinen");
-           string errorReport = Console.ReadLine();
-           Console.Clear();
-           string date = CurrentOrManual();
-           Console.Clear();
-           Console.WriteLine($"Har du Extra information af tilføje? \nHvis ingen Extra information, tryk blot enter. ");
-           string extraInfo = Console.ReadLine();
-           control.CreateNewReport(areaChoice, errorReport, date, extraInfo);
         }
         private string CreateDate()
         {
