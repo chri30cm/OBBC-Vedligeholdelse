@@ -77,7 +77,7 @@ namespace OBBC_Vedligeholdelse
         public void ShowCurrentReports()
         {
             int areaChoice;
-            do
+           do
             {
                 ShowSelectedMenu(firstMenu);
                 if (!int.TryParse(Console.ReadLine(), out areaChoice))
@@ -97,17 +97,31 @@ namespace OBBC_Vedligeholdelse
         }
         public void CreateNewReport()
         {
-           ShowSelectedMenu(secondMenu);
-           int areaChoice = int.Parse(Console.ReadLine());
-           Console.Clear();
-           Console.WriteLine("Beskriv Problemet med Maskinen");
-           string errorReport = Console.ReadLine();
-           Console.Clear();
-           string date = CurrentOrManual();
-           Console.Clear();
-           Console.WriteLine($"Har du Extra information af tilføje? \nHvis ingen Extra information, tryk blot enter. ");
-           string extraInfo = Console.ReadLine();
-           control.CreateNewReport(areaChoice, errorReport, date, extraInfo);
+            bool tryAgain = true;
+            int areaChoice;
+            string errorReport = null;
+            string date = null;
+            string extraInfo = null;
+            do
+            {
+                ShowSelectedMenu(secondMenu);
+                if (!int.TryParse(Console.ReadLine(), out areaChoice))
+                {
+                    areaChoice = -1;
+                    tryAgain = false;
+                }
+            }
+            while (tryAgain);
+
+            Console.Clear();
+            Console.WriteLine("Beskriv Problemet med Maskinen");
+            errorReport = Console.ReadLine();
+            Console.Clear();
+            date = CurrentOrManual();
+            Console.Clear();
+            Console.WriteLine($"Har du Extra information af tilføje? \nHvis ingen Extra information, tryk blot enter. ");
+            extraInfo = Console.ReadLine();
+            control.CreateNewReport(areaChoice, errorReport, date, extraInfo);
         }
         public void ShowSelectedMenu(string selectedMenu)
         {
