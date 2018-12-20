@@ -62,11 +62,11 @@ namespace OBBC_Vedligeholdelse
                         cmd.Parameters.Add(new SqlParameter("@RapportID", reportID));
                         cmd.Parameters.Add(new SqlParameter("@Status", status));
                         cmd.ExecuteReader();
-                        Console.WriteLine("success");
+                        Console.WriteLine("Rapporten fik ændret status");
                     }
                     catch (SqlException e)
                     {
-                        Console.WriteLine("fejl, " + e.Message);
+                        Console.WriteLine("Fejl, " + e.Message);
                     }
                 }
             }
@@ -86,7 +86,7 @@ namespace OBBC_Vedligeholdelse
                         cmd.Parameters.Add(new SqlParameter("@Tidspunkt", date));
                         cmd.Parameters.Add(new SqlParameter("@ExtraInfo", extraInfo));
                         DatabaseReader(cmd);
-                        Console.WriteLine("success");
+                        Console.WriteLine("Rapporten blev oprettet!");
                     }
                     catch (SqlException e)
                     {

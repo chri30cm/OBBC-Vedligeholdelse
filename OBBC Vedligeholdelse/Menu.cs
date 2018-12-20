@@ -47,7 +47,7 @@ namespace OBBC_Vedligeholdelse
                             ShowExtraInfoReports();
                             break;
                         default:
-                            Console.WriteLine("Ugyldigt valg, prøv igen.");
+                            Console.WriteLine("Ugyldigt valg, prøv venligst igen.");
                             Console.ReadLine();
                             break;
                     }
@@ -80,7 +80,7 @@ namespace OBBC_Vedligeholdelse
            do
             {
                 ShowSelectedMenu(firstMenu);
-                if (!int.TryParse(Console.ReadLine(), out areaChoice))
+                if (int.TryParse(Console.ReadLine(), out areaChoice) == false)
                 {
                     areaChoice = -1;
                 }
@@ -89,11 +89,24 @@ namespace OBBC_Vedligeholdelse
         }
         public void ChangeStatus()
         {
-            Console.WriteLine("Indtast Rapport ID: ");
-            int reportID = int.Parse(Console.ReadLine());
-            ShowSelectedMenu(thirdMenu);
-            int statusChoice = int.Parse(Console.ReadLine());
-            control.ChangeStatus(statusChoice, reportID);
+            int reportID;
+            int statusChoice;
+            do
+            {
+                Console.WriteLine("Indtast Rapport ID: ");
+                if (int.TryParse(Console.ReadLine(), out reportID) == false)
+                {
+                    reportID = -1;
+                }
+                Console.Clear();
+                ShowSelectedMenu(thirdMenu);
+                if(int.TryParse(Console.ReadLine(), out statusChoice) == false)
+                {
+                    statusChoice = -1;
+                }
+            }
+            while (control.ChangeStatus(statusChoice, reportID) == false);
+
         }
         public void CreateNewReport()
         {
@@ -150,12 +163,13 @@ namespace OBBC_Vedligeholdelse
         }
         private string CreateDate()
         {
-            Console.WriteLine("indtast dag (f.eks 25)");
+            Console.WriteLine("Indtast dag (f.eks 25)");
             int day = int.Parse(Console.ReadLine());
-            Console.WriteLine("indtast måned (f.eks 12)");
+            Console.WriteLine("Indtast måned (f.eks 12)");
             int month = int.Parse(Console.ReadLine());
-            Console.WriteLine("indtast år (f.eks 2018)");
+            Console.WriteLine("Indtast år (f.eks 2018)");
             int year = int.Parse(Console.ReadLine());
+          
             string date = $"{day}-{month}-{year}";
             return date;
         }
@@ -166,7 +180,7 @@ namespace OBBC_Vedligeholdelse
             while (running)
             {
                 Console.Clear();
-                Console.WriteLine("vil du manuelt skrive dato, eller vælge nuværende tidspunkt?");
+                Console.WriteLine("Vil du manuelt skrive dato, eller vælge nuværende tidspunkt?");
                 Console.WriteLine("1: Manuelt");
                 Console.WriteLine("2: Nuværende tidspunkt");
                 int choice = int.Parse(Console.ReadLine());
@@ -182,7 +196,7 @@ namespace OBBC_Vedligeholdelse
                 }
                 else
                 {
-                    Console.WriteLine("hov hov du, ");
+                    Console.WriteLine("Forkert input ");
                 }
             }
             return result;
