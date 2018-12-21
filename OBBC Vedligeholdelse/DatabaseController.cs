@@ -11,7 +11,7 @@ namespace OBBC_Vedligeholdelse
 {
     public class DatabaseController
     {
-        
+        ReportFactory reportF = new ReportFactory();
         public void GetAllCurrentReports()
         {
             using (SqlConnection con = new SqlConnection(DynamicConnectionString()))
@@ -209,20 +209,32 @@ namespace OBBC_Vedligeholdelse
         }
         private void DatabaseReader(SqlCommand cmd)
         {
-            int reportID_int = -1;
+            ErrorReport errorReport = null;
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.HasRows)
             {
                 while (reader.Read())
                 {
                     string reportID = reader["RapportID"].ToString();
-                    int.TryParse(reportID, out reportID_int);
-
-                    if(reportID_int != -1)
+                    if(reportID != null)
                     {
-                        ErrorReport errorReport = new ErrorReport(reportID_int);
-                        errorReport.AddReport(errorReport);
+                        if (!int.TryParse(reportID, out int IreportID))
+                        {
+                            Console.WriteLine("reportID != parsed");
+                        }
+                        else
+                        {
+                            errorReport = new ErrorReport(IreportID);
+                            reportF.AddReport(errorReport);
+                            Console.WriteLine("added errorReport");
+                        }
                     }
+
+                    if(errorReport == null)
+                    {
+                        Console.WriteLine("errorReport = null");
+                    }
+
                     string location = reader["Lokation"].ToString();
                     string PB = reader["ProblemBeskrivelse"].ToString();
                     string time = reader["Tidspunkt"].ToString();

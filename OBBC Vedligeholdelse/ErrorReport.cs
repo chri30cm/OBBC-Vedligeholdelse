@@ -8,37 +8,18 @@ namespace OBBC_Vedligeholdelse
 {
     public class ErrorReport
     {
-        List<ErrorReport> errorReportList = new List<ErrorReport>();
-        private int errorReport;
         public int ErrorReportID
         {
-            get
-            {
-                return errorReport;
-            }
-            set
-            {
-                errorReport = value;
-            }
+            get;
+            set;
         }
 
-        public ErrorReport(int errorReport)
+        public ErrorReport(int reportID)
         {
-            this.errorReport = errorReport;
+            ErrorReportID = reportID;
         }
         public ErrorReport() { }
 
-        public void AddReport(ErrorReport errorReport)
-        {
-            errorReportList.Add(errorReport);
-        }
 
-        public void ShowErrorReports()
-        {
-            foreach(ErrorReport report in errorReportList)
-            {
-                Console.WriteLine("reportID: " + report.ErrorReportID);
-            }
-        }
     }
 }

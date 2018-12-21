@@ -5,6 +5,7 @@
 3. Ændre på fejlstatus
 4. Vis gamle rapporter
 5. Vis rapporter med extra info
+6. Tjek ErrorReports Listen
 0. Exit
 
 ----------------------------------
