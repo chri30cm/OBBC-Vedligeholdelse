@@ -37,7 +37,7 @@ namespace OBBC_Vedligeholdelse
         {
             foreach(ErrorReport report in errorReportList)
             {
-                Console.WriteLine(report.ToString());
+                Console.WriteLine("reportID: " + report.ToString());
             }
         }
     }
