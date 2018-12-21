@@ -209,7 +209,7 @@ namespace OBBC_Vedligeholdelse
         }
         private void DatabaseReader(SqlCommand cmd)
         {
-            int reportID_int;
+            int reportID_int = -1;
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.HasRows)
             {
@@ -217,9 +217,12 @@ namespace OBBC_Vedligeholdelse
                 {
                     string reportID = reader["RapportID"].ToString();
                     int.TryParse(reportID, out reportID_int);
-                    ErrorReport errorReport = new ErrorReport(reportID_int);
-                    errorReport.AddReport(errorReport);
 
+                    if(reportID_int != -1)
+                    {
+                        ErrorReport errorReport = new ErrorReport(reportID_int);
+                        errorReport.AddReport(errorReport);
+                    }
                     string location = reader["Lokation"].ToString();
                     string PB = reader["ProblemBeskrivelse"].ToString();
                     string time = reader["Tidspunkt"].ToString();
