@@ -10,6 +10,7 @@ namespace OBBC_Vedligeholdelse
     public class Menu
     {
         Controller control = new Controller();
+        ErrorReport errorReport = new ErrorReport();
         private const string startMenu = @"..\..\StartMenu.txt";
         private const string firstMenu = @"..\..\FirstMenu.txt";
         private const string secondMenu = @"..\..\SecondMenu.txt";
@@ -45,6 +46,9 @@ namespace OBBC_Vedligeholdelse
                             break;
                         case "5":
                             ShowExtraInfoReports();
+                            break;
+                        case "6":
+                            errorReport.ShowErrorReports();
                             break;
                         default:
                             Console.WriteLine("Ugyldigt valg, prøv venligst igen.");

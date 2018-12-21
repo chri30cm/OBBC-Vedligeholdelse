@@ -1,4 +1,4 @@
-﻿    using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +11,7 @@ namespace OBBC_Vedligeholdelse
 {
     public class DatabaseController
     {
+        
         public void GetAllCurrentReports()
         {
             using (SqlConnection con = new SqlConnection(DynamicConnectionString()))
@@ -21,12 +22,14 @@ namespace OBBC_Vedligeholdelse
                     SqlCommand cmd = new SqlCommand("VisAlleAktuelleFejlRapporter", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     DatabaseReader(cmd);
+
                 }
                 catch (SqlException e)
                 {
                     Console.WriteLine("UPS, " + e.Message);
                 }
             }
+
         }
         public void GetSpecificCurrentReports(string area)
         {
@@ -206,13 +209,17 @@ namespace OBBC_Vedligeholdelse
         }
         private void DatabaseReader(SqlCommand cmd)
         {
+            int reportID_int;
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.HasRows)
             {
                 while (reader.Read())
                 {
-
                     string reportID = reader["RapportID"].ToString();
+                    int.TryParse(reportID, out reportID_int);
+                    ErrorReport errorReport = new ErrorReport(reportID_int);
+                    errorReport.AddReport(errorReport);
+
                     string location = reader["Lokation"].ToString();
                     string PB = reader["ProblemBeskrivelse"].ToString();
                     string time = reader["Tidspunkt"].ToString();
