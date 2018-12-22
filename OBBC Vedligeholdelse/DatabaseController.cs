@@ -117,12 +117,13 @@ namespace OBBC_Vedligeholdelse
                         if(extraInfo != null)
                         {
                             eReport = new ErrorReport(iReportID, area, errorReport, time, extraInfo, status);
+                            reportFactory.AddReport(eReport);
                         }
                         else
                         {
                             eReport = new ErrorReport(iReportID, area, errorReport, time, status);
+                            reportFactory.AddReport(eReport);
                         }
-                        reportFactory.AddReport(eReport);
                         Console.WriteLine("Rapporten blev oprettet!");
                     }
                     catch (SqlException e)
@@ -261,13 +262,13 @@ namespace OBBC_Vedligeholdelse
                     if(extraInfo != "")
                     {
                         errorReport = new ErrorReport(iReportID, location, errorDescription, time, extraInfo, status);
+                        reportFactory.AddReport(errorReport);
                     }
                     else
                     {
                         errorReport = new ErrorReport(iReportID, location, errorDescription, time, status);
-                        
+                        reportFactory.AddReport(errorReport);
                     }
-                    reportFactory.AddReport(errorReport);
                 }
             }
         }
