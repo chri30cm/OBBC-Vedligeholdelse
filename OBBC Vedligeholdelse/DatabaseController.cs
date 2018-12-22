@@ -96,8 +96,9 @@ namespace OBBC_Vedligeholdelse
                 }
             }
         }
-        public void CreateReport(string area,string errorReport, string date,string extraInfo)
+        public void CreateReport(string area,string errorReport, string time,string extraInfo)
         {
+            ErrorReport eReport;
             using (con = new SqlConnection(DynamicConnectionString()))
             {
                 {
@@ -108,9 +109,20 @@ namespace OBBC_Vedligeholdelse
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add(new SqlParameter("@Lokation", area));
                         cmd.Parameters.Add(new SqlParameter("@ProblemBeskrivelse", errorReport));
-                        cmd.Parameters.Add(new SqlParameter("@Tidspunkt", date));
+                        cmd.Parameters.Add(new SqlParameter("@Tidspunkt", time));
                         cmd.Parameters.Add(new SqlParameter("@ExtraInfo", extraInfo));
-                        DatabaseCurrentReportsWriter(cmd);
+                        string status = reader["Status"].ToString();
+                        string reportID = reader["RapportID"].ToString();
+                        int iReportID = int.Parse(reportID);
+                        if(extraInfo != null)
+                        {
+                            eReport = new ErrorReport(iReportID, area, errorReport, time, extraInfo, status);
+                        }
+                        else
+                        {
+                            eReport = new ErrorReport(iReportID, area, errorReport, time, status);
+                        }
+                        reportFactory.AddReport(eReport);
                         Console.WriteLine("Rapporten blev oprettet!");
                     }
                     catch (SqlException e)
@@ -249,13 +261,13 @@ namespace OBBC_Vedligeholdelse
                     if(extraInfo != "")
                     {
                         errorReport = new ErrorReport(iReportID, location, errorDescription, time, extraInfo, status);
-                        reportFactory.AddReport(errorReport);
                     }
                     else
                     {
                         errorReport = new ErrorReport(iReportID, location, errorDescription, time, status);
-                        reportFactory.AddReport(errorReport);
+                        
                     }
+                    reportFactory.AddReport(errorReport);
                 }
             }
         }
