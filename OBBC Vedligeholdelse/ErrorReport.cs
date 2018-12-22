@@ -18,8 +18,5 @@ namespace OBBC_Vedligeholdelse
         {
             ErrorReportID = reportID;
         }
-        public ErrorReport() { }
-
-
     }
 }
