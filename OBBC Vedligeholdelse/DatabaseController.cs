@@ -11,6 +11,7 @@ namespace OBBC_Vedligeholdelse
 {
     public class DatabaseController
     {
+        SqlDataReader reader;
         SqlConnection con;
         SqlCommand cmd;
         ReportFactory reportFactory = new ReportFactory();
@@ -43,7 +44,6 @@ namespace OBBC_Vedligeholdelse
                     cmd = new SqlCommand("VisAlleAktuelleFejlRapporter", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     DatabaseReader(cmd);
-
                     reportFactory.ShowErrorReports();
                 }
                 catch (SqlException e)
@@ -232,25 +232,29 @@ namespace OBBC_Vedligeholdelse
 
         private void DatabaseReader(SqlCommand cmd)
         {
-            ErrorReport errorReport = null;
-            SqlDataReader reader = cmd.ExecuteReader();
-
+            reader = cmd.ExecuteReader();
+            ErrorReport errorReport;
             if (reader.HasRows)
             {
                 while (reader.Read())
                 {
                     string reportID = reader["RapportID"].ToString();
-                    if (reportID != null)
+                    string location = reader["Lokation"].ToString();
+                    string errorDescription = reader["ProblemBeskrivelse"].ToString();
+                    string time = reader["Tidspunkt"].ToString();
+                    string extraInfo = reader["ExtraInfo"].ToString();
+                    string status = reader["Status"].ToString();
+                    int iReportID = int.Parse(reportID);
+
+                    if(extraInfo != "")
                     {
-                        if (!int.TryParse(reportID, out int IreportID))
-                        {
-                            Console.WriteLine("reportID != parsed");
-                        }
-                        else
-                        {
-                            errorReport = new ErrorReport(IreportID);
-                            reportFactory.AddReport(errorReport);
-                        }
+                        errorReport = new ErrorReport(iReportID, location, errorDescription, time, extraInfo, status);
+                        reportFactory.AddReport(errorReport);
+                    }
+                    else
+                    {
+                        errorReport = new ErrorReport(iReportID, location, errorDescription, time, status);
+                        reportFactory.AddReport(errorReport);
                     }
                 }
             }
@@ -258,27 +262,27 @@ namespace OBBC_Vedligeholdelse
 
         private void DatabaseCurrentReportsWriter(SqlCommand cmd)
         {
-            SqlDataReader reader = cmd.ExecuteReader();
+            reader = cmd.ExecuteReader();
             if (reader.HasRows)
             {
                 while (reader.Read())
                 {
                     string reportID = reader["RapportID"].ToString();
                     string location = reader["Lokation"].ToString();
-                    string PB = reader["ProblemBeskrivelse"].ToString();
+                    string errorDescription = reader["ProblemBeskrivelse"].ToString();
                     string time = reader["Tidspunkt"].ToString();
                     string extraInfo = reader["ExtraInfo"].ToString();
                     string status = reader["Status"].ToString();
                     if (status == "Gul")
                     {
                         Console.ForegroundColor = ConsoleColor.Yellow;
-                        Console.WriteLine($"RapportID: {reportID} \nLokation: {location} \nProblembeskrivelse: {PB} \nTidspunkt:  {time} \nExtra Info: {extraInfo}");
+                        Console.WriteLine($"RapportID: {reportID} \nLokation: {location} \nProblembeskrivelse: {errorDescription} \nTidspunkt:  {time} \nExtra Info: {extraInfo}");
                         Console.WriteLine();
                     }
                     else if (status == "Rød")
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine($"RapportID: {reportID} \nLokation: {location} \nProblembeskrivelse: {PB} \nTidspunkt:  {time} \nExtra Info: {extraInfo}");
+                        Console.WriteLine($"RapportID: {reportID} \nLokation: {location} \nProblembeskrivelse: {errorDescription} \nTidspunkt:  {time} \nExtra Info: {extraInfo}");
                         Console.WriteLine();
                     }
                     else if (status == "Grøn" == true)
@@ -291,7 +295,7 @@ namespace OBBC_Vedligeholdelse
         }
         private void DatabaseOldReportsWriter(SqlCommand cmd)
         {
-            SqlDataReader reader = cmd.ExecuteReader();
+            reader = cmd.ExecuteReader();
             if (reader.HasRows)
             {
                 while (reader.Read())

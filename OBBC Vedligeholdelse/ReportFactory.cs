@@ -18,14 +18,34 @@ namespace OBBC_Vedligeholdelse
         {
             foreach (ErrorReport report in errorReports)
             {
-                Console.WriteLine("[----------------------]");
-                Console.WriteLine("  Error Report ID: " + report.ReportID.ToString());
+                if(report.Status == "Gul")
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("[------------------------------------]");
+                    Console.WriteLine("  Fejlrapport ID: " + report.ReportID.ToString());
+                    Console.WriteLine("  Maskine lokation: " + report.Location);
+                    Console.WriteLine("  Problembeskrivelse: " + report.ErrorDescription);
+                    Console.WriteLine("  Tidspunkt: " + report.Time);
+                    if (report.ExtraInfo != null)
+                    {
+                        Console.WriteLine("  Extra information: " + report.ExtraInfo);
+                    }
+                }
+                else if(report.Status == "Rød")
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("[------------------------------------]");
+                    Console.WriteLine("    Fejlrapport ID: " + report.ReportID.ToString());
+                    Console.WriteLine("    Maskine lokation: " + report.Location);
+                    Console.WriteLine("    Problembeskrivelse: " + report.ErrorDescription);
+                    Console.WriteLine("    Tidspunkt: " + report.Time);
+                    if (report.ExtraInfo != null)
+                    {
+                        Console.WriteLine("  Extra information: " + report.ExtraInfo);
+                    }
+                }
             }
-        }
-
-        public List<ErrorReport> GetErrorReports()
-        {
-            return errorReports;
+            Console.ForegroundColor = ConsoleColor.Gray;
         }
     }
 }
