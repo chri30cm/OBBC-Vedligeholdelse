@@ -111,19 +111,19 @@ namespace OBBC_Vedligeholdelse
                         cmd.Parameters.Add(new SqlParameter("@ProblemBeskrivelse", errorReport));
                         cmd.Parameters.Add(new SqlParameter("@Tidspunkt", time));
                         cmd.Parameters.Add(new SqlParameter("@ExtraInfo", extraInfo));
-                        string status = reader["Status"].ToString();
-                        string reportID = reader["RapportID"].ToString();
-                        int iReportID = int.Parse(reportID);
-                        if(extraInfo != null)
-                        {
-                            eReport = new ErrorReport(iReportID, area, errorReport, time, extraInfo, status);
-                            reportFactory.AddReport(eReport);
-                        }
-                        else
-                        {
-                            eReport = new ErrorReport(iReportID, area, errorReport, time, status);
-                            reportFactory.AddReport(eReport);
-                        }
+                        //string status = reader["Status"].ToString();
+                        //string reportID = reader["RapportID"].ToString();
+                        //int iReportID = int.Parse(reportID);
+                        //if(extraInfo != "")
+                        //{
+                            //eReport = new ErrorReport(iReportID, area, errorReport, time, extraInfo, status);
+                            //reportFactory.AddReport(eReport);
+                        //}
+                        //else
+                        //{
+                        //    eReport = new ErrorReport(iReportID, area, errorReport, time, status);
+                        //    reportFactory.AddReport(eReport);
+                        //}
                         Console.WriteLine("Rapporten blev oprettet!");
                     }
                     catch (SqlException e)
