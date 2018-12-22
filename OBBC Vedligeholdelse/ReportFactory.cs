@@ -15,11 +15,61 @@ namespace OBBC_Vedligeholdelse
         }
         public void ShowSpecificErrorReports(string area)
         {
-            foreach (ErrorReport report in errorReports)
+            if (errorReports[0] != null)
             {
-                Console.WriteLine("så langt så godt");
-                if (report.Location == area)
+                foreach (ErrorReport report in errorReports)
                 {
+                    if (report.Location == area)
+                    {
+                        if (report.Status == "Gul")
+                        {
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("[------------------------------------]");
+                            Console.WriteLine("    Fejlrapport ID: " + report.ReportID.ToString());
+                            Console.WriteLine("    Maskine lokation: " + report.Location);
+                            Console.WriteLine("    Problembeskrivelse: " + report.ErrorDescription);
+                            Console.WriteLine("    Tidspunkt: " + report.Time);
+                            if (report.ExtraInfo != null)
+                            {
+                                Console.WriteLine("    Extra information: " + report.ExtraInfo);
+                            }
+                            Console.WriteLine("[------------------------------------]");
+                        }
+                        else if (report.Status == "Rød")
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("[------------------------------------]");
+                            Console.WriteLine("    Fejlrapport ID: " + report.ReportID.ToString());
+                            Console.WriteLine("    Maskine lokation: " + report.Location);
+                            Console.WriteLine("    Problembeskrivelse: " + report.ErrorDescription);
+                            Console.WriteLine("    Tidspunkt: " + report.Time);
+                            if (report.ExtraInfo != null)
+                            {
+                                Console.WriteLine("    Extra information: " + report.ExtraInfo);
+                            }
+                            Console.WriteLine("[------------------------------------]");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Location != location");
+                    }
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                }
+            }
+            else
+            {
+                Console.WriteLine("listen er tom :'(");
+            }
+        }
+
+        public void ShowAllCurrentErrorReports()
+        {
+            if(errorReports[0] != null)
+            {
+                foreach (ErrorReport report in errorReports)
+                {
+
                     if (report.Status == "Gul")
                     {
                         Console.ForegroundColor = ConsoleColor.Yellow;
@@ -49,46 +99,10 @@ namespace OBBC_Vedligeholdelse
                         Console.WriteLine("[------------------------------------]");
                     }
                 }
-                else
-                {
-                    Console.WriteLine("Location != location");
-                }
-                Console.ForegroundColor = ConsoleColor.Gray;
-            }  
-        }
-
-        public void ShowAllCurrentErrorReports()
-        {
-            foreach (ErrorReport report in errorReports)
+            }
+            else
             {
-                if(report.Status == "Gul")
-                {
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("[------------------------------------]");
-                    Console.WriteLine("    Fejlrapport ID: " + report.ReportID.ToString());
-                    Console.WriteLine("    Maskine lokation: " + report.Location);
-                    Console.WriteLine("    Problembeskrivelse: " + report.ErrorDescription);
-                    Console.WriteLine("    Tidspunkt: " + report.Time);
-                    if (report.ExtraInfo != null)
-                    {
-                        Console.WriteLine("    Extra information: " + report.ExtraInfo);
-                    }
-                    Console.WriteLine("[------------------------------------]");
-                }
-                else if(report.Status == "Rød")
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("[------------------------------------]");
-                    Console.WriteLine("    Fejlrapport ID: " + report.ReportID.ToString());
-                    Console.WriteLine("    Maskine lokation: " + report.Location);
-                    Console.WriteLine("    Problembeskrivelse: " + report.ErrorDescription);
-                    Console.WriteLine("    Tidspunkt: " + report.Time);
-                    if (report.ExtraInfo != null)
-                    {
-                        Console.WriteLine("    Extra information: " + report.ExtraInfo);
-                    }
-                    Console.WriteLine("[------------------------------------]");
-                }
+                Console.WriteLine("listen er tom :'( PepeHands");
             }
             Console.ForegroundColor = ConsoleColor.Gray;
         }
