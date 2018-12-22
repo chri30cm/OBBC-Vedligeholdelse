@@ -11,15 +11,17 @@ namespace OBBC_Vedligeholdelse
 {
     public class DatabaseController
     {
+        SqlConnection con;
+        SqlCommand cmd;
         ReportFactory reportF = new ReportFactory();
         public void GetAllCurrentReports()
         {
-            using (SqlConnection con = new SqlConnection(DynamicConnectionString()))
+            using (con = new SqlConnection(DynamicConnectionString()))
             {
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("VisAlleAktuelleFejlRapporter", con);
+                    cmd = new SqlCommand("VisAlleAktuelleFejlRapporter", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     DatabaseReader(cmd);
 
@@ -29,17 +31,42 @@ namespace OBBC_Vedligeholdelse
                     Console.WriteLine("UPS, " + e.Message);
                 }
             }
-
         }
+
+
+
+        public void ShowTHEFUCKINGReportList()
+        {
+            using (con = new SqlConnection(DynamicConnectionString()))
+            {
+                try
+                {
+                    con.Open();
+                    cmd = new SqlCommand("VisAlleAktuelleFejlRapporter", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    JustReadTheDatabaseFFS(cmd);
+
+                    reportF.ShowErrorReports();
+                }
+                catch (SqlException e)
+                {
+                    Console.WriteLine("UPS, " + e.Message);
+                }
+            }
+        }
+
+
+
+
         public void GetSpecificCurrentReports(string area)
         {
-            using (SqlConnection con = new SqlConnection(DynamicConnectionString()))
+            using (con = new SqlConnection(DynamicConnectionString()))
             {
                 {
                     try
                     {
                         con.Open();
-                        SqlCommand cmd = new SqlCommand("VisSpecifikkeAktuelleFejlRapporter", con);
+                        cmd = new SqlCommand("VisSpecifikkeAktuelleFejlRapporter", con);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add(new SqlParameter("@Lokation", area));
                         DatabaseReader(cmd);
@@ -54,13 +81,13 @@ namespace OBBC_Vedligeholdelse
         }
         public void ChangeReportStatus(int reportID, string status)
         {
-            using (SqlConnection con = new SqlConnection(DynamicConnectionString()))
+            using (con = new SqlConnection(DynamicConnectionString()))
             {
                 {
                     try
                     {
                         con.Open();
-                        SqlCommand cmd = new SqlCommand("ÆndreStatus", con);
+                        cmd = new SqlCommand("ÆndreStatus", con);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add(new SqlParameter("@RapportID", reportID));
                         cmd.Parameters.Add(new SqlParameter("@Status", status));
@@ -76,13 +103,13 @@ namespace OBBC_Vedligeholdelse
         }
         public void CreateReport(string area,string errorReport, string date,string extraInfo)
         {
-            using (SqlConnection con = new SqlConnection(DynamicConnectionString()))
+            using (con = new SqlConnection(DynamicConnectionString()))
             {
                 {
                     try
                     {
                         con.Open();
-                        SqlCommand cmd = new SqlCommand("InsertReport", con);
+                        cmd = new SqlCommand("InsertReport", con);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add(new SqlParameter("@Lokation", area));
                         cmd.Parameters.Add(new SqlParameter("@ProblemBeskrivelse", errorReport));
@@ -101,13 +128,13 @@ namespace OBBC_Vedligeholdelse
 
         public void GetSpecificExtraInfoReports(string area)
         {
-            using (SqlConnection con = new SqlConnection(DynamicConnectionString()))
+            using (con = new SqlConnection(DynamicConnectionString()))
             {
                 {
                     try
                     {
                         con.Open();
-                        SqlCommand cmd = new SqlCommand("VisSpecifikkeMedExtraNote", con);
+                        cmd = new SqlCommand("VisSpecifikkeMedExtraNote", con);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add(new SqlParameter("@Lokation", area));
                         DatabaseReader(cmd);
@@ -123,12 +150,12 @@ namespace OBBC_Vedligeholdelse
 
         public void GetAllExtraInfoReports()
         {
-            using (SqlConnection con = new SqlConnection(DynamicConnectionString()))
+            using (con = new SqlConnection(DynamicConnectionString()))
             {
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("VisAlleMedExtraNote", con);
+                    cmd = new SqlCommand("VisAlleMedExtraNote", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     DatabaseReader(cmd);
                 }
@@ -140,13 +167,13 @@ namespace OBBC_Vedligeholdelse
         }
         public void GetSpecificOldReports(string area)
         {
-            using (SqlConnection con = new SqlConnection(DynamicConnectionString()))
+            using (con = new SqlConnection(DynamicConnectionString()))
             {
                 {
                     try
                     {
                         con.Open();
-                        SqlCommand cmd = new SqlCommand("VisSpecifikkeRepareredeFejlRapporter", con);
+                        cmd = new SqlCommand("VisSpecifikkeRepareredeFejlRapporter", con);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add(new SqlParameter("@Lokation", area));
                         DatabaseReaderGreen(cmd);
@@ -161,12 +188,12 @@ namespace OBBC_Vedligeholdelse
         }
         public void GetAllOldReports()
         {
-            using (SqlConnection con = new SqlConnection(DynamicConnectionString()))
+            using (con = new SqlConnection(DynamicConnectionString()))
             {
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("VisAlleRepareredeFejlRapporter", con);
+                    cmd = new SqlCommand("VisAlleRepareredeFejlRapporter", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     DatabaseReaderGreen(cmd);
                 }
@@ -207,6 +234,35 @@ namespace OBBC_Vedligeholdelse
             }
             return _connectionString;
         }
+
+        private void JustReadTheDatabaseFFS(SqlCommand cmd)
+        {
+            ErrorReport errorReport = null;
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    string reportID = reader["RapportID"].ToString();
+                    if (reportID != null)
+                    {
+                        if (!int.TryParse(reportID, out int IreportID))
+                        {
+                            Console.WriteLine("reportID != parsed");
+                        }
+                        else
+                        {
+                            errorReport = new ErrorReport(IreportID);
+                            reportF.AddReport(errorReport);
+                            Console.WriteLine("added errorReport");
+                        }
+                    }
+                }
+            }
+            Console.ReadLine();
+        }
+
         private void DatabaseReader(SqlCommand cmd)
         {
             ErrorReport errorReport = null;
