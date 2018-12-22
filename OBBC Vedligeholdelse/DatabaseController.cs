@@ -21,11 +21,7 @@ namespace OBBC_Vedligeholdelse
             {
                 try
                 {
-                    con.Open();
-                    cmd = new SqlCommand("VisAlleAktuelleFejlRapporter", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    DatabaseCurrentReportsWriter(cmd);
-
+                    reportFactory.ShowAllCurrentErrorReports();
                 }
                 catch (SqlException e)
                 {
@@ -44,7 +40,24 @@ namespace OBBC_Vedligeholdelse
                     cmd = new SqlCommand("VisAlleAktuelleFejlRapporter", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     DatabaseReader(cmd);
-                    reportFactory.ShowErrorReports();
+                    reportFactory.ShowAllCurrentErrorReports();
+                }
+                catch (SqlException e)
+                {
+                    Console.WriteLine("UPS, " + e.Message);
+                }
+            }
+        }
+        public void ReadOnlyAllErrorReports()
+        {
+            using (con = new SqlConnection(DynamicConnectionString()))
+            {
+                try
+                {
+                    con.Open();
+                    cmd = new SqlCommand("VisAlleAktuelleFejlRapporter", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    DatabaseReader(cmd);
                 }
                 catch (SqlException e)
                 {
@@ -98,8 +111,6 @@ namespace OBBC_Vedligeholdelse
         }
         public void CreateReport(string area,string errorReport, string time,string extraInfo)
         {
-            ErrorReport eReport;
-            reader = cmd.ExecuteReader();
             using (con = new SqlConnection(DynamicConnectionString()))
             {
                 {
@@ -112,20 +123,7 @@ namespace OBBC_Vedligeholdelse
                         cmd.Parameters.Add(new SqlParameter("@ProblemBeskrivelse", errorReport));
                         cmd.Parameters.Add(new SqlParameter("@Tidspunkt", time));
                         cmd.Parameters.Add(new SqlParameter("@ExtraInfo", extraInfo));
-                        reader = cmd.ExecuteReader();
-                        string status = reader["Status"].ToString();
-                        string reportID = reader["RapportID"].ToString();
-                        int iReportID = int.Parse(reportID);
-                        if (extraInfo != "")
-                        {
-                            eReport = new ErrorReport(iReportID, area, errorReport, time, extraInfo, status);
-                            reportFactory.AddReport(eReport);
-                        }
-                        else
-                        {
-                            eReport = new ErrorReport(iReportID, area, errorReport, time, status);
-                            reportFactory.AddReport(eReport);
-                        }
+                        DatabaseReader(cmd);
                         Console.WriteLine("Rapporten blev oprettet!");
                     }
                     catch (SqlException e)
@@ -262,7 +260,7 @@ namespace OBBC_Vedligeholdelse
                     int iReportID = int.Parse(reportID);
 
                     if(extraInfo != "")
-                    {
+                    { 
                         errorReport = new ErrorReport(iReportID, location, errorDescription, time, extraInfo, status);
                         reportFactory.AddReport(errorReport);
                     }

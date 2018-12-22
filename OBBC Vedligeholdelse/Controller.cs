@@ -8,6 +8,7 @@ namespace OBBC_Vedligeholdelse
 {
     public class Controller
     {
+        ReportFactory reportFactory = new ReportFactory();
         DatabaseController databaseController = new DatabaseController();
         public bool ShowCurrentReports(int areaChoice)
         {
@@ -16,10 +17,10 @@ namespace OBBC_Vedligeholdelse
             switch (areaChoice)
             {
                 case 1:
-                    databaseController.GetAllCurrentReports();                    
+                    databaseController.GetAllCurrentReports();                
                     break;
                 case 2:
-                    databaseController.GetSpecificCurrentReports("Bryst");
+                    reportFactory.ShowSpecificErrorReports("Bryst");
                     break;                
                 case 3:
                     databaseController.GetSpecificCurrentReports("Ryg");

@@ -9,6 +9,7 @@ namespace OBBC_Vedligeholdelse
 {
     public class Menu
     {
+        DatabaseController databaseController = new DatabaseController();
         Controller control = new Controller();
         private const string startMenu = @"..\..\StartMenu.txt";
         private const string firstMenu = @"..\..\FirstMenu.txt";
@@ -17,7 +18,7 @@ namespace OBBC_Vedligeholdelse
         private const string fourthMenu = @"..\..\FourthMenu.txt";
         private const string fifthMenu = @"..\..\FifthMenu.txt";
         public void Show()
-        {
+        { 
             bool running = true;
             do
             {
@@ -47,7 +48,6 @@ namespace OBBC_Vedligeholdelse
                             ShowExtraInfoReports();
                             break;
                         case "6":
-                            DatabaseController databaseController = new DatabaseController(); // det gør vi kun her
                             databaseController.ReadAndShowErrorReports();
                             Console.ReadLine();
                             break;

@@ -13,8 +13,51 @@ namespace OBBC_Vedligeholdelse
         {
             errorReports.Add(errorReport);
         }
+        public void ShowSpecificErrorReports(string area)
+        {
+            foreach (ErrorReport report in errorReports)
+            {
+                Console.WriteLine("så langt så godt");
+                if (report.Location == area)
+                {
+                    if (report.Status == "Gul")
+                    {
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("[------------------------------------]");
+                        Console.WriteLine("    Fejlrapport ID: " + report.ReportID.ToString());
+                        Console.WriteLine("    Maskine lokation: " + report.Location);
+                        Console.WriteLine("    Problembeskrivelse: " + report.ErrorDescription);
+                        Console.WriteLine("    Tidspunkt: " + report.Time);
+                        if (report.ExtraInfo != null)
+                        {
+                            Console.WriteLine("    Extra information: " + report.ExtraInfo);
+                        }
+                        Console.WriteLine("[------------------------------------]");
+                    }
+                    else if (report.Status == "Rød")
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("[------------------------------------]");
+                        Console.WriteLine("    Fejlrapport ID: " + report.ReportID.ToString());
+                        Console.WriteLine("    Maskine lokation: " + report.Location);
+                        Console.WriteLine("    Problembeskrivelse: " + report.ErrorDescription);
+                        Console.WriteLine("    Tidspunkt: " + report.Time);
+                        if (report.ExtraInfo != null)
+                        {
+                            Console.WriteLine("    Extra information: " + report.ExtraInfo);
+                        }
+                        Console.WriteLine("[------------------------------------]");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Location != location");
+                }
+                Console.ForegroundColor = ConsoleColor.Gray;
+            }  
+        }
 
-        public void ShowErrorReports()
+        public void ShowAllCurrentErrorReports()
         {
             foreach (ErrorReport report in errorReports)
             {
@@ -48,6 +91,12 @@ namespace OBBC_Vedligeholdelse
                 }
             }
             Console.ForegroundColor = ConsoleColor.Gray;
+        }
+
+
+        public List<ErrorReport> GetErrorReports (List<ErrorReport> list)
+        {
+            return list;
         }
     }
 }
