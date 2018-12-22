@@ -8,15 +8,22 @@ namespace OBBC_Vedligeholdelse
 {
     public class ErrorReport
     {
-        public int ErrorReportID
+        private int reportID;
+        public int ReportID
         {
-            get;
-            set;
+            get
+            {
+                return reportID;
+            }
+            set
+            {
+                reportID = value;
+            }
         }
 
         public ErrorReport(int reportID)
         {
-            ErrorReportID = reportID;
+            this.reportID = reportID;
         }
     }
 }

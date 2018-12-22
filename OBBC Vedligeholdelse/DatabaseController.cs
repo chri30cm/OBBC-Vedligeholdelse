@@ -13,8 +13,27 @@ namespace OBBC_Vedligeholdelse
     {
         SqlConnection con;
         SqlCommand cmd;
-        ReportFactory reportF = new ReportFactory();
+        ReportFactory reportFactory = new ReportFactory();
         public void GetAllCurrentReports()
+        {
+            using (con = new SqlConnection(DynamicConnectionString()))
+            {
+                try
+                {
+                    con.Open();
+                    cmd = new SqlCommand("VisAlleAktuelleFejlRapporter", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    DatabaseCurrentReportsWriter(cmd);
+
+                }
+                catch (SqlException e)
+                {
+                    Console.WriteLine("UPS, " + e.Message);
+                }
+            }
+        }
+
+        public void ReadAndShowErrorReports()
         {
             using (con = new SqlConnection(DynamicConnectionString()))
             {
@@ -25,26 +44,7 @@ namespace OBBC_Vedligeholdelse
                     cmd.CommandType = CommandType.StoredProcedure;
                     DatabaseReader(cmd);
 
-                }
-                catch (SqlException e)
-                {
-                    Console.WriteLine("UPS, " + e.Message);
-                }
-            }
-        }
-
-        public void ShowErrorReportList()
-        {
-            using (con = new SqlConnection(DynamicConnectionString()))
-            {
-                try
-                {
-                    con.Open();
-                    cmd = new SqlCommand("VisAlleAktuelleFejlRapporter", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    ReportIdDatabaseReader(cmd);
-
-                    reportF.ShowErrorReports();
+                    reportFactory.ShowErrorReports();
                 }
                 catch (SqlException e)
                 {
@@ -64,7 +64,7 @@ namespace OBBC_Vedligeholdelse
                         cmd = new SqlCommand("VisSpecifikkeAktuelleFejlRapporter", con);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add(new SqlParameter("@Lokation", area));
-                        DatabaseReader(cmd);
+                        DatabaseCurrentReportsWriter(cmd);
                        
                     }
                     catch (SqlException e)
@@ -110,7 +110,7 @@ namespace OBBC_Vedligeholdelse
                         cmd.Parameters.Add(new SqlParameter("@ProblemBeskrivelse", errorReport));
                         cmd.Parameters.Add(new SqlParameter("@Tidspunkt", date));
                         cmd.Parameters.Add(new SqlParameter("@ExtraInfo", extraInfo));
-                        DatabaseReader(cmd);
+                        DatabaseCurrentReportsWriter(cmd);
                         Console.WriteLine("Rapporten blev oprettet!");
                     }
                     catch (SqlException e)
@@ -132,7 +132,7 @@ namespace OBBC_Vedligeholdelse
                         cmd = new SqlCommand("VisSpecifikkeMedExtraNote", con);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add(new SqlParameter("@Lokation", area));
-                        DatabaseReader(cmd);
+                        DatabaseCurrentReportsWriter(cmd);
 
                     }
                     catch (SqlException e)
@@ -152,7 +152,7 @@ namespace OBBC_Vedligeholdelse
                     con.Open();
                     cmd = new SqlCommand("VisAlleMedExtraNote", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    DatabaseReader(cmd);
+                    DatabaseCurrentReportsWriter(cmd);
                 }
                 catch (SqlException e)
                 {
@@ -171,7 +171,7 @@ namespace OBBC_Vedligeholdelse
                         cmd = new SqlCommand("VisSpecifikkeRepareredeFejlRapporter", con);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add(new SqlParameter("@Lokation", area));
-                        DatabaseReaderGreen(cmd);
+                        DatabaseOldReportsWriter(cmd);
 
                     }
                     catch (SqlException e)
@@ -190,7 +190,7 @@ namespace OBBC_Vedligeholdelse
                     con.Open();
                     cmd = new SqlCommand("VisAlleRepareredeFejlRapporter", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    DatabaseReaderGreen(cmd);
+                    DatabaseOldReportsWriter(cmd);
                 }
                 catch (SqlException e)
                 {
@@ -230,7 +230,7 @@ namespace OBBC_Vedligeholdelse
             return _connectionString;
         }
 
-        private void ReportIdDatabaseReader(SqlCommand cmd)
+        private void DatabaseReader(SqlCommand cmd)
         {
             ErrorReport errorReport = null;
             SqlDataReader reader = cmd.ExecuteReader();
@@ -249,41 +249,21 @@ namespace OBBC_Vedligeholdelse
                         else
                         {
                             errorReport = new ErrorReport(IreportID);
-                            reportF.AddReport(errorReport);
+                            reportFactory.AddReport(errorReport);
                         }
                     }
                 }
             }
         }
 
-        private void DatabaseReader(SqlCommand cmd)
+        private void DatabaseCurrentReportsWriter(SqlCommand cmd)
         {
-            ErrorReport errorReport = null;
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.HasRows)
             {
                 while (reader.Read())
                 {
                     string reportID = reader["RapportID"].ToString();
-                    if(reportID != null)
-                    {
-                        if (!int.TryParse(reportID, out int IreportID))
-                        {
-                            Console.WriteLine("reportID != parsed");
-                        }
-                        else
-                        {
-                            errorReport = new ErrorReport(IreportID);
-                            reportF.AddReport(errorReport);
-                            Console.WriteLine("added errorReport");
-                        }
-                    }
-
-                    if(errorReport == null)
-                    {
-                        Console.WriteLine("errorReport = null");
-                    }
-
                     string location = reader["Lokation"].ToString();
                     string PB = reader["ProblemBeskrivelse"].ToString();
                     string time = reader["Tidspunkt"].ToString();
@@ -301,11 +281,15 @@ namespace OBBC_Vedligeholdelse
                         Console.WriteLine($"RapportID: {reportID} \nLokation: {location} \nProblembeskrivelse: {PB} \nTidspunkt:  {time} \nExtra Info: {extraInfo}");
                         Console.WriteLine();
                     }
+                    else if (status == "Grøn" == true)
+                    {
+
+                    }
                 }
             }
             Console.ForegroundColor = ConsoleColor.Gray;
         }
-        private void DatabaseReaderGreen(SqlCommand cmd)
+        private void DatabaseOldReportsWriter(SqlCommand cmd)
         {
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.HasRows)

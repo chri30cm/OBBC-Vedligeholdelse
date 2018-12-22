@@ -1,11 +1,12 @@
-﻿ -------Vedligeholdelse OBBC-------
+﻿[----------------------- Vedligeholdelse OBBC --------------------------------------
  
-1. Vis aktuelle fejlrapporter
-2. Opret Fejlmelding
-3. Ændre på fejlstatus
-4. Vis gamle rapporter
-5. Vis rapporter med extra info
-6. VIS NU BARE DEN FUCKING LISTE ALTSÅ!
-0. Exit
+	1. Vis aktuelle fejlrapporter
+	2. Opret Fejlmelding
+	3. Ændre på fejlstatus
+	4. Vis gamle rapporter
+	5. Vis rapporter med extra info
+	6. Gem RapportID fra databasen i et objekt med propertyen ReportID, 
+	   og få vist alle ReportID objekter i konsollen.
+	0. Exit
 
-----------------------------------
+[-----------------------------------------------------------------------------------

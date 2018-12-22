@@ -18,8 +18,8 @@ namespace OBBC_Vedligeholdelse
         {
             foreach (ErrorReport report in errorReports)
             {
-                Console.WriteLine("Error Report ID: " + report.ErrorReportID.ToString());
-                Console.WriteLine();
+                Console.WriteLine("[----------------------]");
+                Console.WriteLine("  Error Report ID: " + report.ReportID.ToString());
             }
         }
 
