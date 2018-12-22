@@ -33,9 +33,7 @@ namespace OBBC_Vedligeholdelse
             }
         }
 
-
-
-        public void ShowTHEFUCKINGReportList()
+        public void ShowErrorReportList()
         {
             using (con = new SqlConnection(DynamicConnectionString()))
             {
@@ -44,7 +42,7 @@ namespace OBBC_Vedligeholdelse
                     con.Open();
                     cmd = new SqlCommand("VisAlleAktuelleFejlRapporter", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    JustReadTheDatabaseFFS(cmd);
+                    ReportIdDatabaseReader(cmd);
 
                     reportF.ShowErrorReports();
                 }
@@ -54,9 +52,6 @@ namespace OBBC_Vedligeholdelse
                 }
             }
         }
-
-
-
 
         public void GetSpecificCurrentReports(string area)
         {
@@ -235,7 +230,7 @@ namespace OBBC_Vedligeholdelse
             return _connectionString;
         }
 
-        private void JustReadTheDatabaseFFS(SqlCommand cmd)
+        private void ReportIdDatabaseReader(SqlCommand cmd)
         {
             ErrorReport errorReport = null;
             SqlDataReader reader = cmd.ExecuteReader();
@@ -255,12 +250,10 @@ namespace OBBC_Vedligeholdelse
                         {
                             errorReport = new ErrorReport(IreportID);
                             reportF.AddReport(errorReport);
-                            Console.WriteLine("added errorReport");
                         }
                     }
                 }
             }
-            Console.ReadLine();
         }
 
         private void DatabaseReader(SqlCommand cmd)

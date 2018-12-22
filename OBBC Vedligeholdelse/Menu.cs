@@ -11,7 +11,6 @@ namespace OBBC_Vedligeholdelse
     {
         DatabaseController DB = new DatabaseController();
         Controller control = new Controller();
-        ReportFactory reportF = new ReportFactory();
         private const string startMenu = @"..\..\StartMenu.txt";
         private const string firstMenu = @"..\..\FirstMenu.txt";
         private const string secondMenu = @"..\..\SecondMenu.txt";
@@ -49,7 +48,7 @@ namespace OBBC_Vedligeholdelse
                             ShowExtraInfoReports();
                             break;
                         case "6":
-                            DB.ShowTHEFUCKINGReportList();
+                            DB.ShowErrorReportList();
                             Console.ReadLine();
                             break;
                         default:

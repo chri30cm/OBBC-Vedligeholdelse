@@ -16,13 +16,11 @@ namespace OBBC_Vedligeholdelse
 
         public void ShowErrorReports()
         {
-            Console.WriteLine("hej");
             foreach (ErrorReport report in errorReports)
             {
-                Console.WriteLine("shit det godt");
-                Console.WriteLine(report.ErrorReportID.ToString());
+                Console.WriteLine("Error Report ID: " + report.ErrorReportID.ToString());
+                Console.WriteLine();
             }
-            Console.WriteLine("haj");
         }
 
         public List<ErrorReport> GetErrorReports()
