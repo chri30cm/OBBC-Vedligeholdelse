@@ -16,7 +16,7 @@ namespace OBBC_Vedligeholdelse
         }
         private void Run()
         {
-            database.ReadAndShowErrorReports();
+            database.ReadOnlyAllErrorReports();
             Menu menu = new Menu();
             menu.Show();
         }
