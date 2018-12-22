@@ -145,7 +145,8 @@ namespace OBBC_Vedligeholdelse
                     date = CurrentOrManual();
                     Console.Clear();
                     Console.WriteLine($"Har du Extra information af tilføje? \nHvis ingen Extra information, tryk blot enter. ");
-                    extraInfo = Console.ReadLine();
+                    Console.WriteLine();
+                    Console.WriteLine(": " + (extraInfo = Console.ReadLine()));
                 }
             }
             while (!control.CreateNewReport(areaChoice, errorReport, date, extraInfo));
