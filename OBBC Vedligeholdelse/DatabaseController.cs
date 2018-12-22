@@ -99,11 +99,12 @@ namespace OBBC_Vedligeholdelse
         public void CreateReport(string area,string errorReport, string time,string extraInfo)
         {
             ErrorReport eReport;
+            reader = cmd.ExecuteReader();
             using (con = new SqlConnection(DynamicConnectionString()))
             {
                 {
                     try
-                    {
+                    { 
                         con.Open();
                         cmd = new SqlCommand("InsertReport", con);
                         cmd.CommandType = CommandType.StoredProcedure;
@@ -111,19 +112,20 @@ namespace OBBC_Vedligeholdelse
                         cmd.Parameters.Add(new SqlParameter("@ProblemBeskrivelse", errorReport));
                         cmd.Parameters.Add(new SqlParameter("@Tidspunkt", time));
                         cmd.Parameters.Add(new SqlParameter("@ExtraInfo", extraInfo));
-                        //string status = reader["Status"].ToString();
-                        //string reportID = reader["RapportID"].ToString();
-                        //int iReportID = int.Parse(reportID);
-                        //if(extraInfo != "")
-                        //{
-                            //eReport = new ErrorReport(iReportID, area, errorReport, time, extraInfo, status);
-                            //reportFactory.AddReport(eReport);
-                        //}
-                        //else
-                        //{
-                        //    eReport = new ErrorReport(iReportID, area, errorReport, time, status);
-                        //    reportFactory.AddReport(eReport);
-                        //}
+                        reader = cmd.ExecuteReader();
+                        string status = reader["Status"].ToString();
+                        string reportID = reader["RapportID"].ToString();
+                        int iReportID = int.Parse(reportID);
+                        if (extraInfo != "")
+                        {
+                            eReport = new ErrorReport(iReportID, area, errorReport, time, extraInfo, status);
+                            reportFactory.AddReport(eReport);
+                        }
+                        else
+                        {
+                            eReport = new ErrorReport(iReportID, area, errorReport, time, status);
+                            reportFactory.AddReport(eReport);
+                        }
                         Console.WriteLine("Rapporten blev oprettet!");
                     }
                     catch (SqlException e)
