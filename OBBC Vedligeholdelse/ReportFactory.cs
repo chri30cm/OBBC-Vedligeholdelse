@@ -30,6 +30,7 @@ namespace OBBC_Vedligeholdelse
                     {
                         Console.WriteLine("    Extra information: " + report.ExtraInfo);
                     }
+                    Console.WriteLine("[------------------------------------]");
                 }
                 else if(report.Status == "Rød")
                 {
@@ -43,6 +44,7 @@ namespace OBBC_Vedligeholdelse
                     {
                         Console.WriteLine("    Extra information: " + report.ExtraInfo);
                     }
+                    Console.WriteLine("[------------------------------------]");
                 }
             }
             Console.ForegroundColor = ConsoleColor.Gray;
