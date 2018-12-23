@@ -339,12 +339,28 @@ namespace OBBC_Vedligeholdelse
                     if (extraInfo != "")
                     {
                         errorReport = new ErrorReport(iReportID, location, errorDescription, time, extraInfo, status);
-                        reportFactory.AddReport(errorReport);
+                        if(errorReport == null)
+                        {
+                            Console.WriteLine("errorReport findes ikke");
+                        }
+                        else
+                        {
+                            reportFactory.AddReport(errorReport);
+                            Console.WriteLine("errorReport add'ed");
+                        }
                     }
                     else
                     {
                         errorReport = new ErrorReport(iReportID, location, errorDescription, time, status);
-                        reportFactory.AddReport(errorReport);
+                        if (errorReport == null)
+                        {
+                            Console.WriteLine("errorReport findes ikke");
+                        }
+                        else
+                        {
+                            reportFactory.AddReport(errorReport);
+                            Console.WriteLine("errorReport add'ed");
+                        }
                     }
                 }
             }

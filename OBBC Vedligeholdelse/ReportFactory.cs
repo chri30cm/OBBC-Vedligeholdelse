@@ -56,7 +56,7 @@ namespace OBBC_Vedligeholdelse
                     }
                     else
                     {
-                        Console.WriteLine("Location != location");
+                        Console.WriteLine("Der findes ingen rapport med den valgte lokation");
                     }
                     Console.ForegroundColor = ConsoleColor.Gray;
                 }
@@ -116,9 +116,5 @@ namespace OBBC_Vedligeholdelse
         {
             return errorReports;
         }
-
-        
-
-
     }
 }
