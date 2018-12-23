@@ -346,7 +346,6 @@ namespace OBBC_Vedligeholdelse
                         else
                         {
                             reportFactory.AddReport(errorReport);
-                            Console.WriteLine("errorReport add'ed");
                         }
                     }
                     else
@@ -359,7 +358,6 @@ namespace OBBC_Vedligeholdelse
                         else
                         {
                             reportFactory.AddReport(errorReport);
-                            Console.WriteLine("errorReport add'ed");
                         }
                     }
                 }
