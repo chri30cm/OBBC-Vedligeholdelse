@@ -51,6 +51,10 @@ namespace OBBC_Vedligeholdelse
                             databaseController.ReadAndShowErrorReports();
                             Console.ReadLine();
                             break;
+                        case "7":
+                            databaseController.ReadOnlyAllErrorReports();
+                            Console.ReadLine();
+                            break;
                         default:
                             Console.WriteLine("Ugyldigt valg, prøv venligst igen.");
                             Console.ReadLine();

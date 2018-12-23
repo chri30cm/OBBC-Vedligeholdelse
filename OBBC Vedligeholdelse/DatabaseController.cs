@@ -11,17 +11,29 @@ namespace OBBC_Vedligeholdelse
 {
     public class DatabaseController
     {
+        string reportID;
+        string location;
+        string errorDescription;
+        string time;
+        string extraInfo;
+        string status;
+        int iReportID;
+        private const string errorReportsPath = @"..\..\ErrorReports.txt";
         SqlDataReader reader;
         SqlConnection con;
         SqlCommand cmd;
         ReportFactory reportFactory = new ReportFactory();
+        
         public void GetAllCurrentReports()
         {
             using (con = new SqlConnection(DynamicConnectionString()))
             {
                 try
                 {
-                    reportFactory.ShowAllCurrentErrorReports();
+                    con.Open();
+                    cmd = new SqlCommand("VisAlleAktuelleFejlRapporter", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    DatabaseCurrentReportsWriter(cmd);
                 }
                 catch (SqlException e)
                 {
@@ -251,13 +263,13 @@ namespace OBBC_Vedligeholdelse
             {
                 while (reader.Read())
                 {
-                    string reportID = reader["RapportID"].ToString();
-                    string location = reader["Lokation"].ToString();
-                    string errorDescription = reader["ProblemBeskrivelse"].ToString();
-                    string time = reader["Tidspunkt"].ToString();
-                    string extraInfo = reader["ExtraInfo"].ToString();
-                    string status = reader["Status"].ToString();
-                    int iReportID = int.Parse(reportID);
+                    reportID = reader["RapportID"].ToString();
+                    location = reader["Lokation"].ToString();
+                    errorDescription = reader["ProblemBeskrivelse"].ToString();
+                    time = reader["Tidspunkt"].ToString();
+                    extraInfo = reader["ExtraInfo"].ToString();
+                    status = reader["Status"].ToString();
+                    iReportID = int.Parse(reportID);
 
                     if(extraInfo != "")
                     { 
@@ -271,6 +283,41 @@ namespace OBBC_Vedligeholdelse
                     }
                 }
             }
+            //TextWriter();
+        }
+        private void TextWriter()
+        {
+            StreamWriter streamWriter = new StreamWriter(errorReportsPath);
+            List<ErrorReport> errorReportList = reportFactory.GetErrorReports();
+            foreach(ErrorReport eReport in errorReportList)
+            {
+                if (!IsStringInFile(eReport.ReportID.ToString()))
+                {
+                    if (eReport.Status == "Gul")
+                    {
+                        streamWriter.WriteLine("Console.ForegroundColor = ConsoleColor.Yellow");
+                    }
+                    else if (eReport.Status == "Rød")
+                    {
+                        streamWriter.WriteLine("Console.ForegroundColor = ConsoleColor.Red");
+                    }
+                    streamWriter.WriteLine("[------------------------------------]");
+                    streamWriter.WriteLine("    Fejlrapport ID: " + eReport.ReportID.ToString());
+                    streamWriter.WriteLine("    Maskine lokation: " + eReport.Location);
+                    streamWriter.WriteLine("    Problembeskrivelse: " + eReport.ErrorDescription);
+                    streamWriter.WriteLine("    Tidspunkt: " + eReport.Time);
+                    if (eReport.ExtraInfo != null)
+                    {
+                        streamWriter.WriteLine("    Extra information: " + eReport.ExtraInfo);
+                    }
+                    streamWriter.WriteLine("[------------------------------------]");
+                }
+            }
+            Console.ForegroundColor = ConsoleColor.Gray;
+        }
+        private bool IsStringInFile(string searchThis)
+        {
+            return File.ReadAllText(errorReportsPath).Contains(searchThis);
         }
 
         private void DatabaseCurrentReportsWriter(SqlCommand cmd)
@@ -280,12 +327,12 @@ namespace OBBC_Vedligeholdelse
             {
                 while (reader.Read())
                 {
-                    string reportID = reader["RapportID"].ToString();
-                    string location = reader["Lokation"].ToString();
-                    string errorDescription = reader["ProblemBeskrivelse"].ToString();
-                    string time = reader["Tidspunkt"].ToString();
-                    string extraInfo = reader["ExtraInfo"].ToString();
-                    string status = reader["Status"].ToString();
+                    reportID = reader["RapportID"].ToString();
+                    location = reader["Lokation"].ToString();
+                    errorDescription = reader["ProblemBeskrivelse"].ToString();
+                    time = reader["Tidspunkt"].ToString();
+                    extraInfo = reader["ExtraInfo"].ToString();
+                    status = reader["Status"].ToString();
                     if (status == "Gul")
                     {
                         Console.ForegroundColor = ConsoleColor.Yellow;
@@ -313,21 +360,27 @@ namespace OBBC_Vedligeholdelse
             {
                 while (reader.Read())
                 {
-                    string reportID = reader["RapportID"].ToString();
-                    string location = reader["Lokation"].ToString();
-                    string PB = reader["ProblemBeskrivelse"].ToString();
-                    string time = reader["Tidspunkt"].ToString();
-                    string extraInfo = reader["ExtraInfo"].ToString();
-                    string status = reader["Status"].ToString();
+                    reportID = reader["RapportID"].ToString();
+                    location = reader["Lokation"].ToString();
+                    errorDescription = reader["ProblemBeskrivelse"].ToString();
+                    time = reader["Tidspunkt"].ToString();
+                    extraInfo = reader["ExtraInfo"].ToString();
+                    status = reader["Status"].ToString();
                     if (status == "Grøn")
                     {
                         Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine($"RapportID: {reportID} \nLokation: {location} \nProblembeskrivelse: {PB} \nTidspunkt:  {time} \nExtra Info: {extraInfo}");
+                        Console.WriteLine($"RapportID: {reportID} \nLokation: {location} \nProblembeskrivelse: {errorDescription} \nTidspunkt:  {time} \nExtra Info: {extraInfo}");
                         Console.WriteLine();
                     }
                 }
             }
             Console.ForegroundColor = ConsoleColor.Gray;
         }
+
+        // JULEMANDENS GAVER <3
+        // JULEMANDENS GAVER <3
+        // JULEMANDENS GAVER <3 HERUNDER:
+
+
     }
 }

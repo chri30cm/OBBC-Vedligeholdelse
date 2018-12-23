@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DatabaseAccess.txt" />
+    <Content Include="ErrorReports.txt" />
     <Content Include="FifthMenu.txt" />
     <Content Include="FirstMenu.txt" />
     <Content Include="FourthMenu.txt" />

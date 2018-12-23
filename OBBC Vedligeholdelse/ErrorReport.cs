@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace OBBC_Vedligeholdelse
 {
+    // JULEMANDENS GAVER <3
+    // JULEMANDENS GAVER <3
+    // JULEMANDENS GAVER <3
+
     public class ErrorReport
     {
         private int reportID;

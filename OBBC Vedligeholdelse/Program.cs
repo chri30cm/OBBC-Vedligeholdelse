@@ -8,7 +8,6 @@ namespace OBBC_Vedligeholdelse
 {
     public class Program
     {
-        DatabaseController database = new DatabaseController();
         private static void Main(string[] args)
         {
             Program myProgram = new Program();
@@ -16,7 +15,6 @@ namespace OBBC_Vedligeholdelse
         }
         private void Run()
         {
-            database.ReadOnlyAllErrorReports();
             Menu menu = new Menu();
             menu.Show();
         }

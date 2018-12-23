@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace OBBC_Vedligeholdelse
 {
+    // JULEMANDENS GAVER <3
+    // JULEMANDENS GAVER <3
+    // JULEMANDENS GAVER <3
+
     class ReportFactory
     {
         List<ErrorReport> errorReports = new List<ErrorReport>();
@@ -59,7 +63,7 @@ namespace OBBC_Vedligeholdelse
             }
             else
             {
-                Console.WriteLine("listen er tom :'(");
+                Console.WriteLine("listen er tom :'( PepeHands");
             }
         }
 
@@ -108,9 +112,13 @@ namespace OBBC_Vedligeholdelse
         }
 
 
-        public List<ErrorReport> GetErrorReports (List<ErrorReport> list)
+        public List<ErrorReport> GetErrorReports ()
         {
-            return list;
+            return errorReports;
         }
+
+        
+
+
     }
 }
