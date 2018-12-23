@@ -362,35 +362,37 @@ namespace OBBC_Vedligeholdelse
                     }
                 }
             }
-            //TextWriter();
+            TextWriter();
         }
 
         private void TextWriter()
         {
-            StreamWriter streamWriter = new StreamWriter(errorReportsPath);
             List<ErrorReport> errorReportList = reportFactory.GetErrorReports();
-            foreach (ErrorReport eReport in errorReportList)
+            using (StreamWriter streamWriter = new StreamWriter(errorReportsPath))
             {
-                if (!IsStringInFile(eReport.ReportID.ToString()))
+                foreach (ErrorReport eReport in errorReportList)
                 {
-                    if (eReport.Status == "Gul")
-                    {
-                        streamWriter.WriteLine("Console.ForegroundColor = ConsoleColor.Yellow");
-                    }
-                    else if (eReport.Status == "Rød")
-                    {
-                        streamWriter.WriteLine("Console.ForegroundColor = ConsoleColor.Red");
-                    }
-                    streamWriter.WriteLine("[------------------------------------]");
-                    streamWriter.WriteLine("    Fejlrapport ID: " + eReport.ReportID.ToString());
-                    streamWriter.WriteLine("    Maskine lokation: " + eReport.Location);
-                    streamWriter.WriteLine("    Problembeskrivelse: " + eReport.ErrorDescription);
-                    streamWriter.WriteLine("    Tidspunkt: " + eReport.Time);
-                    if (eReport.ExtraInfo != null)
-                    {
-                        streamWriter.WriteLine("    Extra information: " + eReport.ExtraInfo);
-                    }
-                    streamWriter.WriteLine("[------------------------------------]");
+                    //if (!IsStringInFile(eReport.ReportID.ToString()))
+                    //{
+                        if (eReport.Status == "Gul")
+                        {
+                            streamWriter.WriteLine("Console.ForegroundColor = ConsoleColor.Yellow");
+                        }
+                        else if (eReport.Status == "Rød")
+                        {
+                            streamWriter.WriteLine("Console.ForegroundColor = ConsoleColor.Red");
+                        }
+                        streamWriter.WriteLine("[------------------------------------]");
+                        streamWriter.WriteLine("    Fejlrapport ID: " + eReport.ReportID.ToString());
+                        streamWriter.WriteLine("    Maskine lokation: " + eReport.Location);
+                        streamWriter.WriteLine("    Problembeskrivelse: " + eReport.ErrorDescription);
+                        streamWriter.WriteLine("    Tidspunkt: " + eReport.Time);
+                        if (eReport.ExtraInfo != null)
+                        {
+                            streamWriter.WriteLine("    Extra information: " + eReport.ExtraInfo);
+                        }
+                        streamWriter.WriteLine("[------------------------------------]");
+                    //}
                 }
             }
             Console.ForegroundColor = ConsoleColor.Gray;
@@ -398,7 +400,9 @@ namespace OBBC_Vedligeholdelse
 
         private bool IsStringInFile(string searchThis)
         {
+
             return File.ReadAllText(errorReportsPath).Contains(searchThis);
+
         }
     }
 }
