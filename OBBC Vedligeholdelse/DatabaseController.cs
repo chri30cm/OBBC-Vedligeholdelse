@@ -42,41 +42,8 @@ namespace OBBC_Vedligeholdelse
             }
         }
 
-        public void ReadAndShowErrorReports()
-        {
-            using (con = new SqlConnection(DynamicConnectionString()))
-            {
-                try
-                {
-                    con.Open();
-                    cmd = new SqlCommand("VisAlleAktuelleFejlRapporter", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    DatabaseReader(cmd);
-                    reportFactory.ShowAllCurrentErrorReports();
-                }
-                catch (SqlException e)
-                {
-                    Console.WriteLine("UPS, " + e.Message);
-                }
-            }
-        }
-        public void ReadOnlyAllErrorReports()
-        {
-            using (con = new SqlConnection(DynamicConnectionString()))
-            {
-                try
-                {
-                    con.Open();
-                    cmd = new SqlCommand("VisAlleAktuelleFejlRapporter", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    DatabaseReader(cmd);
-                }
-                catch (SqlException e)
-                {
-                    Console.WriteLine("UPS, " + e.Message);
-                }
-            }
-        }
+
+
 
         public void GetSpecificCurrentReports(string area)
         {
@@ -255,71 +222,6 @@ namespace OBBC_Vedligeholdelse
             return _connectionString;
         }
 
-        private void DatabaseReader(SqlCommand cmd)
-        {
-            reader = cmd.ExecuteReader();
-            ErrorReport errorReport;
-            if (reader.HasRows)
-            {
-                while (reader.Read())
-                {
-                    reportID = reader["RapportID"].ToString();
-                    location = reader["Lokation"].ToString();
-                    errorDescription = reader["ProblemBeskrivelse"].ToString();
-                    time = reader["Tidspunkt"].ToString();
-                    extraInfo = reader["ExtraInfo"].ToString();
-                    status = reader["Status"].ToString();
-                    iReportID = int.Parse(reportID);
-
-                    if(extraInfo != "")
-                    { 
-                        errorReport = new ErrorReport(iReportID, location, errorDescription, time, extraInfo, status);
-                        reportFactory.AddReport(errorReport);
-                    }
-                    else
-                    {
-                        errorReport = new ErrorReport(iReportID, location, errorDescription, time, status);
-                        reportFactory.AddReport(errorReport);
-                    }
-                }
-            }
-            //TextWriter();
-        }
-        private void TextWriter()
-        {
-            StreamWriter streamWriter = new StreamWriter(errorReportsPath);
-            List<ErrorReport> errorReportList = reportFactory.GetErrorReports();
-            foreach(ErrorReport eReport in errorReportList)
-            {
-                if (!IsStringInFile(eReport.ReportID.ToString()))
-                {
-                    if (eReport.Status == "Gul")
-                    {
-                        streamWriter.WriteLine("Console.ForegroundColor = ConsoleColor.Yellow");
-                    }
-                    else if (eReport.Status == "Rød")
-                    {
-                        streamWriter.WriteLine("Console.ForegroundColor = ConsoleColor.Red");
-                    }
-                    streamWriter.WriteLine("[------------------------------------]");
-                    streamWriter.WriteLine("    Fejlrapport ID: " + eReport.ReportID.ToString());
-                    streamWriter.WriteLine("    Maskine lokation: " + eReport.Location);
-                    streamWriter.WriteLine("    Problembeskrivelse: " + eReport.ErrorDescription);
-                    streamWriter.WriteLine("    Tidspunkt: " + eReport.Time);
-                    if (eReport.ExtraInfo != null)
-                    {
-                        streamWriter.WriteLine("    Extra information: " + eReport.ExtraInfo);
-                    }
-                    streamWriter.WriteLine("[------------------------------------]");
-                }
-            }
-            Console.ForegroundColor = ConsoleColor.Gray;
-        }
-        private bool IsStringInFile(string searchThis)
-        {
-            return File.ReadAllText(errorReportsPath).Contains(searchThis);
-        }
-
         private void DatabaseCurrentReportsWriter(SqlCommand cmd)
         {
             reader = cmd.ExecuteReader();
@@ -381,6 +283,108 @@ namespace OBBC_Vedligeholdelse
         // JULEMANDENS GAVER <3
         // JULEMANDENS GAVER <3 HERUNDER:
 
+        public void ReadAndShowErrorReports()
+        {
+            using (con = new SqlConnection(DynamicConnectionString()))
+            {
+                try
+                {
+                    con.Open();
+                    cmd = new SqlCommand("VisAlleAktuelleFejlRapporter", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    DatabaseReader(cmd);
+                    reportFactory.ShowAllCurrentErrorReports();
+                }
+                catch (SqlException e)
+                {
+                    Console.WriteLine("UPS, " + e.Message);
+                }
+            }
+        }
 
+        public void ReadOnlyAllErrorReports()
+        {
+            using (con = new SqlConnection(DynamicConnectionString()))
+            {
+                try
+                {
+                    con.Open();
+                    cmd = new SqlCommand("VisAlleAktuelleFejlRapporter", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    DatabaseReader(cmd);
+                }
+                catch (SqlException e)
+                {
+                    Console.WriteLine("UPS, " + e.Message);
+                }
+            }
+        }
+
+        private void DatabaseReader(SqlCommand cmd)
+        {
+            reader = cmd.ExecuteReader();
+            ErrorReport errorReport;
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    reportID = reader["RapportID"].ToString();
+                    location = reader["Lokation"].ToString();
+                    errorDescription = reader["ProblemBeskrivelse"].ToString();
+                    time = reader["Tidspunkt"].ToString();
+                    extraInfo = reader["ExtraInfo"].ToString();
+                    status = reader["Status"].ToString();
+                    iReportID = int.Parse(reportID);
+
+                    if (extraInfo != "")
+                    {
+                        errorReport = new ErrorReport(iReportID, location, errorDescription, time, extraInfo, status);
+                        reportFactory.AddReport(errorReport);
+                    }
+                    else
+                    {
+                        errorReport = new ErrorReport(iReportID, location, errorDescription, time, status);
+                        reportFactory.AddReport(errorReport);
+                    }
+                }
+            }
+            //TextWriter();
+        }
+
+        private void TextWriter()
+        {
+            StreamWriter streamWriter = new StreamWriter(errorReportsPath);
+            List<ErrorReport> errorReportList = reportFactory.GetErrorReports();
+            foreach (ErrorReport eReport in errorReportList)
+            {
+                if (!IsStringInFile(eReport.ReportID.ToString()))
+                {
+                    if (eReport.Status == "Gul")
+                    {
+                        streamWriter.WriteLine("Console.ForegroundColor = ConsoleColor.Yellow");
+                    }
+                    else if (eReport.Status == "Rød")
+                    {
+                        streamWriter.WriteLine("Console.ForegroundColor = ConsoleColor.Red");
+                    }
+                    streamWriter.WriteLine("[------------------------------------]");
+                    streamWriter.WriteLine("    Fejlrapport ID: " + eReport.ReportID.ToString());
+                    streamWriter.WriteLine("    Maskine lokation: " + eReport.Location);
+                    streamWriter.WriteLine("    Problembeskrivelse: " + eReport.ErrorDescription);
+                    streamWriter.WriteLine("    Tidspunkt: " + eReport.Time);
+                    if (eReport.ExtraInfo != null)
+                    {
+                        streamWriter.WriteLine("    Extra information: " + eReport.ExtraInfo);
+                    }
+                    streamWriter.WriteLine("[------------------------------------]");
+                }
+            }
+            Console.ForegroundColor = ConsoleColor.Gray;
+        }
+
+        private bool IsStringInFile(string searchThis)
+        {
+            return File.ReadAllText(errorReportsPath).Contains(searchThis);
+        }
     }
 }

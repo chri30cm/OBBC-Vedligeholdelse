@@ -48,11 +48,11 @@ namespace OBBC_Vedligeholdelse
                             ShowExtraInfoReports();
                             break;
                         case "6":
-                            databaseController.ReadAndShowErrorReports();
+                            databaseController.ReadAndShowErrorReports(); // test
                             Console.ReadLine();
                             break;
                         case "7":
-                            databaseController.ReadOnlyAllErrorReports();
+                            databaseController.ReadOnlyAllErrorReports(); // test
                             Console.ReadLine();
                             break;
                         default:

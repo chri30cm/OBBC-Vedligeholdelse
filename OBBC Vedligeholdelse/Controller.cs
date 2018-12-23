@@ -20,7 +20,7 @@ namespace OBBC_Vedligeholdelse
                     databaseController.GetAllCurrentReports();                
                     break;
                 case 2:
-                    reportFactory.ShowSpecificErrorReports("Bryst");
+                    reportFactory.ShowSpecificErrorReports("Bryst"); // test
                     break;                
                 case 3:
                     databaseController.GetSpecificCurrentReports("Ryg");
