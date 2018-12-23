@@ -15,7 +15,7 @@ namespace OBBC_Vedligeholdelse
         }
         public void ShowSpecificErrorReports(string area)
         {
-            if (errorReports[0] != null)
+            if (errorReports.Count != 0)
             {
                 foreach (ErrorReport report in errorReports)
                 {
@@ -65,7 +65,7 @@ namespace OBBC_Vedligeholdelse
 
         public void ShowAllCurrentErrorReports()
         {
-            if(errorReports[0] != null)
+            if(errorReports.Count != 0)
             {
                 foreach (ErrorReport report in errorReports)
                 {
