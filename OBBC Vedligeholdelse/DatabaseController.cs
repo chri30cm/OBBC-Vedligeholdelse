@@ -30,10 +30,7 @@ namespace OBBC_Vedligeholdelse
             {
                 try
                 {
-                    con.Open();
-                    cmd = new SqlCommand("VisAlleAktuelleFejlRapporter", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    DatabaseCurrentReportsWriter(cmd);
+                    reportFactory.ShowAllCurrentErrorReports();
                 }
                 catch (SqlException e)
                 {
