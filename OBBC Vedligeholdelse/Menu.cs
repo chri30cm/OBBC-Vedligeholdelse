@@ -210,7 +210,7 @@ namespace OBBC_Vedligeholdelse
                 }
                 else if (choice == 2)
                 {
-                        result = DateTime.Now.ToString("yyyy-MM-dd H:mm:ss");
+                        result = DateTime.Now.ToString("yyyy-MM-dd H:mm");
                         running = false;
                 }
                 else
