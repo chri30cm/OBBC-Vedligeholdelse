@@ -9,7 +9,6 @@ namespace OBBC_Vedligeholdelse
 {
     public class Menu
     {
-        DatabaseController databaseController = new DatabaseController();
         Controller control = new Controller();
         private const string startMenu = @"..\..\StartMenu.txt";
         private const string firstMenu = @"..\..\FirstMenu.txt";
@@ -47,14 +46,6 @@ namespace OBBC_Vedligeholdelse
                         case "5":
                             ShowExtraInfoReports();
                             break;
-                        //case "6":
-                        //    databaseController.ReadAndShowErrorReports(); // test
-                        //    Console.ReadLine();
-                        //    break;
-                        //case "7":
-                        //    databaseController.ReadOnlyAllErrorReports(); // test
-                        //    Console.ReadLine();
-                        //    break;
                         default:
                             Console.WriteLine("Ugyldigt valg, prøv venligst igen.");
                             Console.ReadLine();
@@ -222,3 +213,13 @@ namespace OBBC_Vedligeholdelse
         }
     }
 }
+
+
+//case "6":
+//    databaseController.ReadAndShowErrorReports(); // test
+//    Console.ReadLine();
+//    break;
+//case "7":
+//    databaseController.ReadOnlyAllErrorReports(); // test
+//    Console.ReadLine();
+//    break;
