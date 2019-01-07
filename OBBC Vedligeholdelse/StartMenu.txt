@@ -5,8 +5,6 @@
 	3. Ændre på fejlstatus
 	4. Vis gamle rapporter
 	5. Vis rapporter med extra info
-	6. Gem Rapport fra databasen, og få vist alle rapporter :i
-	7. gøgler bare lidt :i men nummer 7 her prøver kun at gemmme rapporterne
 	0. Exit
 
 [-----------------------------------------------------------------------------------

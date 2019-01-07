@@ -47,14 +47,14 @@ namespace OBBC_Vedligeholdelse
                         case "5":
                             ShowExtraInfoReports();
                             break;
-                        case "6":
-                            databaseController.ReadAndShowErrorReports(); // test
-                            Console.ReadLine();
-                            break;
-                        case "7":
-                            databaseController.ReadOnlyAllErrorReports(); // test
-                            Console.ReadLine();
-                            break;
+                        //case "6":
+                        //    databaseController.ReadAndShowErrorReports(); // test
+                        //    Console.ReadLine();
+                        //    break;
+                        //case "7":
+                        //    databaseController.ReadOnlyAllErrorReports(); // test
+                        //    Console.ReadLine();
+                        //    break;
                         default:
                             Console.WriteLine("Ugyldigt valg, prøv venligst igen.");
                             Console.ReadLine();
