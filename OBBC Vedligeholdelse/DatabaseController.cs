@@ -30,7 +30,8 @@ namespace OBBC_Vedligeholdelse
             {
                 try
                 {
-                    reportFactory.ShowAllCurrentErrorReports();
+                    //reportFactory.ShowAllCurrentErrorReports();
+                    ReadAndShowErrorReports();
                 }
                 catch (SqlException e)
                 {
