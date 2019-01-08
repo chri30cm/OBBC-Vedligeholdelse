@@ -30,8 +30,10 @@ namespace OBBC_Vedligeholdelse
             {
                 try
                 {
-                    //reportFactory.ShowAllCurrentErrorReports();
-                    ReadAndShowErrorReports();
+                    con.Open();
+                    cmd = new SqlCommand("VisAlleAktuelleFejlRapporter", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    DatabaseCurrentReportsWriter(cmd);
                 }
                 catch (SqlException e)
                 {
@@ -123,7 +125,6 @@ namespace OBBC_Vedligeholdelse
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add(new SqlParameter("@Lokation", area));
                         DatabaseCurrentReportsWriter(cmd);
-
                     }
                     catch (SqlException e)
                     {
@@ -162,7 +163,6 @@ namespace OBBC_Vedligeholdelse
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add(new SqlParameter("@Lokation", area));
                         DatabaseOldReportsWriter(cmd);
-
                     }
                     catch (SqlException e)
                     {
@@ -244,10 +244,6 @@ namespace OBBC_Vedligeholdelse
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine($"RapportID: {reportID} \nLokation: {location} \nProblembeskrivelse: {errorDescription} \nTidspunkt:  {time} \nExtra Info: {extraInfo}");
                         Console.WriteLine();
-                    }
-                    else if (status == "Grøn" == true)
-                    {
-
                     }
                 }
             }
