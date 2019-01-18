@@ -13,8 +13,10 @@ namespace Domain
         List<ErrorReport> errorReports = new List<ErrorReport>();
         public void AddReport(ErrorReport errorReport)
         {
-            if(!errorReports.Contains(errorReport))
-            errorReports.Add(errorReport);
+            if (!errorReports.Contains(errorReport))
+            {
+                errorReports.Add(errorReport);
+            }
         }
         public void ShowSpecificErrorReports(string area)
         {

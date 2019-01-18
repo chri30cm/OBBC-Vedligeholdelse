@@ -190,7 +190,7 @@ namespace Domain
             string _connectionString = null;
             try
             {
-                using (StreamReader sr = new StreamReader(@"C:\Users\Christian\source\repos\OBBC-Vedligeholdelse\Domain\DatabaseAccess.txt"))
+                using (StreamReader sr = new StreamReader(@"C:\Users\Bruger\source\repos\OBBC Vedligeholdelse\Domain3\DatabaseAccess.txt"))
                 {
                     string line;
                     string[] connectionArray;
@@ -351,7 +351,7 @@ namespace Domain
                     }
                 }
             }
-            TextWriter();
+            //TextWriter();
         }
 
         private void TextWriter()
