@@ -4,12 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OBBC_Vedligeholdelse
+namespace Domain
 {
-    // JULEMANDENS GAVER <3
-    // JULEMANDENS GAVER <3
-    // JULEMANDENS GAVER <3
-
     public class ErrorReport
     {
         private int reportID;

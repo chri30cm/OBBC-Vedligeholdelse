@@ -7,7 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.IO;
 
-namespace OBBC_Vedligeholdelse 
+namespace Domain
 {
     public class DatabaseController
     {
@@ -190,7 +190,7 @@ namespace OBBC_Vedligeholdelse
             string _connectionString = null;
             try
             {
-                using (StreamReader sr = new StreamReader(@"..\..\DatabaseAccess.txt"))
+                using (StreamReader sr = new StreamReader(@"C:\Users\Christian\source\repos\OBBC-Vedligeholdelse\Domain\DatabaseAccess.txt"))
                 {
                     string line;
                     string[] connectionArray;
@@ -270,8 +270,6 @@ namespace OBBC_Vedligeholdelse
             Console.ForegroundColor = ConsoleColor.Gray;
         }
 
-        // JULEMANDENS GAVER <3
-        // JULEMANDENS GAVER <3
         // JULEMANDENS GAVER <3 HERUNDER:
 
         public void ReadAndShowErrorReports()
@@ -392,7 +390,6 @@ namespace OBBC_Vedligeholdelse
             {
                 Console.WriteLine(e.Message);
             }
-            
             Console.ForegroundColor = ConsoleColor.Gray;
         }
         public void TextReader()

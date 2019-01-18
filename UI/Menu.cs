@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using Application;
 
-namespace OBBC_Vedligeholdelse
+namespace UI
 {
     public class Menu
     {
-        DatabaseController DB = new DatabaseController();
         Controller control = new Controller();
         private const string startMenu = @"..\..\StartMenu.txt";
         private const string firstMenu = @"..\..\FirstMenu.txt";
@@ -46,9 +46,6 @@ namespace OBBC_Vedligeholdelse
                             break;
                         case "5":
                             ShowExtraInfoReports();
-                            break;
-                        case "6":
-                            DB.TextReader();
                             break;
                         default:
                             Console.WriteLine("Ugyldigt valg, prøv venligst igen.");

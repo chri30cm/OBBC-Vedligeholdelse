@@ -4,17 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OBBC_Vedligeholdelse
+namespace Domain
 {
     // JULEMANDENS GAVER <3
-    // JULEMANDENS GAVER <3
-    // JULEMANDENS GAVER <3
 
-    class ReportFactory
+    public class ReportFactory
     {
         List<ErrorReport> errorReports = new List<ErrorReport>();
         public void AddReport(ErrorReport errorReport)
         {
+            if(!errorReports.Contains(errorReport))
             errorReports.Add(errorReport);
         }
         public void ShowSpecificErrorReports(string area)
@@ -69,7 +68,11 @@ namespace OBBC_Vedligeholdelse
 
         public void ShowAllCurrentErrorReports()
         {
-            if(errorReports.Count != 0)
+            if(errorReports.Count == 0)
+            {
+                Console.WriteLine("listen er tom :'( PepeHands");
+            }
+            else
             {
                 foreach (ErrorReport report in errorReports)
                 {
@@ -77,7 +80,7 @@ namespace OBBC_Vedligeholdelse
                     if (report.Status == "Gul")
                     {
                         Console.ForegroundColor = ConsoleColor.Yellow;
-                        Console.WriteLine("[------------------------------------]");
+                        Console.WriteLine("");
                         Console.WriteLine("    Fejlrapport ID: " + report.ReportID.ToString());
                         Console.WriteLine("    Maskine lokation: " + report.Location);
                         Console.WriteLine("    Problembeskrivelse: " + report.ErrorDescription);
@@ -86,12 +89,13 @@ namespace OBBC_Vedligeholdelse
                         {
                             Console.WriteLine("    Extra information: " + report.ExtraInfo);
                         }
+                        Console.WriteLine("");
                         Console.WriteLine("[------------------------------------]");
                     }
                     else if (report.Status == "Rød")
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("[------------------------------------]");
+                        Console.WriteLine("");
                         Console.WriteLine("    Fejlrapport ID: " + report.ReportID.ToString());
                         Console.WriteLine("    Maskine lokation: " + report.Location);
                         Console.WriteLine("    Problembeskrivelse: " + report.ErrorDescription);
@@ -100,18 +104,14 @@ namespace OBBC_Vedligeholdelse
                         {
                             Console.WriteLine("    Extra information: " + report.ExtraInfo);
                         }
+                        Console.WriteLine("");
                         Console.WriteLine("[------------------------------------]");
                     }
+                    AddReport(report);
                 }
-            }
-            else
-            {
-                Console.WriteLine("listen er tom :'( PepeHands");
             }
             Console.ForegroundColor = ConsoleColor.Gray;
         }
-
-
         public List<ErrorReport> GetErrorReports ()
         {
             return errorReports;

@@ -4,19 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OBBC_Vedligeholdelse
+namespace UI
 {
     public class Program
     {
-        private static void Main(string[] args)
+        static void Main(string[] args)
         {
             Program myProgram = new Program();
             myProgram.Run();
         }
         private void Run()
         {
-            DatabaseController DC = new DatabaseController();
-            DC.ReadOnlyAllErrorReports();
             Menu menu = new Menu();
             menu.Show();
         }

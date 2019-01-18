@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OBBC Vedligeholdelse", "OBBC Vedligeholdelse\OBBC Vedligeholdelse.csproj", "{A03FB643-4232-4ACB-A295-8FB7F2208F2B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "OBBC Vedligeholdelse\Application.csproj", "{A03FB643-4232-4ACB-A295-8FB7F2208F2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "UI3\UI.csproj", "{3B38F4C3-6337-492C-95BA-532A4C59C02F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain3\Domain.csproj", "{4440417F-3C1A-47B3-B8EF-7D2D95702357}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{A03FB643-4232-4ACB-A295-8FB7F2208F2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A03FB643-4232-4ACB-A295-8FB7F2208F2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A03FB643-4232-4ACB-A295-8FB7F2208F2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B38F4C3-6337-492C-95BA-532A4C59C02F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B38F4C3-6337-492C-95BA-532A4C59C02F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B38F4C3-6337-492C-95BA-532A4C59C02F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B38F4C3-6337-492C-95BA-532A4C59C02F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4440417F-3C1A-47B3-B8EF-7D2D95702357}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4440417F-3C1A-47B3-B8EF-7D2D95702357}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4440417F-3C1A-47B3-B8EF-7D2D95702357}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4440417F-3C1A-47B3-B8EF-7D2D95702357}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

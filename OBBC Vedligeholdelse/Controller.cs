@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain;
 
-namespace OBBC_Vedligeholdelse
+namespace Application
 {
     public class Controller
     {
+        ReportFactory reportFactory = new ReportFactory();
         DatabaseController databaseController = new DatabaseController();
         public bool ShowCurrentReports(int areaChoice)
         {
@@ -69,6 +71,23 @@ namespace OBBC_Vedligeholdelse
             Console.Clear();
             return success;
         }
+
+        public void ReadAndShowFromDatabase()
+        {
+            Console.Clear();
+            databaseController.ReadAndShowErrorReports();
+            Console.ReadLine();
+            Console.Clear();
+        }
+
+        public void ShowErrorReportsList()
+        {
+            Console.Clear();
+            reportFactory.ShowAllCurrentErrorReports();
+            Console.ReadLine();
+            Console.Clear();
+        }
+
         public bool CreateNewReport(int areaChoice, string errorReport, string date, string extraInfo)
         {
             bool success = true;

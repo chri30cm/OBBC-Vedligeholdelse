@@ -1,0 +1,12 @@
+﻿[----------------------- Vedligeholdelse OBBC --------------------------------------
+ 
+	1. Vis aktuelle fejlrapporter
+	2. Opret Fejlmelding
+	3. Ændre på fejlstatus
+	4. Vis gamle rapporter
+	5. Vis rapporter med extra info
+	6. læs og gem errorReports fra DB til liste, og vis listen.
+	7. vis listen med errorReports.
+	0. Exit
+
+[-----------------------------------------------------------------------------------

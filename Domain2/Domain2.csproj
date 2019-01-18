@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.4</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="DatabaseAccess.txt" />
+    <None Remove="ErrorReports.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="DatabaseAccess.txt" />
+    <Content Include="ErrorReports.txt" />
+  </ItemGroup>
+
+</Project>
