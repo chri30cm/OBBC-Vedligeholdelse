@@ -59,7 +59,7 @@ namespace OBBC_Vedligeholdelse
             ExtraInfo = extraInfo;
             Status = status;
         }
-        public ErrorReport(int reportID, string location, string errorDescription, string time, string status)
+        public ErrorReport(int reportID, string location, string errorDescription, string time, string status) 
         {
             this.reportID = reportID;
             Location = location;
