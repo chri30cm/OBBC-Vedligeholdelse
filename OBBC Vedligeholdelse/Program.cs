@@ -15,6 +15,8 @@ namespace OBBC_Vedligeholdelse
         }
         private void Run()
         {
+            DatabaseController DC = new DatabaseController();
+            DC.ReadOnlyAllErrorReports();
             Menu menu = new Menu();
             menu.Show();
         }

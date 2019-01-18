@@ -34,6 +34,7 @@ namespace OBBC_Vedligeholdelse
                     cmd = new SqlCommand("VisAlleAktuelleFejlRapporter", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     DatabaseCurrentReportsWriter(cmd);
+
                 }
                 catch (SqlException e)
                 {
@@ -41,9 +42,6 @@ namespace OBBC_Vedligeholdelse
                 }
             }
         }
-
-
-
 
         public void GetSpecificCurrentReports(string area)
         {
@@ -57,7 +55,6 @@ namespace OBBC_Vedligeholdelse
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add(new SqlParameter("@Lokation", area));
                         DatabaseCurrentReportsWriter(cmd);
-                       
                     }
                     catch (SqlException e)
                     {
@@ -314,7 +311,7 @@ namespace OBBC_Vedligeholdelse
             }
         }
 
-        private void DatabaseReader(SqlCommand cmd)
+        public void DatabaseReader(SqlCommand cmd)
         {
             reader = cmd.ExecuteReader();
             ErrorReport errorReport;
@@ -362,11 +359,12 @@ namespace OBBC_Vedligeholdelse
         private void TextWriter()
         {
             List<ErrorReport> errorReportList = reportFactory.GetErrorReports();
-            using (StreamWriter streamWriter = new StreamWriter(errorReportsPath))
+            try
             {
+                StreamWriter streamWriter = new StreamWriter(errorReportsPath);
                 foreach (ErrorReport eReport in errorReportList)
                 {
-                    //if (!IsStringInFile(eReport.ReportID.ToString()))
+                    //if (!IsStringInFile(errorReportsPath, eReport.ReportID.ToString()))
                     //{
                         if (eReport.Status == "Gul")
                         {
@@ -375,7 +373,7 @@ namespace OBBC_Vedligeholdelse
                         else if (eReport.Status == "Rød")
                         {
                             streamWriter.WriteLine("Console.ForegroundColor = ConsoleColor.Red");
-                        }
+                        }   
                         streamWriter.WriteLine("[------------------------------------]");
                         streamWriter.WriteLine("    Fejlrapport ID: " + eReport.ReportID.ToString());
                         streamWriter.WriteLine("    Maskine lokation: " + eReport.Location);
@@ -386,17 +384,41 @@ namespace OBBC_Vedligeholdelse
                             streamWriter.WriteLine("    Extra information: " + eReport.ExtraInfo);
                         }
                         streamWriter.WriteLine("[------------------------------------]");
-                    //}
+                    //} 
                 }
+                streamWriter.Close();
             }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            
             Console.ForegroundColor = ConsoleColor.Gray;
         }
-
-        private bool IsStringInFile(string searchThis)
+        public void TextReader()
         {
+            StreamReader streamReader = new StreamReader(errorReportsPath);
+            string line;
+            while((line = streamReader.ReadLine()) != null)
+            {
+                if (line == "Console.ForegroundColor = ConsoleColor.Yellow")
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                }
+                else if(line == "Console.ForegroundColor = ConsoleColor.Red")
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                }
+                Console.WriteLine(line);
+            }
+            streamReader.Close();
+            Console.ReadLine();
+        }
+        
 
-            return File.ReadAllText(errorReportsPath).Contains(searchThis);
-
+        private bool IsStringInFile(string path, string searchThis)
+        {
+            return File.ReadAllText(path).Contains(searchThis);
         }
     }
 }
