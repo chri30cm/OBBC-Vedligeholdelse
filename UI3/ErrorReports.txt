@@ -3,7 +3,7 @@ Console.ForegroundColor = ConsoleColor.Red
     Fejlrapport ID: 1
     Maskine lokation: Spinning
     Problembeskrivelse: Mangler pedal
-    Tidspunkt: 12/12/2012 00.00.00
+    Tidspunkt: 12-12-2012 00:00:00
     Extra information: Ingen Extra Information
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
@@ -11,7 +11,7 @@ Console.ForegroundColor = ConsoleColor.Red
     Fejlrapport ID: 22
     Maskine lokation: Bryst
     Problembeskrivelse: 1
-    Tidspunkt: 01/01/2011 00.00.00
+    Tidspunkt: 01-01-2011 00:00:00
     Extra information: nej
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
@@ -19,21 +19,21 @@ Console.ForegroundColor = ConsoleColor.Red
     Fejlrapport ID: 23
     Maskine lokation: Bryst
     Problembeskrivelse: nej
-    Tidspunkt: 12/12/2018 13.38.43
+    Tidspunkt: 12-12-2018 13:38:43
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Yellow
 [------------------------------------]
     Fejlrapport ID: 24
     Maskine lokation: Bryst
     Problembeskrivelse: sdfg
-    Tidspunkt: 12/12/2018 13.51.59
+    Tidspunkt: 12-12-2018 13:51:59
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
 [------------------------------------]
     Fejlrapport ID: 25
     Maskine lokation: Bryst
     Problembeskrivelse: bryst
-    Tidspunkt: 12/12/2018 13.53.51
+    Tidspunkt: 12-12-2018 13:53:51
     Extra information: nej
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Yellow
@@ -41,14 +41,14 @@ Console.ForegroundColor = ConsoleColor.Yellow
     Fejlrapport ID: 26
     Maskine lokation: Bryst
     Problembeskrivelse: 1
-    Tidspunkt: 12/12/2012 00.00.00
+    Tidspunkt: 12-12-2012 00:00:00
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Yellow
 [------------------------------------]
     Fejlrapport ID: 27
     Maskine lokation: Ryg
     Problembeskrivelse: Ryuggen er død bror
-    Tidspunkt: 13/12/2018 16.11.14
+    Tidspunkt: 13-12-2018 16:11:14
     Extra information: nej
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
@@ -56,7 +56,7 @@ Console.ForegroundColor = ConsoleColor.Red
     Fejlrapport ID: 30
     Maskine lokation: Arme
     Problembeskrivelse: mangler sæde
-    Tidspunkt: 15/12/2018 10.41.01
+    Tidspunkt: 15-12-2018 10:41:01
     Extra information: maskine 28
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
@@ -64,7 +64,7 @@ Console.ForegroundColor = ConsoleColor.Red
     Fejlrapport ID: 32
     Maskine lokation: Spinning
     Problembeskrivelse: Cykel mangler pedal osv osv
-    Tidspunkt: 16/12/2018 11.04.10
+    Tidspunkt: 16-12-2018 11:04:10
     Extra information: cykel nr 33
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
@@ -72,70 +72,70 @@ Console.ForegroundColor = ConsoleColor.Red
     Fejlrapport ID: 34
     Maskine lokation: Bryst
     Problembeskrivelse: ledningen er i stykker
-    Tidspunkt: 17/12/2018 13.04.22
+    Tidspunkt: 17-12-2018 13:04:22
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
 [------------------------------------]
     Fejlrapport ID: 37
     Maskine lokation: Bryst
     Problembeskrivelse: 1
-    Tidspunkt: 01/01/2001 00.00.00
+    Tidspunkt: 01-01-2001 00:00:00
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
 [------------------------------------]
     Fejlrapport ID: 38
     Maskine lokation: Bryst
     Problembeskrivelse: den er i stykker b
-    Tidspunkt: 20/12/2018 10.45.11
+    Tidspunkt: 20-12-2018 10:45:11
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
 [------------------------------------]
     Fejlrapport ID: 39
     Maskine lokation: Bryst
     Problembeskrivelse: 1
-    Tidspunkt: 20/12/2018 10.47.05
+    Tidspunkt: 20-12-2018 10:47:05
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
 [------------------------------------]
     Fejlrapport ID: 40
     Maskine lokation: Bryst
     Problembeskrivelse: asd
-    Tidspunkt: 20/12/2018 11.00.34
+    Tidspunkt: 20-12-2018 11:00:34
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
 [------------------------------------]
     Fejlrapport ID: 41
     Maskine lokation: Ryg
     Problembeskrivelse: 2
-    Tidspunkt: 20/12/2018 11.24.46
+    Tidspunkt: 20-12-2018 11:24:46
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
 [------------------------------------]
     Fejlrapport ID: 42
     Maskine lokation: Ryg
     Problembeskrivelse: 2
-    Tidspunkt: 20/12/2018 11.25.12
+    Tidspunkt: 20-12-2018 11:25:12
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
 [------------------------------------]
     Fejlrapport ID: 43
     Maskine lokation: Ryg
     Problembeskrivelse: 2
-    Tidspunkt: 20/12/2018 11.25.35
+    Tidspunkt: 20-12-2018 11:25:35
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
 [------------------------------------]
     Fejlrapport ID: 44
     Maskine lokation: Ryg
     Problembeskrivelse: 2
-    Tidspunkt: 20/12/2018 11.27.56
+    Tidspunkt: 20-12-2018 11:27:56
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
 [------------------------------------]
     Fejlrapport ID: 46
     Maskine lokation: Bryst
     Problembeskrivelse: test
-    Tidspunkt: 20/12/2018 11.29.47
+    Tidspunkt: 20-12-2018 11:29:47
     Extra information: d
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
@@ -143,14 +143,14 @@ Console.ForegroundColor = ConsoleColor.Red
     Fejlrapport ID: 47
     Maskine lokation: Ryg
     Problembeskrivelse: 2
-    Tidspunkt: 20/12/2018 11.30.51
+    Tidspunkt: 20-12-2018 11:30:51
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
 [------------------------------------]
     Fejlrapport ID: 48
     Maskine lokation: Bryst
     Problembeskrivelse: den er i stykker
-    Tidspunkt: 20/12/2018 16.22.54
+    Tidspunkt: 20-12-2018 16:22:54
     Extra information: der mangler en skrue for neden
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
@@ -158,7 +158,7 @@ Console.ForegroundColor = ConsoleColor.Red
     Fejlrapport ID: 49
     Maskine lokation: Bryst
     Problembeskrivelse: jhg
-    Tidspunkt: 22/12/2018 13.44.43
+    Tidspunkt: 22-12-2018 13:44:43
     Extra information: hjg
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
@@ -166,21 +166,21 @@ Console.ForegroundColor = ConsoleColor.Red
     Fejlrapport ID: 50
     Maskine lokation: Bryst
     Problembeskrivelse: hjg
-    Tidspunkt: 22/12/2018 13.44.55
+    Tidspunkt: 22-12-2018 13:44:55
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
 [------------------------------------]
     Fejlrapport ID: 51
     Maskine lokation: Mave
     Problembeskrivelse: 
-    Tidspunkt: 22/12/2018 13.45.18
+    Tidspunkt: 22-12-2018 13:45:18
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
 [------------------------------------]
     Fejlrapport ID: 52
     Maskine lokation: Arme
     Problembeskrivelse: 65
-    Tidspunkt: 05/12/1954 00.00.00
+    Tidspunkt: 05-12-1954 00:00:00
     Extra information: 342
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
@@ -188,7 +188,7 @@ Console.ForegroundColor = ConsoleColor.Red
     Fejlrapport ID: 53
     Maskine lokation: Spinning
     Problembeskrivelse: 
-    Tidspunkt: 22/12/2018 13.46.24
+    Tidspunkt: 22-12-2018 13:46:24
     Extra information: 54
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
@@ -196,14 +196,14 @@ Console.ForegroundColor = ConsoleColor.Red
     Fejlrapport ID: 54
     Maskine lokation: Ryg
     Problembeskrivelse: 
-    Tidspunkt: 22/12/2018 14.02.59
+    Tidspunkt: 22-12-2018 14:02:59
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
 [------------------------------------]
     Fejlrapport ID: 55
     Maskine lokation: Ryg
     Problembeskrivelse: sdf
-    Tidspunkt: 22/12/2018 14.03.07
+    Tidspunkt: 22-12-2018 14:03:07
     Extra information: sdf
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
@@ -211,21 +211,21 @@ Console.ForegroundColor = ConsoleColor.Red
     Fejlrapport ID: 56
     Maskine lokation: Mave
     Problembeskrivelse: gf
-    Tidspunkt: 22/12/2018 14.52.00
+    Tidspunkt: 22-12-2018 14:52:00
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
 [------------------------------------]
     Fejlrapport ID: 57
     Maskine lokation: Mave
     Problembeskrivelse: hjg
-    Tidspunkt: 22/12/2018 21.23.45
+    Tidspunkt: 22-12-2018 21:23:45
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
 [------------------------------------]
     Fejlrapport ID: 58
     Maskine lokation: Bryst
     Problembeskrivelse: sdf
-    Tidspunkt: 22/12/2018 21.30.57
+    Tidspunkt: 22-12-2018 21:30:57
     Extra information: sdf
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
@@ -233,7 +233,7 @@ Console.ForegroundColor = ConsoleColor.Red
     Fejlrapport ID: 59
     Maskine lokation: Bryst
     Problembeskrivelse: swef
-    Tidspunkt: 22/12/2018 22.03.29
+    Tidspunkt: 22-12-2018 22:03:29
     Extra information: asd
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
@@ -241,21 +241,21 @@ Console.ForegroundColor = ConsoleColor.Red
     Fejlrapport ID: 60
     Maskine lokation: Bryst
     Problembeskrivelse: 
-    Tidspunkt: 23/12/2018 00.08.54
+    Tidspunkt: 23-12-2018 00:08:54
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
 [------------------------------------]
     Fejlrapport ID: 61
     Maskine lokation: Bryst
     Problembeskrivelse: 123
-    Tidspunkt: 06/01/2019 23.29.00
+    Tidspunkt: 06-01-2019 23:29:00
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
 [------------------------------------]
     Fejlrapport ID: 63
     Maskine lokation: Ryg
     Problembeskrivelse: dsg
-    Tidspunkt: 07/01/2019 10.59.00
+    Tidspunkt: 07-01-2019 10:59:00
     Extra information: sdf
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
@@ -263,7 +263,7 @@ Console.ForegroundColor = ConsoleColor.Red
     Fejlrapport ID: 64
     Maskine lokation: Bryst
     Problembeskrivelse: dfg
-    Tidspunkt: 07/01/2019 11.03.00
+    Tidspunkt: 07-01-2019 11:03:00
     Extra information: sdf
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
@@ -271,7 +271,7 @@ Console.ForegroundColor = ConsoleColor.Red
     Fejlrapport ID: 65
     Maskine lokation: Mave
     Problembeskrivelse: den er lort
-    Tidspunkt: 07/01/2019 11.06.00
+    Tidspunkt: 07-01-2019 11:06:00
     Extra information: jamen ja
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
@@ -279,7 +279,7 @@ Console.ForegroundColor = ConsoleColor.Red
     Fejlrapport ID: 66
     Maskine lokation: Bryst
     Problembeskrivelse: dfg
-    Tidspunkt: 07/01/2019 11.11.00
+    Tidspunkt: 07-01-2019 11:11:00
     Extra information: sdf
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
@@ -287,7 +287,7 @@ Console.ForegroundColor = ConsoleColor.Red
     Fejlrapport ID: 67
     Maskine lokation: Spinning
     Problembeskrivelse: ku
-    Tidspunkt: 07/01/2019 11.14.00
+    Tidspunkt: 07-01-2019 11:14:00
     Extra information: jk
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
@@ -295,7 +295,7 @@ Console.ForegroundColor = ConsoleColor.Red
     Fejlrapport ID: 68
     Maskine lokation: Ryg
     Problembeskrivelse: sd
-    Tidspunkt: 07/01/2019 11.19.00
+    Tidspunkt: 07-01-2019 11:19:00
     Extra information: dfg
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
@@ -303,14 +303,14 @@ Console.ForegroundColor = ConsoleColor.Red
     Fejlrapport ID: 69
     Maskine lokation: Spinning
     Problembeskrivelse: gggg
-    Tidspunkt: 07/01/2019 11.25.00
+    Tidspunkt: 07-01-2019 11:25:00
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
 [------------------------------------]
     Fejlrapport ID: 70
     Maskine lokation: Mave
     Problembeskrivelse: hjg
-    Tidspunkt: 07/01/2019 11.28.00
+    Tidspunkt: 07-01-2019 11:28:00
     Extra information: hg
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
@@ -318,7 +318,7 @@ Console.ForegroundColor = ConsoleColor.Red
     Fejlrapport ID: 71
     Maskine lokation: Spinning
     Problembeskrivelse: ghjf
-    Tidspunkt: 07/01/2019 11.30.00
+    Tidspunkt: 07-01-2019 11:30:00
     Extra information: hgj
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
@@ -326,7 +326,7 @@ Console.ForegroundColor = ConsoleColor.Red
     Fejlrapport ID: 72
     Maskine lokation: Spinning
     Problembeskrivelse: hj
-    Tidspunkt: 07/01/2019 11.34.00
+    Tidspunkt: 07-01-2019 11:34:00
     Extra information: hj
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
@@ -334,14 +334,14 @@ Console.ForegroundColor = ConsoleColor.Red
     Fejlrapport ID: 73
     Maskine lokation: Ben
     Problembeskrivelse: jkhh
-    Tidspunkt: 07/01/2019 11.37.00
+    Tidspunkt: 07-01-2019 11:37:00
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
 [------------------------------------]
     Fejlrapport ID: 74
     Maskine lokation: Bryst
     Problembeskrivelse: sdf
-    Tidspunkt: 07/01/2019 12.18.00
+    Tidspunkt: 07-01-2019 12:18:00
     Extra information: dfg
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
@@ -349,7 +349,7 @@ Console.ForegroundColor = ConsoleColor.Red
     Fejlrapport ID: 75
     Maskine lokation: Ryg
     Problembeskrivelse: sdf
-    Tidspunkt: 07/01/2019 12.20.00
+    Tidspunkt: 07-01-2019 12:20:00
     Extra information: sdf
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
@@ -357,14 +357,14 @@ Console.ForegroundColor = ConsoleColor.Red
     Fejlrapport ID: 76
     Maskine lokation: Bryst
     Problembeskrivelse: Den er defekt
-    Tidspunkt: 08/01/2019 10.34.00
+    Tidspunkt: 08-01-2019 10:34:00
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
 [------------------------------------]
     Fejlrapport ID: 77
     Maskine lokation: Ryg
     Problembeskrivelse: Defekt
-    Tidspunkt: 08/01/2019 11.35.00
+    Tidspunkt: 08-01-2019 11:35:00
     Extra information: Test
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
@@ -372,7 +372,7 @@ Console.ForegroundColor = ConsoleColor.Red
     Fejlrapport ID: 78
     Maskine lokation: Ryg
     Problembeskrivelse: Defekt
-    Tidspunkt: 08/01/2019 12.51.00
+    Tidspunkt: 08-01-2019 12:51:00
     Extra information: test
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Yellow
@@ -380,7 +380,7 @@ Console.ForegroundColor = ConsoleColor.Yellow
     Fejlrapport ID: 79
     Maskine lokation: Bryst
     Problembeskrivelse: eksamen
-    Tidspunkt: 08/01/2019 13.50.00
+    Tidspunkt: 08-01-2019 13:50:00
     Extra information: test
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
@@ -388,7 +388,7 @@ Console.ForegroundColor = ConsoleColor.Red
     Fejlrapport ID: 80
     Maskine lokation: Bryst
     Problembeskrivelse: test
-    Tidspunkt: 09/01/2019 10.41.00
+    Tidspunkt: 09-01-2019 10:41:00
     Extra information: test
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
@@ -396,7 +396,7 @@ Console.ForegroundColor = ConsoleColor.Red
     Fejlrapport ID: 81
     Maskine lokation: Bryst
     Problembeskrivelse: Test
-    Tidspunkt: 09/01/2019 11.02.00
+    Tidspunkt: 09-01-2019 11:02:00
     Extra information: test
 [------------------------------------]
 Console.ForegroundColor = ConsoleColor.Red
@@ -404,13 +404,845 @@ Console.ForegroundColor = ConsoleColor.Red
     Fejlrapport ID: 82
     Maskine lokation: Bryst
     Problembeskrivelse: I stykker
-    Tidspunkt: 01/01/2001 00.00.00
+    Tidspunkt: 01-01-2001 00:00:00
     Extra information: RØD
 [------------------------------------]
 [------------------------------------]
     Fejlrapport ID: 83
     Maskine lokation: Bryst
     Problembeskrivelse: I stykker
-    Tidspunkt: 01/01/2001 00.00.00
+    Tidspunkt: 01-01-2001 00:00:00
+    Extra information: RØD
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 1
+    Maskine lokation: Spinning
+    Problembeskrivelse: Mangler pedal
+    Tidspunkt: 12-12-2012 00:00:00
+    Extra information: Ingen Extra Information
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 22
+    Maskine lokation: Bryst
+    Problembeskrivelse: 1
+    Tidspunkt: 01-01-2011 00:00:00
+    Extra information: nej
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 23
+    Maskine lokation: Bryst
+    Problembeskrivelse: nej
+    Tidspunkt: 12-12-2018 13:38:43
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Yellow
+[------------------------------------]
+    Fejlrapport ID: 24
+    Maskine lokation: Bryst
+    Problembeskrivelse: sdfg
+    Tidspunkt: 12-12-2018 13:51:59
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 25
+    Maskine lokation: Bryst
+    Problembeskrivelse: bryst
+    Tidspunkt: 12-12-2018 13:53:51
+    Extra information: nej
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Yellow
+[------------------------------------]
+    Fejlrapport ID: 26
+    Maskine lokation: Bryst
+    Problembeskrivelse: 1
+    Tidspunkt: 12-12-2012 00:00:00
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Yellow
+[------------------------------------]
+    Fejlrapport ID: 27
+    Maskine lokation: Ryg
+    Problembeskrivelse: Ryuggen er død bror
+    Tidspunkt: 13-12-2018 16:11:14
+    Extra information: nej
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 30
+    Maskine lokation: Arme
+    Problembeskrivelse: mangler sæde
+    Tidspunkt: 15-12-2018 10:41:01
+    Extra information: maskine 28
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 32
+    Maskine lokation: Spinning
+    Problembeskrivelse: Cykel mangler pedal osv osv
+    Tidspunkt: 16-12-2018 11:04:10
+    Extra information: cykel nr 33
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 34
+    Maskine lokation: Bryst
+    Problembeskrivelse: ledningen er i stykker
+    Tidspunkt: 17-12-2018 13:04:22
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 37
+    Maskine lokation: Bryst
+    Problembeskrivelse: 1
+    Tidspunkt: 01-01-2001 00:00:00
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 38
+    Maskine lokation: Bryst
+    Problembeskrivelse: den er i stykker b
+    Tidspunkt: 20-12-2018 10:45:11
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 39
+    Maskine lokation: Bryst
+    Problembeskrivelse: 1
+    Tidspunkt: 20-12-2018 10:47:05
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 40
+    Maskine lokation: Bryst
+    Problembeskrivelse: asd
+    Tidspunkt: 20-12-2018 11:00:34
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 41
+    Maskine lokation: Ryg
+    Problembeskrivelse: 2
+    Tidspunkt: 20-12-2018 11:24:46
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 42
+    Maskine lokation: Ryg
+    Problembeskrivelse: 2
+    Tidspunkt: 20-12-2018 11:25:12
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 43
+    Maskine lokation: Ryg
+    Problembeskrivelse: 2
+    Tidspunkt: 20-12-2018 11:25:35
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 44
+    Maskine lokation: Ryg
+    Problembeskrivelse: 2
+    Tidspunkt: 20-12-2018 11:27:56
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 46
+    Maskine lokation: Bryst
+    Problembeskrivelse: test
+    Tidspunkt: 20-12-2018 11:29:47
+    Extra information: d
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 47
+    Maskine lokation: Ryg
+    Problembeskrivelse: 2
+    Tidspunkt: 20-12-2018 11:30:51
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 48
+    Maskine lokation: Bryst
+    Problembeskrivelse: den er i stykker
+    Tidspunkt: 20-12-2018 16:22:54
+    Extra information: der mangler en skrue for neden
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 49
+    Maskine lokation: Bryst
+    Problembeskrivelse: jhg
+    Tidspunkt: 22-12-2018 13:44:43
+    Extra information: hjg
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 50
+    Maskine lokation: Bryst
+    Problembeskrivelse: hjg
+    Tidspunkt: 22-12-2018 13:44:55
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 51
+    Maskine lokation: Mave
+    Problembeskrivelse: 
+    Tidspunkt: 22-12-2018 13:45:18
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 52
+    Maskine lokation: Arme
+    Problembeskrivelse: 65
+    Tidspunkt: 05-12-1954 00:00:00
+    Extra information: 342
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 53
+    Maskine lokation: Spinning
+    Problembeskrivelse: 
+    Tidspunkt: 22-12-2018 13:46:24
+    Extra information: 54
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 54
+    Maskine lokation: Ryg
+    Problembeskrivelse: 
+    Tidspunkt: 22-12-2018 14:02:59
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 55
+    Maskine lokation: Ryg
+    Problembeskrivelse: sdf
+    Tidspunkt: 22-12-2018 14:03:07
+    Extra information: sdf
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 56
+    Maskine lokation: Mave
+    Problembeskrivelse: gf
+    Tidspunkt: 22-12-2018 14:52:00
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 57
+    Maskine lokation: Mave
+    Problembeskrivelse: hjg
+    Tidspunkt: 22-12-2018 21:23:45
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 58
+    Maskine lokation: Bryst
+    Problembeskrivelse: sdf
+    Tidspunkt: 22-12-2018 21:30:57
+    Extra information: sdf
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 59
+    Maskine lokation: Bryst
+    Problembeskrivelse: swef
+    Tidspunkt: 22-12-2018 22:03:29
+    Extra information: asd
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 60
+    Maskine lokation: Bryst
+    Problembeskrivelse: 
+    Tidspunkt: 23-12-2018 00:08:54
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 61
+    Maskine lokation: Bryst
+    Problembeskrivelse: 123
+    Tidspunkt: 06-01-2019 23:29:00
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 63
+    Maskine lokation: Ryg
+    Problembeskrivelse: dsg
+    Tidspunkt: 07-01-2019 10:59:00
+    Extra information: sdf
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 64
+    Maskine lokation: Bryst
+    Problembeskrivelse: dfg
+    Tidspunkt: 07-01-2019 11:03:00
+    Extra information: sdf
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 65
+    Maskine lokation: Mave
+    Problembeskrivelse: den er lort
+    Tidspunkt: 07-01-2019 11:06:00
+    Extra information: jamen ja
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 66
+    Maskine lokation: Bryst
+    Problembeskrivelse: dfg
+    Tidspunkt: 07-01-2019 11:11:00
+    Extra information: sdf
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 67
+    Maskine lokation: Spinning
+    Problembeskrivelse: ku
+    Tidspunkt: 07-01-2019 11:14:00
+    Extra information: jk
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 68
+    Maskine lokation: Ryg
+    Problembeskrivelse: sd
+    Tidspunkt: 07-01-2019 11:19:00
+    Extra information: dfg
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 69
+    Maskine lokation: Spinning
+    Problembeskrivelse: gggg
+    Tidspunkt: 07-01-2019 11:25:00
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 70
+    Maskine lokation: Mave
+    Problembeskrivelse: hjg
+    Tidspunkt: 07-01-2019 11:28:00
+    Extra information: hg
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 71
+    Maskine lokation: Spinning
+    Problembeskrivelse: ghjf
+    Tidspunkt: 07-01-2019 11:30:00
+    Extra information: hgj
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 72
+    Maskine lokation: Spinning
+    Problembeskrivelse: hj
+    Tidspunkt: 07-01-2019 11:34:00
+    Extra information: hj
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 73
+    Maskine lokation: Ben
+    Problembeskrivelse: jkhh
+    Tidspunkt: 07-01-2019 11:37:00
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 74
+    Maskine lokation: Bryst
+    Problembeskrivelse: sdf
+    Tidspunkt: 07-01-2019 12:18:00
+    Extra information: dfg
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 75
+    Maskine lokation: Ryg
+    Problembeskrivelse: sdf
+    Tidspunkt: 07-01-2019 12:20:00
+    Extra information: sdf
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 76
+    Maskine lokation: Bryst
+    Problembeskrivelse: Den er defekt
+    Tidspunkt: 08-01-2019 10:34:00
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 77
+    Maskine lokation: Ryg
+    Problembeskrivelse: Defekt
+    Tidspunkt: 08-01-2019 11:35:00
+    Extra information: Test
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 78
+    Maskine lokation: Ryg
+    Problembeskrivelse: Defekt
+    Tidspunkt: 08-01-2019 12:51:00
+    Extra information: test
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Yellow
+[------------------------------------]
+    Fejlrapport ID: 79
+    Maskine lokation: Bryst
+    Problembeskrivelse: eksamen
+    Tidspunkt: 08-01-2019 13:50:00
+    Extra information: test
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 80
+    Maskine lokation: Bryst
+    Problembeskrivelse: test
+    Tidspunkt: 09-01-2019 10:41:00
+    Extra information: test
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 81
+    Maskine lokation: Bryst
+    Problembeskrivelse: Test
+    Tidspunkt: 09-01-2019 11:02:00
+    Extra information: test
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 82
+    Maskine lokation: Bryst
+    Problembeskrivelse: I stykker
+    Tidspunkt: 01-01-2001 00:00:00
+    Extra information: RØD
+[------------------------------------]
+[------------------------------------]
+    Fejlrapport ID: 83
+    Maskine lokation: Bryst
+    Problembeskrivelse: I stykker
+    Tidspunkt: 01-01-2001 00:00:00
+    Extra information: RØD
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 1
+    Maskine lokation: Spinning
+    Problembeskrivelse: Mangler pedal
+    Tidspunkt: 12-12-2012 00:00:00
+    Extra information: Ingen Extra Information
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 22
+    Maskine lokation: Bryst
+    Problembeskrivelse: 1
+    Tidspunkt: 01-01-2011 00:00:00
+    Extra information: nej
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 23
+    Maskine lokation: Bryst
+    Problembeskrivelse: nej
+    Tidspunkt: 12-12-2018 13:38:43
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Yellow
+[------------------------------------]
+    Fejlrapport ID: 24
+    Maskine lokation: Bryst
+    Problembeskrivelse: sdfg
+    Tidspunkt: 12-12-2018 13:51:59
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 25
+    Maskine lokation: Bryst
+    Problembeskrivelse: bryst
+    Tidspunkt: 12-12-2018 13:53:51
+    Extra information: nej
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Yellow
+[------------------------------------]
+    Fejlrapport ID: 26
+    Maskine lokation: Bryst
+    Problembeskrivelse: 1
+    Tidspunkt: 12-12-2012 00:00:00
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Yellow
+[------------------------------------]
+    Fejlrapport ID: 27
+    Maskine lokation: Ryg
+    Problembeskrivelse: Ryuggen er død bror
+    Tidspunkt: 13-12-2018 16:11:14
+    Extra information: nej
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 30
+    Maskine lokation: Arme
+    Problembeskrivelse: mangler sæde
+    Tidspunkt: 15-12-2018 10:41:01
+    Extra information: maskine 28
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 32
+    Maskine lokation: Spinning
+    Problembeskrivelse: Cykel mangler pedal osv osv
+    Tidspunkt: 16-12-2018 11:04:10
+    Extra information: cykel nr 33
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 34
+    Maskine lokation: Bryst
+    Problembeskrivelse: ledningen er i stykker
+    Tidspunkt: 17-12-2018 13:04:22
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 37
+    Maskine lokation: Bryst
+    Problembeskrivelse: 1
+    Tidspunkt: 01-01-2001 00:00:00
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 38
+    Maskine lokation: Bryst
+    Problembeskrivelse: den er i stykker b
+    Tidspunkt: 20-12-2018 10:45:11
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 39
+    Maskine lokation: Bryst
+    Problembeskrivelse: 1
+    Tidspunkt: 20-12-2018 10:47:05
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 40
+    Maskine lokation: Bryst
+    Problembeskrivelse: asd
+    Tidspunkt: 20-12-2018 11:00:34
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 41
+    Maskine lokation: Ryg
+    Problembeskrivelse: 2
+    Tidspunkt: 20-12-2018 11:24:46
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 42
+    Maskine lokation: Ryg
+    Problembeskrivelse: 2
+    Tidspunkt: 20-12-2018 11:25:12
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 43
+    Maskine lokation: Ryg
+    Problembeskrivelse: 2
+    Tidspunkt: 20-12-2018 11:25:35
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 44
+    Maskine lokation: Ryg
+    Problembeskrivelse: 2
+    Tidspunkt: 20-12-2018 11:27:56
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 46
+    Maskine lokation: Bryst
+    Problembeskrivelse: test
+    Tidspunkt: 20-12-2018 11:29:47
+    Extra information: d
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 47
+    Maskine lokation: Ryg
+    Problembeskrivelse: 2
+    Tidspunkt: 20-12-2018 11:30:51
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 48
+    Maskine lokation: Bryst
+    Problembeskrivelse: den er i stykker
+    Tidspunkt: 20-12-2018 16:22:54
+    Extra information: der mangler en skrue for neden
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 49
+    Maskine lokation: Bryst
+    Problembeskrivelse: jhg
+    Tidspunkt: 22-12-2018 13:44:43
+    Extra information: hjg
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 50
+    Maskine lokation: Bryst
+    Problembeskrivelse: hjg
+    Tidspunkt: 22-12-2018 13:44:55
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 51
+    Maskine lokation: Mave
+    Problembeskrivelse: 
+    Tidspunkt: 22-12-2018 13:45:18
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 52
+    Maskine lokation: Arme
+    Problembeskrivelse: 65
+    Tidspunkt: 05-12-1954 00:00:00
+    Extra information: 342
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 53
+    Maskine lokation: Spinning
+    Problembeskrivelse: 
+    Tidspunkt: 22-12-2018 13:46:24
+    Extra information: 54
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 54
+    Maskine lokation: Ryg
+    Problembeskrivelse: 
+    Tidspunkt: 22-12-2018 14:02:59
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 55
+    Maskine lokation: Ryg
+    Problembeskrivelse: sdf
+    Tidspunkt: 22-12-2018 14:03:07
+    Extra information: sdf
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 56
+    Maskine lokation: Mave
+    Problembeskrivelse: gf
+    Tidspunkt: 22-12-2018 14:52:00
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 57
+    Maskine lokation: Mave
+    Problembeskrivelse: hjg
+    Tidspunkt: 22-12-2018 21:23:45
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 58
+    Maskine lokation: Bryst
+    Problembeskrivelse: sdf
+    Tidspunkt: 22-12-2018 21:30:57
+    Extra information: sdf
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 59
+    Maskine lokation: Bryst
+    Problembeskrivelse: swef
+    Tidspunkt: 22-12-2018 22:03:29
+    Extra information: asd
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 60
+    Maskine lokation: Bryst
+    Problembeskrivelse: 
+    Tidspunkt: 23-12-2018 00:08:54
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 61
+    Maskine lokation: Bryst
+    Problembeskrivelse: 123
+    Tidspunkt: 06-01-2019 23:29:00
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 63
+    Maskine lokation: Ryg
+    Problembeskrivelse: dsg
+    Tidspunkt: 07-01-2019 10:59:00
+    Extra information: sdf
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 64
+    Maskine lokation: Bryst
+    Problembeskrivelse: dfg
+    Tidspunkt: 07-01-2019 11:03:00
+    Extra information: sdf
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 65
+    Maskine lokation: Mave
+    Problembeskrivelse: den er lort
+    Tidspunkt: 07-01-2019 11:06:00
+    Extra information: jamen ja
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 66
+    Maskine lokation: Bryst
+    Problembeskrivelse: dfg
+    Tidspunkt: 07-01-2019 11:11:00
+    Extra information: sdf
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 67
+    Maskine lokation: Spinning
+    Problembeskrivelse: ku
+    Tidspunkt: 07-01-2019 11:14:00
+    Extra information: jk
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 68
+    Maskine lokation: Ryg
+    Problembeskrivelse: sd
+    Tidspunkt: 07-01-2019 11:19:00
+    Extra information: dfg
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 69
+    Maskine lokation: Spinning
+    Problembeskrivelse: gggg
+    Tidspunkt: 07-01-2019 11:25:00
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 70
+    Maskine lokation: Mave
+    Problembeskrivelse: hjg
+    Tidspunkt: 07-01-2019 11:28:00
+    Extra information: hg
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 71
+    Maskine lokation: Spinning
+    Problembeskrivelse: ghjf
+    Tidspunkt: 07-01-2019 11:30:00
+    Extra information: hgj
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 72
+    Maskine lokation: Spinning
+    Problembeskrivelse: hj
+    Tidspunkt: 07-01-2019 11:34:00
+    Extra information: hj
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 73
+    Maskine lokation: Ben
+    Problembeskrivelse: jkhh
+    Tidspunkt: 07-01-2019 11:37:00
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 74
+    Maskine lokation: Bryst
+    Problembeskrivelse: sdf
+    Tidspunkt: 07-01-2019 12:18:00
+    Extra information: dfg
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 75
+    Maskine lokation: Ryg
+    Problembeskrivelse: sdf
+    Tidspunkt: 07-01-2019 12:20:00
+    Extra information: sdf
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 76
+    Maskine lokation: Bryst
+    Problembeskrivelse: Den er defekt
+    Tidspunkt: 08-01-2019 10:34:00
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 77
+    Maskine lokation: Ryg
+    Problembeskrivelse: Defekt
+    Tidspunkt: 08-01-2019 11:35:00
+    Extra information: Test
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 78
+    Maskine lokation: Ryg
+    Problembeskrivelse: Defekt
+    Tidspunkt: 08-01-2019 12:51:00
+    Extra information: test
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Yellow
+[------------------------------------]
+    Fejlrapport ID: 79
+    Maskine lokation: Bryst
+    Problembeskrivelse: eksamen
+    Tidspunkt: 08-01-2019 13:50:00
+    Extra information: test
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 80
+    Maskine lokation: Bryst
+    Problembeskrivelse: test
+    Tidspunkt: 09-01-2019 10:41:00
+    Extra information: test
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 81
+    Maskine lokation: Bryst
+    Problembeskrivelse: Test
+    Tidspunkt: 09-01-2019 11:02:00
+    Extra information: test
+[------------------------------------]
+Console.ForegroundColor = ConsoleColor.Red
+[------------------------------------]
+    Fejlrapport ID: 82
+    Maskine lokation: Bryst
+    Problembeskrivelse: I stykker
+    Tidspunkt: 01-01-2001 00:00:00
+    Extra information: RØD
+[------------------------------------]
+[------------------------------------]
+    Fejlrapport ID: 83
+    Maskine lokation: Bryst
+    Problembeskrivelse: I stykker
+    Tidspunkt: 01-01-2001 00:00:00
     Extra information: RØD
 [------------------------------------]
